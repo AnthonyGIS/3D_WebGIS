@@ -41,7 +41,7 @@
 
 例如，从github上获取的cesium的整个源码结构如下图所示，上表中的"Cesium/Build/".
 <br>
-![](LIBS/IMGS/Cesium Struct.png)
+![Cesium Struct](LIBS/IMGS/CesiumStruct.png)
 
 
 
