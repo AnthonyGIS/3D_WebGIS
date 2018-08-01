@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8" />
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Make the application on mobile take up the full browser screen and
+		disable user scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>台风路径演示
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="../../Cesium/Widgets/widgets.css" rel="stylesheet" />
+    <link href="css/toolbar.css" rel="stylesheet" />
+
+    <script src="../../../LIB/JS/jquery-3.2.1.min.js"></script>
+    <script src="../../Cesium/Cesium.js"></script>
+    <script src="../../Cesium/Others/viewerCesiumNavigationMixin.min.js"></script>
+    <script src="../../Cesium/Others/GeoserverTerrainProvider.js"></script>
+</head>
+
+<body oncontextmenu="return false">
+
+    <div id="cesiumContainer"></div>
+
+
+    <!-- Toolbar -->
+    <div id="DrowTX">
+        <a href="#" title="相关操作"><img src="images/horizontal.png"></a>
+    </div>
+
+    <div id="toolbar">
+        <ul>
+            <li style="display: block; position: absolute; left: 0px; top: 0px; width: 40px; height: 40px">
+                <a href="#" id="showTaifeng" title="显示台风路径">
+                    <img src="images/taifeng.png"></a>
+            </li>
+            <li style="display: inline; width: 40px; height: 40px">
+                <a href="#" id="A1" title="显示台风路径">
+                    <img src="images/taifeng.png"></a>
+            </li>
+            <div class="FGline"></div>
+        </ul>
+    </div>
+    <!--div id="bukejian" style="display: none;height:0px"></div>-->
+
+
+    <script type="text/javascript" src="js/Init.js"></script>
+    <script type="text/javascript" src="js/other.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <title></title> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            background:#78a995;
+        } 
+ 
+        a { 
+            text-decoration: none; 
+        } 
+ 
+        #conter { 
+            width: 1000px; 
+            margin: auto; 
+        } 
+ 
+        #help-left { 
+            width: 200px; 
+            font-family: 'microsoft YaHei'; 
+            float: left; 
+        } 
+ 
+        .menu { 
+            border-left: 1px solid #ccc; 
+            border-right: 1px solid #ccc; 
+        } 
+ 
+        .menu:last-child { 
+            border-bottom: 1px solid #ccc; 
+        } 
+ 
+        .menu summary { 
+            height: 40px; 
+            line-height: 40px; 
+            text-indent: 10px; 
+            outline: none; 
+            font-size: 14px; 
+            font-weight: 700; 
+            border-top: 1px solid #ddd; 
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b0b28d), color-stop(1, #CCCCCC)); 
+            cursor: pointer; 
+        } 
+ 
+        .menu summary::-webkit-details-marker { 
+            display: none; 
+        } 
+ 
+        /*可用图片或字符,如果使用图片，请把content的值设置成空字符*/ 
+        .menu summary:before { 
+            content: "+"; 
+            /*background: url(../Images/right.png) no-repeat center center;*/ /*收起时的图片*/ 
+            /*vertical-align: middle;*/ 
+            display: inline-block; 
+            width: 16px; 
+            height: 16px; 
+            margin-right: 10px; 
+            font-size:18px; 
+            font-weight:700; 
+        } 
+ 
+        .menu[open] summary:before { 
+            content: "-"; 
+            /*background: url(../Images/down.png) no-repeat center center;*/ /*展开时的图片*/ 
+        } 
+ 
+        .menu ul { 
+            padding: 10px 0; 
+            background-color:rgba(255, 255, 255, 0.33);
+        } 
+ 
+        .menu ul li { 
+            list-style: none; 
+            text-indent: 25px; 
+            font-size: 12px; 
+            height: 30px; 
+            line-height: 30px; 
+            
+
+        } 
+ 
+        .menu ul li a { 
+            display: block; 
+            background-color:rgba(255, 255, 255, 0.33);
+        } 
+ 
+        .menu ul li a:hover { 
+            text-decoration: underline; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <section id="conter"> 
+        <section id="help-left"> 
+            <details class="menu" open> 
+                <summary>洋魔坊保障</summary> 
+                <ul> 
+                    <li><a href="#">正品保障</a></li> 
+                    <li><a href="#">海外直供</a></li> 
+                </ul> 
+            </details> 
+            <details class="menu" open> 
+                <summary>新手帮助</summary> 
+                <ul> 
+                    <li><a href="#">申请支付宝</a></li> 
+                    <li><a href="#">支付宝充值</a></li> 
+                </ul> 
+            </details> 
+            <details class="menu" open> 
+                <summary>支付方式</summary> 
+                <ul> 
+                    <li><a href="#">支付宝快捷支付</a></li> 
+                    <li><a href="#">支付宝余额支付</a></li> 
+                    <li><a href="#">新手入门</a></li> 
+                </ul> 
+            </details> 
+        </section> 
+    </section> 
+</body> 
+</html> 
+

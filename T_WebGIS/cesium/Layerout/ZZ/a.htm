@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="a/main.css" rel="stylesheet" />
+    <script src="a/jquery-1.js"></script>
+    <style></style>
+    <title>遮罩弹窗居中demo</title>
+</head>
+
+<body>
+    <div>
+        <button type="button" id="ClickMe">点击显示弹窗遮罩</button>
+    </div>
+
+
+
+    <div id="goodcover" style="display: none;"></div>
+    <div id="code" style="position: absolute; top: 131.5px; left: 650px; display: none;">
+        <div class="close1">
+            <a href="javascript:void(0)" id="closebt"><img src="a/close.gif"></a>
+        </div>
+        <div class="goodtxt">
+            <p>ZJECMS UAV</p>
+            <p>让您海量的文件管理更加便捷</p>
+            <p>欢迎参与进来</p>
+        </div>
+        <div class="code-img">
+            <img id="ewmsrc" src="a/code2.png" />
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        $(function () {
+            //alert($(window).height());
+            $('#ClickMe').click(function () {
+                $('#code').center();
+                $('#goodcover').show();
+                $('#code').fadeIn();
+            });
+            $('#closebt').click(function () {
+                $('#code').hide();
+                $('#goodcover').hide();
+            });
+            $('#goodcover').click(function () {
+                $('#code').hide();
+                $('#goodcover').hide();
+            });
+            /*var val=$(window).height();
+            var codeheight=$("#code").height();
+            var topheight=(val-codeheight)/2;
+            $('#code').css('top',topheight);*/
+            jQuery.fn.center = function (loaded) {
+                var obj = this;
+                body_width = parseInt($(window).width());
+                body_height = parseInt($(window).height());
+                block_width = parseInt(obj.width());
+                block_height = parseInt(obj.height());
+
+                left_position = parseInt((body_width / 2) - (block_width / 2) + $(window).scrollLeft());
+                if (body_width < block_width) {
+                    left_position = 0 + $(window).scrollLeft();
+                };
+
+                top_position = parseInt((body_height / 2) - (block_height / 2) + $(window).scrollTop());
+                if (body_height < block_height) {
+                    top_position = 0 + $(window).scrollTop();
+                };
+
+                if (!loaded) {
+
+                    obj.css({
+                        'position': 'absolute'
+                    });
+                    obj.css({
+                        'top': ($(window).height() - $('#code').height()) * 0.5,
+                        'left': left_position
+                    });
+                    $(window).bind('resize', function () {
+                        obj.center(!loaded);
+                    });
+                    $(window).bind('scroll', function () {
+                        obj.center(!loaded);
+                    });
+
+                } else {
+                    obj.stop();
+                    obj.css({
+                        'position': 'absolute'
+                    });
+                    obj.animate({
+                        'top': top_position
+                    }, 200, 'linear');
+                }
+            }
+
+        })
+    </script>
+
+</body>
+</html>
