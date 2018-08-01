@@ -9,7 +9,7 @@
 <tr>
 <th>缺失的目录</th>
 <th>获取途径</th>
-<th">备注</th>
+<th>备注</th>
 </tr>
 </thead>
 <tr>
@@ -40,8 +40,12 @@
 </table>
 
 例如，从github上获取的cesium的整个源码结构如下图所示，上表中的"Cesium/Build/".
-<br>
+<div align=center>
+
 ![Cesium Struct](LIBS/IMGS/CesiumStruct.png)
+</div>
+## 项目的特色与功能
+
 
 
 
