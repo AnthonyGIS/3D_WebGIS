@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>jQuery Popup Window &mdash; Example</title>
+    <script src="../../LIBS/JS/jquery-3.2.1.min.js"></script>
+    <script src="jquery.popupwindow.js"></script>
+    <script>
+      $(function() {
+        $('.example-defaults').on('click', function(event) {
+          event.preventDefault();
+          $.popupWindow('http://google.com');
+        });
+
+        $('.example-small').on('click', function(event) {
+          event.preventDefault();
+          $.popupWindow('http://google.com', {
+            width: 200,
+            height: 200
+          });
+        });
+
+        $('.example-callback').on('click', function(event) {
+          event.preventDefault();
+          $.popupWindow('http://google.com', {
+            onUnload: function() {
+              alert('Window closed!');
+            }
+          });
+        });
+
+        $('a.center-screen').on('click', function(event) {
+          event.preventDefault();
+          $.popupWindow('http://google.com', {
+              width: 400,
+              height: 400,
+              center: 'screen'
+          });
+        });
+
+        $('a.center-parent').on('click', function(event) {
+          event.preventDefault();
+          $.popupWindow('http://google.com', {
+              width: 400,
+              height: 400,
+              center: 'parent'
+          });
+        });
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <h1>jQuery Popup Window Plugin</h1>
+
+    <h2>Examples</h2>
+
+    <ul>
+      <li><a href="#" class="example-defaults">Open window (with defaults)</a></li>
+      <li><a href="#" class="example-small">Open window (custom size: 200x200)</a></li>
+      <li><a href="#" class="example-callback">Open window (close callback)</a></li>
+      <li><a href="#" class="center-screen">Open window (centered on screen)</a></li>
+      <li><a href="#" class="center-parent">Open window (centered on parent)</a></li>
+    </ul>
+
+    <h2>More Details</h2>
+
+    <p>
+      See <a
+        href="https://github.com/mkdynamic/jquery-popupwindow">https://github.com/mkdynamic/jquery-popupwindow</a>
+      for more details.
+    </p>
+  </body>
+</html>

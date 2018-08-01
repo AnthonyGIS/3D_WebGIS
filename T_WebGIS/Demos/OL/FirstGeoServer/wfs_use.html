@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>WFS - GetFeature</title>
+    <link href="../../../LIB/openlayers/css/ol.css" rel="stylesheet" />
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="../../../LIB/openlayers/build/ol.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+
+</head>
+<body>
+    <div id="map" class="map"></div>
+    <script>
+
+        var bounds = [113.901069641113, 33.0065879821777,
+                   113.906242370605, 33.0110206604004];
+
+        // WFS服务
+        var vectorSource = new ol.source.Vector();
+        var vector = new ol.layer.Vector({
+            source: vectorSource,
+            style: new ol.style.Style({
+                fill: new ol.style.Fill({
+                    color: 'rgba(255, 0, 0, 0.2)',
+                }),
+                stroke: new ol.style.Stroke({
+                    color: 'rgba(0, 0, 255, 1.0)',
+                    width: 2
+                }),
+                image: new ol.style.Circle({
+                    radius: 7,
+                    fill: new ol.style.Fill({
+                        color: 'red'
+                    })
+                })
+            })
+        });
+
+        
+
+
+        // raster layer
+        var raster = new ol.layer.Tile({
+            source: new ol.source.BingMaps({
+                imagerySet: 'Aerial',
+                key: 'AuUKioHoVzV-16Ep0yv6ay21ixWZ5OZ7jDs-k7g03fiUMbN6GSH97IpRcQ_s_s3-'
+            })
+        });
+
+    
+
+        var projection = new ol.proj.Projection({
+            code: 'EPSG:4326',
+            units: 'degrees',
+            axisOrientation: 'neu',
+            global: false
+        });
+
+
+        var map = new ol.Map({
+            layers: [raster, vector],
+            target: document.getElementById('map'),
+            view: new ol.View({
+                center: [113.901069641113, 33.0065879821777],
+                maxZoom: 19,
+                zoom: 12,
+                projection: projection
+            })
+        });
+
+        // generate a GetFeature request
+        var featureRequest = new ol.format.WFS().writeGetFeature({
+            srsName: 'EPSG:4326',
+            featureNS: 'http://www.weng_test.com',
+            featurePrefix: 'osm',
+            featureTypes: ['dw_country'], // 图层名
+            outputFormat: 'application/json',
+            //filter: ol.format.filter.and(
+            //    ol.format.filter.like('name', 'Mississippi*'),
+            //    ol.format.filter.equalTo('waterway', 'riverbank')
+            //)
+        });
+
+        // then post the request and add the received features to a layer
+        fetch('http://localhost:8080/geoserver/wfs', {
+            method: 'POST',
+            body: new XMLSerializer().serializeToString(featureRequest)
+        }).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            var features = new ol.format.GeoJSON().readFeatures(json);
+            vectorSource.addFeatures(features);
+            map.getView().fit(vectorSource.getExtent());
+        });
+
+        //map.getView().fit(bounds, map.getSize());
+
+
+
+
+        /*
+        // WFS2 
+        // http://blog.csdn.net/sinat_28797501/article/details/76146804
+        function wfs(name) {
+            var wfsParams = {
+                service: 'WFS',
+                version: '1.0.0',
+                request: 'GetFeature',
+                typeName: name,  //图层名称       
+                outputFormat: 'text/javascript',  //重点，不要改变    
+                format_options: 'callback:loadFeatures'  //回调函数声明    
+            };
+
+            var vectorSource = new ol.source.Vector({
+                format: new ol.format.GeoJSON(),
+                loader: function (extent, resolution, projection) {  //加载函数    
+                    var url = 'http://localhost:8080/geoserver/wfs';
+                    $.ajax({
+                        url: url,
+                        data: $.param(wfsParams),   //传参    
+                        type: 'GET',
+                        dataType: 'jsonp',   //解决跨域的关键    
+                        jsonpCallback: 'loadFeatures'  //回调    
+
+                    });
+                },
+                strategy: ol.loadingstrategy.tile(new ol.tilegrid.createXYZ({
+                    maxZoom: 21
+                })),
+                projection: 'EPSG:4326'
+            });
+            //回调函数使用    
+            window.loadFeatures = function (response) {
+                vectorSource.addFeatures((new ol.format.GeoJSON()).readFeatures(response));  //载入要素    
+
+            };
+            var vectorLayer = new ol.layer.Vector({
+                source: vectorSource
+            });
+            return vectorLayer;
+        }
+
+        var wfs_layer = null;
+
+        function clcall() {
+            if (wfs_layer) {
+                map.removeLayer(wfs_layer);
+                wfs_layer = null;
+            }
+        }
+        function select_home() {
+            var name = 'weng_test:dw_country';
+            clcall();
+            wfs_layer = wfs(name);
+            map.addLayer(wfs_layer);
+        }
+        */
+
+
+        /*
+        // 交互式绘图
+        //矢量图层是用来渲染矢量数据的图层类型，在OpenLayers里，它是可以定制的，可以控制它的透明度，颜色，以及加载在上面的要素形状等。
+        var source = new ol.source.Vector();
+        function draw_polygon() {
+            var draw = new ol.interaction.Draw({
+                source: source,
+                type: 'Polygon',
+
+                //用于交互绘制图形时所设置的样式
+
+                style: new ol.style.Style({
+                    fill: new ol.style.Fill({
+                        // color: 'rgba(255, 255, 255, 0.2)'
+                        color: 'yellow'
+                    }),
+                    stroke: new ol.style.Stroke({
+                        color: '#ffcc33',
+                        width: 2
+                    }),
+                    image: new ol.style.Circle({
+                        radius: 5,
+                        stroke: new ol.style.Stroke({
+                            color: 'red'
+                        }),
+                        fill: new ol.style.Fill({
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        })
+                    })
+                })
+            })
+            map.addInteraction(draw);
+        }
+        draw_polygon();
+       */
+
+
+
+      
+    </script>
+</body>
+</html>

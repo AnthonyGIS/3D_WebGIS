@@ -1,0 +1,7 @@
+/node_modules/*
+/.git
+/example/*
+/.idea
+npm-debug.log
+yarn.lock
+index.html

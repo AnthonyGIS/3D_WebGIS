@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width" />
+		<title>jQuery Touch Optimized Sliders &quot;R&quot;Us</title>
+
+		<!-- include jQuery -->
+		<script src="../../LIBS/JS/jquery-3.2.1.min.js"></script>
+
+		<!-- for dragging/swiping/pinching, include Hammer.js -->
+		<script type="text/javascript" src="http://cdn.jsdelivr.net/hammerjs/2.0.3/hammer.min.js"></script>
+
+		<!-- for scaling UI buttons (for wide websites on small screens), include FlameViewportScale -->
+		<script type="text/javascript" language="javascript" src="lib/FlameViewportScale.js"></script>
+
+		<!-- include Tos "R"Us -->
+		<script type="text/javascript" language="javascript" src="dist/js/jquery.tosrus.all.min.js"></script>
+		<link type="text/css" media="all" rel="stylesheet" href="dist/css/jquery.tosrus.all.css" />
+
+		<!-- fire the plugin onDocumentReady -->
+		<script type="text/javascript" language="javascript">
+			jQuery(function( $ ) {
+
+				//	Add a custom filter to recognize images from lorempixel (that don't end with ".jpg" or something similar)
+				$.tosrus.defaults.media.image = {
+					filterAnchors: function( $anchor ) {
+						return $anchor.attr( 'href' ).indexOf( 'lorempixel.com' ) > -1;
+					}
+				};
+
+				$('#example-1 a').tosrus({
+					buttons: 'inline',
+					pagination	: {
+						add			: true,
+						type		: 'thumbnails'
+					}
+				});
+
+				$('#example-2 a').tosrus({
+					pagination	: {
+						add			: true
+					},
+					caption		: {
+						add			: true
+					},
+					slides		: {
+						scale		: 'fill'
+					}
+				});
+
+				$('#example-3 a').tosrus();
+
+				$('#example-4').tosrus({
+					infinite	: true,
+					slides		: {
+						visible		: 3
+					}
+				});
+
+				$('#example-5').tosrus({
+					buttons		: false,
+					pagination	: {
+						add			: true
+					},
+					slides		: {
+						scale		: 'fill'
+					}
+				});
+
+			});
+		</script>
+
+
+		<!-- CSS for this demo page -->
+		<style type="text/css" media="all">
+			html, body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			body {
+				background-color: #eee;
+				font-family: Arial, Helvetica, Verdana;
+				color: #666;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				color: #333;
+			}
+			a, a:link, a:active, a:visited {
+				color: #666;
+				text-decoration: underline;
+			}
+			a:hover {
+				color: #000;
+			}
+			hr {
+				margin: 75px -20px;
+				height: 0;
+				padding: 0;
+				border: 0;
+				border-top: 1px solid #ccc;
+			}
+			pre {
+				border-left: 5px solid #ccc;
+				width: 100%;
+				padding: 10px 0 10px 20px;
+				overflow: auto;
+			}
+
+			#wrapper {
+				background-color: #fff;
+				width: 70%;
+				min-width: 675px;
+				padding: 50px 50px 100px 50px;
+				margin: 0 auto;
+				border: 1px solid #ccc;
+				box-shadow: 0 0 5px #ccc;
+			}
+			#intro p {
+				font-size: 18px;
+				line-height: 24px;
+			}
+
+			.thumbs,
+			.gallery,
+			.links,
+			.slider {
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				background: #eee;
+				margin: 20px -50px;
+			}
+			.thumbs {
+				padding: 10px 30px 30px 50px;
+				text-align: center;
+			}
+			.thumbs:after {
+				content: " ";
+				display: block;
+				clear: both;
+			}
+			.thumbs a {
+				display: inline-block;
+				margin: 20px 20px 0 0;
+			}
+			thumbs img
+			{
+				width: 130px;
+				height: 130px;
+			}
+			.thumbs img,
+			.gallery img {
+				border: 1px solid #ccc;
+				background: #fff;
+				padding: 9px;
+			}
+			.thumbs a:hover img {
+				border-color: #999;
+			}
+			.gallery {
+				height: 300px;
+				padding: 30px 0;
+			}
+			.slider {
+				height: 475px;
+			}
+			.links {
+				padding: 30px 50px;
+			}
+			.links a {
+				line-height: 30px;
+			}
+
+			.hidden {
+				display: none;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div id="wrapper" style="position: relative;">
+			<div id="intro">
+				<h1>jQuery Touch Optimized Sliders &quot;R&quot;Us</h1>
+				<p>The one-stop-shop jQuery plugin for scrolling/swiping through all different kinds of content. On a desktop, tablet or smartphone, inside a HTML element or as a lightbox popup.</p>
+				<p>The plugin is responsive by default, so try resizing your browser.<br />
+					This is a demo-page, for the full documentation and more examples, please visit <a href="http://tosrus.frebsite.nl">TosRUs.frebsite.nl</a></p>
+			</div>
+
+			<hr />
+
+			<section>
+				<h2>Lightbox popup examples</h2>
+				<p>Fire the plugin on a (set of) thumbnail(s) and it will create a lightbox popup with a slider for the enlarged images.<br />
+					The plugin will automatically create a gallery from the targeted anchors.</p>
+				<p>This lightbox has been set up with a thumbnail pagination and inline-buttons:</p>
+				<div id="example-1" class="thumbs">
+					<a href="http://lorempixel.com/1200/675/cats/5/">
+						<img src="http://lorempixel.com/130/130/cats/5/" /></a>
+					<a href="http://lorempixel.com/1200/675/cats/6/">
+						<img src="http://lorempixel.com/130/130/cats/6/" /></a>
+					<a href="http://lorempixel.com/1200/675/cats/7/">
+						<img src="http://lorempixel.com/130/130/cats/7/" /></a>
+					<a href="http://lorempixel.com/1200/675/cats/8/">
+						<img src="http://lorempixel.com/130/130/cats/8/" /></a>
+				</div>
+<pre>
+$(&quot;#example a&quot;).tosrus({
+   buttons    : &quot;inline&quot;,
+   pagination : {
+      add        : true,
+      type       : &quot;thumbnails&quot;
+   }
+});
+</pre>
+				<br />
+				<p>This lightbox has been set up so that the images fill up the entire screen and has captions and a bullet pagination:</p>
+				<div id="example-2" class="thumbs">
+					<a href="http://lorempixel.com/1200/675/cats/1/" title="White cat on purple cushion.">
+						<img src="http://lorempixel.com/130/130/cats/1/" /></a>
+					<a href="http://lorempixel.com/1200/675/cats/2/" title="Angry, scary cat.">
+						<img src="http://lorempixel.com/130/130/cats/2/" /></a>
+					<a href="http://lorempixel.com/1200/675/cats/3/" title="Brown cat that looks a bit annoyed.">
+						<img src="http://lorempixel.com/130/130/cats/3/" /></a>
+					<a href="http://lorempixel.com/1200/675/cats/4/" title="Gray cat, chilling.">
+						<img src="http://lorempixel.com/130/130/cats/4/" /></a>
+				</div>
+<pre>
+$(&quot;#example a&quot;).tosrus({
+   pagination : {
+      add        : true
+   },
+   caption    : {
+      add        : true
+   },
+   slides     : {
+      scale      : &quot;fill&quot;
+   }
+});
+</pre>
+				<br />
+				<p>Besides images, you can also scroll through YouTube and Vimeo video's and any other type of HTML:</p>
+				<div id="example-3" class="links">
+					<a href="http://www.youtube.com/watch?v=INscMGmhmX4">YouTube: Grumpy cat.</a><br />
+					<a href="http://vimeo.com/37328349">Vimeo: Flying cat.</a><br />
+					<a href="#hidden-content">Some hidden HTML.</a>
+				</div>
+				<div class="hidden">
+					<div id="hidden-content" style="max-width: 750px;">
+						<img src="http://lorempixel.com/200/200/cats/5/" style="float: right; margin: 0 0 20px 20px;" />
+						<h3>Kitty ipsum dolor sit amet</h3>
+						<p>Purr attack in viverra nullam, jump on the table puking chase the red dot biting run fluffy fur tempus et. Jump on the table iaculis tortor tail flick eat egestas, jump on the table zzz sleep in the sink chuf. Lay down in your way orci turpis knock over the lamp vestibulum aliquam, ac shed everywhere non judging you shed everywhere scratched. Accumsan egestas scratched puking scratched tincidunt a, purr dolor enim ut jump on the table orci turpis libero. Vel non vel amet, stretching jump litter box eat sagittis nunc non. Nunc chuf pellentesque leap et ac, tortor climb the curtains stuck in a tree sollicitudin. Sagittis nibh aliquam nunc, tortor stretching rhoncus suspendisse hiss accumsan rhoncus litter box. Consectetur jump on the table dolor suscipit suscipit hiss, iaculis biting mauris a I don't like that food.</p>
+						<p>Purr judging you nam dolor rip the couch, purr tincidunt a tristique give me fish aliquam climb the curtains pharetra. I don't like that food vel puking hairball, nam pellentesque attack consectetur suspendisse sleep in the sink feed me. Sleep on your face tortor faucibus chuf hairball, leap quis nunc sleep in the sink egestas meow. Tail flick sleep in the sink tincidunt a sunbathe enim, pellentesque scratched purr sleep on your face sagittis. Litter box hiss shed everywhere etiam, biting non aliquam egestas tincidunt a enim ut tail flick iaculis. Et mauris a aliquam run suscipit mauris a, attack stuck in a tree stuck in a tree iaculis lay down in your way sollicitudin.</p>
+					</div>
+				</div>
+<pre>
+$(&quot;#example a&quot;).tosrus();
+</pre>
+			</section>
+
+			<hr />
+
+			<section>
+				<h2>Inline slider examples</h2>
+				<p>Fire the plugin on a &quot;wrapper&quot; with existing content, and the popup gallery is replaced with an inline slider.<br />
+					Just like the lightbox popup, the slides in this slider are responsive by default.</p>
+				<p>This slider has been set up to show three slides and is infinite:</p>
+				<div id="example-4" class="gallery">
+					<img src="http://lorempixel.com/200/300/cats/1/" />
+					<img src="http://lorempixel.com/200/300/cats/2/" />
+					<img src="http://lorempixel.com/200/300/cats/3/" />
+					<img src="http://lorempixel.com/200/300/cats/4/" />
+					<img src="http://lorempixel.com/200/300/cats/5/" />
+					<img src="http://lorempixel.com/200/300/cats/6/" />
+					<img src="http://lorempixel.com/200/300/cats/7/" />
+					<img src="http://lorempixel.com/200/300/cats/8/" />
+				</div>
+<pre>
+$(&quot;#example&quot;).tosrus({
+   infinite   : true,
+   slides     : {
+      visible    : 3
+   }
+});
+</pre>
+				<br />
+				<p>This slider has been set up to so that the images fill up the wrapper. It has no buttons, only a pagination:</p>
+				<div id="example-5" class="slider">
+					<img src="http://lorempixel.com/775/475/cats/1/" />
+					<img src="http://lorempixel.com/775/475/cats/2/" />
+					<img src="http://lorempixel.com/775/475/cats/3/" />
+					<img src="http://lorempixel.com/775/475/cats/4/" />
+					<img src="http://lorempixel.com/775/475/cats/5/" />
+					<img src="http://lorempixel.com/775/475/cats/6/" />
+					<img src="http://lorempixel.com/775/475/cats/7/" />
+					<img src="http://lorempixel.com/775/475/cats/8/" />
+				</div>
+<pre>
+$(&quot;#example&quot;).tosrus({
+   buttons    : false,
+   pagination : {
+      add          : true
+   },
+   slides     : {
+      scale      : &quot;fill&quot;
+   }
+});
+</pre>
+			</section>
+			
+			<hr />
+			
+			<section>
+				<h4>About the images</h4>
+				<p>All images on this demo-page are hosted on <a href="http://lorempixel.com/" target="_blank">lorempixel.com</a>.<br />
+					Because these images are generated by a server-side script, they don't end with &quot;.jpg&quot; or something similar. To ensure the plugin would still recognize the url as an image, a custom filter was added to the <code>$.tosrus.defaults.media.image</code> object.</p>
+				<p><strong>Why cats?</strong><br />
+					Because everybody loves cats, right?</p>
+			</section>
+		</div>
+	</body>
+</html>

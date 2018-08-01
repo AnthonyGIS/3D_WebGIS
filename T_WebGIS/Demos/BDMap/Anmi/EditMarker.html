@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#l-map{height:500px;width:100%;}
+		#r-result{width:100%;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+	<title>设置点是否可拖拽</title>
+</head>
+<body>
+	<div id="l-map"></div>
+	<div id="r-result">
+		<input type="button" onclick="marker.enableDragging();" value="可拖拽" />
+		<input type="button" onclick="marker.disableDragging();" value="不可拖拽" />
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("l-map");
+    var point = new BMap.Point(116.700244, 39.92556);
+    map.centerAndZoom(point, 12);
+    var marker = new BMap.Marker(point);// 创建标注
+    map.addOverlay(marker);             // 将标注添加到地图中
+    marker.disableDragging();           // 不可拖拽
+
+
+    //创建小狐狸
+    var pt = new BMap.Point(116.417, 39.909);
+    var myIcon = new BMap.Icon("http://lbsyun.baidu.com/jsdemo/img/fox.gif", new BMap.Size(300, 157));
+    var marker2 = new BMap.Marker(pt, { icon: myIcon });  // 创建标注
+    map.addOverlay(marker2);
+
+    // jump pt
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);               // 将标注添加到地图中
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+
+</script>

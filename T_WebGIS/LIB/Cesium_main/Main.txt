@@ -1,0 +1,7 @@
+﻿F:\Learnings\Projects\ZJECMS_UAVProject\WebGIS\Cesium-1.41
+
+使用方法：
+1. 用Tomcat启动后，就可以使用了。
+2. shift+鼠标右键单击，输入node server.js也是可以运行的。
+运行后，访问http://localhost:8082/具体有所区别
+

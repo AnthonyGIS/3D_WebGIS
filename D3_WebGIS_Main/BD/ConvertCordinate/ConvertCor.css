@@ -1,0 +1,61 @@
+﻿body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+
+#mapDiv {
+    float: left;
+    margin-top: 2%;
+    overflow: hidden;
+    width: 70%;
+    height: 90%;
+}
+
+/*去掉百度地图的版权标记*/
+    /*#mapDiv .anchorBL img:first-child{
+        display:none;
+    }*/
+    #mapDiv .BMap_cpyCtrl{  
+        display:none;   
+    }  
+
+
+
+#controlPanel {
+    float: right;
+    margin-top: 2%;
+    width: 28%;
+    height: 90%;
+    background-color: #c5deed;
+}
+
+.wc_wrapper{
+    display:contents;
+    height:30px;
+    margin-top:10px;
+    
+}
+
+.wc_wrapper select{
+    width:150px;
+}
+.wc_wrapper .c1{
+    width:130px;
+    float: left;
+    text-align: left;
+}
+
+.io_message_box {
+    padding-top:5px;
+    margin-left:130px;
+}
+
+.io_message_box input, button{
+    margin-top:5px;
+}
+.io_message_box input{
+    width:100px;
+}

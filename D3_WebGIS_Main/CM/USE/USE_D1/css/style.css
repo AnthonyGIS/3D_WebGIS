@@ -1,0 +1,411 @@
+/*全般*/
+
+html, body, #cesiumContainer {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: fixed;
+	font-family: "MS Pゴシック",sans-serif;
+    background-color:black;
+}
+
+h2 {
+    font-size:13px;
+    font-weight:bold;
+    text-align:center;
+}
+
+a {
+    color:black;
+	text-decoration:none;
+}
+
+a:hover{
+	color:white;
+	background:gray;
+}
+
+.license{
+    position:absolute;
+    bottom:30px;
+    left:2px;
+    opacity:0.5;
+    font-size:0;
+}
+
+a.tooltip span {
+    display:none;
+    padding:2px 3px;
+    margin-left:8px;
+    width:130px;
+
+}
+a.tooltip:hover span{
+    display:inline;
+    position:absolute;
+    border:1px solid #cccccc;
+    background:#ffffff;
+    color:#6c6c6c;
+}
+
+/*Cesiumインターフェイス関連*/
+
+.cesium-infoBox-iframe {
+	width:320px;
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+	z-index:10001;
+}
+
+.cesium-infoBox {
+	width:320px;
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+	z-index:10001;
+	background-color:rgba(255,255,255,0.9);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cesium-infoBox-visible {
+	width:320px;
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+	z-index:10001;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cesium-infoBox-title {
+	padding:5px 24px;
+	overflow:hidden;
+	color:#000;
+	background-color:rgba(255,255,255,0.5);
+}
+
+button.cesium-infoBox-close {
+	color:#aaa;
+}
+.cesium-selection-wrapper svg {
+    fill: #FFF;
+    stroke: #FFF;
+    stroke-width: 0px;
+    opacity:0.7;
+}
+
+/*ボタン群*/
+
+.sample {
+	position:absolute;
+	height:100%;
+}
+#button {
+	position:absolute;
+	top:8px;
+	left:8px;
+	z-index:10005;
+}
+#button2 {
+	position:absolute;
+	top:8px;
+	right:8px;
+	z-index:10005;
+}
+#button3 {
+	position:absolute;
+	top:8px;
+	right:54px;
+	z-index:10005;
+}
+#button4 {
+	position:absolute;
+	top:8px;
+	left:50%;
+	margin-left:-20px;
+	z-index:10100;
+}
+#buttonGeo {
+	position:absolute;
+	bottom:44px;
+	left:50%;
+	margin-left:-20px;
+	opacity:0.9;
+}
+#sceneModeButton3D {
+	position:absolute;
+	top:8px;
+	right:100px;
+	z-index:10100;
+}
+#sceneModeButton2D {
+	position:absolute;
+	top:8px;
+	right:100px;
+	z-index:10100;
+}
+/*スライドメニュー群*/
+
+#slide_menu{
+    position: fixed;
+    top: 48px;
+    left: -200px;
+    width: 80px;
+    opacity:0.8;
+    padding:0px 0px 20px 0px;
+    margin:0px;
+    margin-bottom:0px;
+    background:white;
+    text-align:center;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#slide_menu2{
+    position: fixed;
+    top: 48px;
+    right: -200px;
+    width: 110px;
+    opacity:0.8;
+    padding:10px 0px 0px 10px;
+    margin:0px;
+    margin-bottom:0px;
+    background:white;
+    text-align:left;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	z-index:10005;
+}
+
+.viewpoint {
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+    font-size:11px;
+    list-style-type:none;
+    line-height:1.7em;
+    text-indent:0px;
+    background:white;
+}
+
+.slide_label{
+	font-size:11px;
+	margin:0px 0px 2px 0px;
+	padding:0px;
+	height:12px;
+}
+
+#slider {
+	position: absolute;
+	width: 100px;
+	top: 5px;
+	background: none repeat scroll 0% 0% transparent;
+	z-index: 10001;
+	right: 98px;
+}
+
+/*ローディング*/
+
+#blackOut {
+	position:absolute;
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+	background:black;
+	z-index:10002;
+	opacity:0.6;
+}
+
+.loading {
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-40px;
+	margin-left:-40px;
+}
+
+input {
+	margin:2px 0px 0px 0px;
+	padding:0px;
+	width: 250px !important;
+	outline: none;
+}
+
+/*透明条*/
+#range01{
+	width: 100px !important;
+}
+
+/*导航条*/
+
+.navbar
+.navbar-default{
+	position: absolute;
+}
+
+/*搜索框*/
+
+.geocode {
+	position:absolute;
+	background-color: #fff;
+	border-radius: 3px;
+	top:10px;
+	left:55px;
+	z-index:10001;
+}
+
+.textbox {
+	border:0;
+	margin:0px;
+	padding:0px 0px 1px 2px;
+	font-size:15px;
+	width:250px;
+	height:30px;
+	background-color: #fff;
+	border-radius: 3px;
+}
+
+#search{
+	position: absolute !important;
+	right: 6px;
+	top: 7px;
+	font-size: 17px;
+	width: 20px;
+	height: 20px;
+}
+/* ストリートビュー関連 */
+
+#streetView_wrapper {
+	position: absolute;
+	top: 55%;
+	right: 0;
+	width: 100%;
+	height: 45%;
+	display: none;
+	background-color:rgba(0,0,0,0.1);
+	z-index:20000;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    box-shadow: 0 0 8px;
+}
+#streetView {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.btn {
+	position: absolute;
+	right: 2px;
+	top: 7px;
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	-webkit-border-radius: 28px;
+	-moz-border-radius: 28px;
+	border-radius: 28px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 24px;
+	padding: 5px 12px 5px 12px;
+	text-decoration: none;
+}
+
+.btn:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+
+/* ストビュー利用不可メッセージ */
+
+#svNotAvailable {
+	position:absolute;
+	width:100%;
+	height:100%;
+	margin:0;
+	background-color: rgba(0,0,0,0.5);
+	color:white;
+	z-index:10010;
+}
+
+.errorMessage {
+	position: absolute;
+	top: 50%;
+	width:100%;
+	text-align:center;
+	margin-top: -1em;
+}
+
+/* タイムカウンター */
+
+#timeCounter {
+    width:160px;
+    height16px;
+    position:absolute;
+    bottom:14px;
+    left:50%;
+    margin-left:-80px;
+    z-index:10000;
+}
+.timeCounter {
+    font-size:14px;
+    color:white;
+    line-height:14px;
+    text-align:center;
+    font-family:sans-serif; 
+}
+
+/* タイムライン */
+
+.cesium-timeline-ticLabel {
+    visibility:hidden;
+}
+.cesium-timeline-ticTiny{
+    visibility:hidden;
+}
+.cesium-timeline-icon16 {
+    border: 1px solid rgba(0,0,0,0.5);
+    height:22px;
+    width:33px;
+    background: #f2f6f8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f2f6f8 0%, #d8e1e7 50%, #c0ccdb 51%, #e0eff9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f6f8), color-stop(50%,#d8e1e7), color-stop(51%,#c0ccdb), color-stop(100%,#e0eff9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#c0ccdb 51%,#e0eff9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#c0ccdb 51%,#e0eff9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f2f6f8 0%,#d8e1e7 50%,#c0ccdb 51%,#e0eff9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f2f6f8 0%,#d8e1e7 50%,#c0ccdb 51%,#e0eff9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+    margin-bottom:0px;
+    margin-left:-9px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.cesium-timeline-main {
+    border:none;
+}
+.cesium-timeline-bar{
+    background:rgba(0,0,0,0.4);
+}
+

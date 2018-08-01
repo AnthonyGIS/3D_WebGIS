@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>绘制线</title>
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../../LIBS/Cesium/Widgets/widgets.css">
+    <script src="../../../../LIBS/Cesium/Cesium.js"></script>
+    <script src="../../../../LIBS/JS/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="cesiumContainer"></div>
+<div style="position: absolute; float: right;right: 10px;top: 50px; z-index: 999999;">
+    <input id="startDraw" type="button" value="开始绘制(双击结束绘制)" class="cesium-button">
+</div>
+</body>
+</html>
+
+
+<script>
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        baseLayerPicker: false,
+        geocoder: false,
+        homeButton: false,
+        navigationHelpButton: false,
+        timeline: false,
+        animation: false
+    });
+
+    viewer.imageryLayers.removeAll();
+    viewer.camera.setView({
+        destination: Cesium.Cartesian3.fromDegrees(112.52133465950095, 23.071194052564465, 1063.5910571697082),
+        orientation: {
+            heading: 0.9183320934226114,
+            pitch: -0.2851308873567558,
+            roll: 0.00200137740773787
+        }
+    });
+
+    //天地图在线影像
+    var TDTimageryLayer = new Cesium.WebMapTileServiceImageryProvider({
+        url: "http://{s}.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
+        layer: "tdtImgBasicLayer",
+        style: "default",
+        subdomains: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'],
+        format: "image/jpeg",
+        tileMatrixSetID: "GoogleMapsCompatible",
+        maximumLevel: 17,
+        credit: "天地图",
+        show: true
+    });
+    //天地图在线影像注记
+    var TDTimageryLabel = new Cesium.WebMapTileServiceImageryProvider({
+        url: "http://{s}.tianditu.com/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
+        layer: "tdtImgBasicLayer",
+        style: "default",
+        subdomains: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'],
+        format: "image/jpeg",
+        tileMatrixSetID: "GoogleMapsCompatible",
+        maximumLevel: 17,
+        credit: "天地图影像注记",
+        show: true
+    });
+
+    viewer.imageryLayers.addImageryProvider(TDTimageryLayer);
+    viewer.imageryLayers.addImageryProvider(TDTimageryLabel);
+
+    viewer.scene.screenSpaceCameraController.minimumZoomDistance = -1000;
+
+    var CreatePolygon = (function () {
+        function _(positons) {
+            if (!Cesium.defined(positons)) {
+                throw new Cesium.DeveloperError('positions is required!');
+            }
+            if (positons.length < 3) {
+                throw new Cesium.DeveloperError('positions 的长度必须大于等于3');
+            }
+            this.options = {
+                polygon: {
+                    show: true,
+                    hierarchy: undefined,
+                    material: Cesium.Color.YELLOW.withAlpha(0.5)
+                }
+            };
+            this.path = positons;
+
+            this._init();
+        }
+
+        _.prototype._init = function () {
+            var that = this;
+            var positionCBP = function () {
+                return that.path;
+            };
+            this.options.polygon.hierarchy = new Cesium.CallbackProperty(positionCBP, false);
+            viewer.entities.add(this.options);
+        };
+
+        return _;
+    })();
+
+    var isDraw = false;
+    var polygonPath = [];
+    var polygon = undefined;
+
+    var handler = viewer.cesiumWidget.screenSpaceEventHandler;
+    handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+    handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+
+    handler.setInputAction(function (movement) {
+        var ray = viewer.scene.camera.getPickRay(movement.endPosition);
+
+        var cartesian = viewer.scene.globe.pick(ray, viewer.scene);
+
+        if (cartesian) {
+            if (isDraw) {
+                if (polygonPath.length < 2) {
+                    return;
+                }
+                if (!Cesium.defined(polygon)) {
+                    polygonPath.push(cartesian);
+
+                    polygon = new CreatePolygon(polygonPath);
+
+                } else {
+                    polygon.path.pop();
+                    polygon.path.push(cartesian);
+                }
+            }
+        }
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+    handler.setInputAction(function (movement) {
+        var ray = viewer.scene.camera.getPickRay(movement.position);
+
+        var cartesian = viewer.scene.globe.pick(ray, viewer.scene);
+
+        if (cartesian) {
+            if (isDraw) {
+                polygonPath.push(cartesian);
+            }
+        }
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    handler.setInputAction(function () {
+        isDraw = false;
+        polygonPath = [];
+        polygon = undefined;
+    }, Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+
+    document.getElementById('startDraw').onclick = function () {
+        isDraw = true;
+    };
+
+
+</script>

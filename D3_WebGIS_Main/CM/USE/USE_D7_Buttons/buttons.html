@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - 按钮</title>
+    <meta name="keywords" content="XXX">
+    <meta name="description" content="ZZ">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/clockpicker.css">
+
+    <link rel="stylesheet" href="../../../LIBS/Cesium/Widgets/widgets.css">
+    <script src="../../../LIBS/Cesium/Cesium.js"></script>
+    <script src="../../../LIBS/JS/jquery-3.2.1.min.js"></script>
+
+    <style>
+        /*leaflet风格气泡窗口样式模板*/
+        .leaflet-popup {
+            position: absolute;
+            text-align: center;
+        }
+
+        .leaflet-popup-close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 4px 0 0;
+            text-align: center;
+            width: 18px;
+            height: 14px;
+            font: 16px/14px Tahoma, Verdana, sans-serif;
+            color: #c3c3c3;
+            text-decoration: none;
+            font-weight: bold;
+            background: transparent;
+            marign: 5px;
+        }
+
+        .leaflet-popup-content-wrapper {
+            max-height: 200px;
+            overflow-y: auto;
+            background: white;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            text-align: left;
+            border-radius: 12px;
+            text-decoration: none;
+        }
+
+        .leaflet-popup-content {
+            margin: 5px 4px;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .leaflet-popup-tip-container {
+            margin: 0 auto;
+            width: 40px;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaflet-popup-tip {
+            box-shadow: 0 3px 14px #060606;
+            width: 17px;
+            height: 17px;
+            padding: 1px;
+            margin: -10px auto 0;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background: #fff;
+        }
+
+        #map {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+<div class="col-sm-2"
+     style="position: absolute;z-index: 999999;left: 2%;top: 5%;-webkit-animation-name: inherit;animation-duration: 1s;">
+    <div class="ibox float-e-margins"
+         style="box-shadow: inset 0 0 10px #373a3a, 0 5px 0 0 #606363, 0 10px 5px #2d2b2b;">
+        <div class="ibox-title">
+            <h5>地图漫游</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div class="ibox-content">
+
+            <button class="btn btn-outline btn-primary dim" type="button" onclick="huaxian(2)">开始漫游
+            </button>
+            <button class="btn btn-outline btn-warning dim" type="button" onclick="huaxian(4)">结束漫游
+            </button>
+            <button class="btn btn-outline btn-primary dim" type="button">保存路线
+            </button>
+            <div class="checkbox checkbox-primary" onclick="huaxian(5)">
+                <input id="checkbox2" type="checkbox" checked="">
+                <label for="checkbox2">
+                    取消跟踪
+                </label>
+            </div>
+            <div class="form-group">
+                <label>高度</label>
+                <input id="gaodu" type="email" placeholder="请输入您要飞行的高度" class="form-control">
+            </div>
+            <button class="btn btn-outline btn-success  dim" type="button" onclick="huaxian(3)">清除
+            </button>
+            <button class="btn btn-outline btn-info  dim" type="button" onclick="huaxian(1)">划线
+            </button>
+            <button class="btn btn-outline btn-warning  dim" type="button"
+                    onclick="dingwei(120.045961294, 30.554238193, 30000);">复位
+            </button>
+            <button class="btn btn-outline btn-danger  dim " type="button" onclick="addPoint()">画点
+            </button>
+            <button class="btn btn-outline btn-danger  dim " type="button" onclick="addPolyline12()">画线
+            </button>
+            <button class="btn btn-outline btn-danger  dim " type="button" onclick="addPolyline13()">画面
+            </button>
+            <button class="btn btn-outline btn-danger  dim " type="button" onclick="addPolyline14()">画圆
+            </button>
+            <button class="btn btn-outline btn-danger  dim " type="button" onclick="addPolyline15()">弧线
+            </button>
+            <button class="btn btn-outline btn-danger  dim " type="button" onclick="clearAllPan()">删除
+            </button>
+            <g class="cesium-animation-rectButton cesium-animation-buttonToggled" transform="translate(84,99)">
+                <rect class="cesium-animation-buttonGlow" width="32" height="32" rx="2" ry="2"></rect>
+                <rect class="cesium-animation-buttonMain" width="32" height="32" rx="4" ry="4"></rect>
+                <use class="cesium-animation-buttonPath" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:href="#animation_pathPause"></use>
+                <title>Pause</title></g>
+        </div>
+    </div>
+</div>
+<div id="map" style="height: 100%;width: 100%;" class="fullSize"></div>
+<div id="toolbar">
+</div>
+<div id="logging">
+</div>
+
+<script src="js/viewerCesiumNavigationMixin.min.js"></script>
+<script src="js/SpirographPositionProperty.js"></script>
+<script type="text/javascript" src="js/CesiumUtils.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/content.min.js"></script>
+
+<script>
+    'use strict';
+    var operation = 0;
+    var viewer = new Cesium.Viewer(
+        'map',
+        {
+            animation: true,//是否创建动画小器件，左下角仪表
+            baseLayerPicker: false,//是否显示图层选择器
+            fullscreenButton: false,//是否显示全屏按钮
+            geocoder: false,//是否显示geocoder小器件，右上角查询按钮
+            homeButton: false,//是否显示Home按钮
+            infoBox: false,//是否显示信息框
+            sceneModePicker: false,//是否显示3D/2D选择器
+            selectionIndicator: false,//是否显示选取指示器组件
+            timeline: false,//是否显示时间轴
+            navigationHelpButton: false,//是否显示右上角的帮助按钮
+            scene3DOnly: true,//如果设置为true，则所有几何图形以3D模式绘制以节约GPU资源
+            clock: new Cesium.Clock(),//用于控制当前时间的时钟对象
+            imageryProviderViewModels: Cesium.createDefaultImageryProviderViewModels(),//可供BaseLayerPicker选择的图像图层ProviderViewModel数组
+            selectedTerrainProviderViewModel: undefined,//当前地形图层的显示模型，仅baseLayerPicker设为true有意义
+            terrainProviderViewModels: Cesium.createDefaultTerrainProviderViewModels(),//可供BaseLayerPicker选择的地形图层ProviderViewModel数组
+            terrainProvider: new Cesium.CesiumTerrainProvider({
+                url: "http://192.168.0.107:8080/terrain_tiles2",
+                requestWaterMask: true,
+                requestVertexNormals: true
+            }),
+            //添加BingMaps影像服务
+            imageryProvider: new Cesium.BingMapsImageryProvider({
+                key: "AjQhMyw76oicHqFz7cUc3qTEy3M2fC2YIbcHjqgyMPuQprNVBr3SsvVdOfmlVc0v",
+                url: "//dev.virtualearth.net"
+            }),
+            selectedImageryProviderViewModel: undefined,//当前图像图层的显示模型，仅baseLayerPicker设为true有意义
+
+            fullscreenElement: document.body,//全屏时渲染的HTML元素,
+            useDefaultRenderLoop: true,//如果需要控制渲染循环，则设为true
+            targetFrameRate: undefined,//使用默认render loop时的帧率
+            showRenderLoopErrors: false,//如果设为true，将在一个HTML面板中显示错误信息
+            automaticallyTrackDataSourceClocks: true,//自动追踪最近添加的数据源的时钟设置
+            contextOptions: undefined,//传递给Scene对象的上下文参数（scene.options）
+            sceneMode: Cesium.SceneMode.SCENE3D,//初始场景模式
+            mapProjection: new Cesium.WebMercatorProjection(),//地图投影体系
+            dataSources: new Cesium.DataSourceCollection()
+            //需要进行可视化的数据源的集合
+        });
+    viewer.cesiumWidget.screenSpaceEventHandler
+        .removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+    var entities = viewer.entities;
+    var layers = viewer.imageryLayers;
+    var xixiimage = layers.addImageryProvider(Cesium.createTileMapServiceImageryProvider({
+        url: '/zgz',
+        credit: 'XXX'
+    }));
+    viewer.scene.globe.enableLighting = true;
+    viewer.scene.globe.depthTestAgainstTerrain = false;
+
+
+    // 用铯导航混合物扩展我们的视野
+    viewer.extend(Cesium.viewerCesiumNavigationMixin, {});
+
+    //你可以访问viewer的铯导航。cesiumNavigation或viewer.cesiumWidget.cesiumNavigation
+    function createSpirographEntity(url, longitude, latitude, height, radiusMedian, radiusSubCircle, durationMedianCircle, durationSubCircle) {
+        var centerPosition = Cesium.Cartographic.fromDegrees(longitude, latitude, height);
+        var spirographPositionProperty = new Cesium.SpirographPositionProperty(centerPosition, radiusMedian, radiusSubCircle, durationMedianCircle, durationSubCircle, viewer.scene.globe.ellipsoid);
+
+        viewer.entities.add({
+            name: url,
+            description: 'It is supposed to have a useful desciption here<br />but instead there is just a placeholder to get a larger info box',
+            position: spirographPositionProperty,
+            orientation: new Cesium.VelocityOrientationProperty(spirographPositionProperty, viewer.scene.globe.ellipsoid),
+            model: {
+                uri: url,
+                minimumPixelSize: 96
+            }
+        });
+    }
+
+    /*createSpirographEntity('../models/CesiumAir/Cesium_Air.glb', -100, 44, 10000.0,Cesium.Math.toRadians(0.5), Cesium.Math.toRadians(2), 1e6, 2e5);
+    createSpirographEntity('../models/CesiumGround/Cesium_Ground.glb', -122, 45, 0,Cesium.Math.toRadians(0.1), Cesium.Math.toRadians(1), 5e6, 7e5);*/
+
+
+    dingwei(120.045961294, 30.554238193, 6000);
+    var trakmod = CeMadd3Dentity(120.045961294, 30.554238193, 1000, 'models/CesiumMilkTruck/CesiumMilkTruck.gltf');
+    trimRight(120.1795475, 30.6526607760999, 10, "11", "112.png", 'modelName');
+
+    var scene = viewer.scene;
+    var canvas = viewer.canvas;
+    var clock = viewer.clock;
+    var camera = viewer.scene.camera;
+
+    var ellipsoid = scene.globe.ellipsoid;
+
+    //飞行到某个点
+    function dingwei(lon, lat, height) {
+        viewer.camera.flyTo({
+            destination: Cesium.Cartesian3.fromDegrees(lon, lat, height),
+            orientation: {
+                heading: Cesium.Math.toRadians(-40.0),
+                pitch: Cesium.Math.toRadians(-90.0),
+                roll: 0.0
+            }
+        });
+    }
+
+
+    var handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
+
+    //鼠标移动时做的操作
+    handler.setInputAction(function (movement) {
+        var cartesian = viewer.camera.pickEllipsoid(movement.endPosition, scene.globe.ellipsoid);
+        var cartographic1 = Cesium.Ellipsoid.WGS84.cartesianToCartographic(cartesian);
+        var curMovementLon = Cesium.Math.toDegrees(cartographic1.longitude);
+        var curMovementLat = Cesium.Math.toDegrees(cartographic1.latitude);
+        var height = cartographic1.height;
+
+        //鼠标移动画线事件
+        yidong(cartesian, curMovementLon, curMovementLat, height);
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+    //鼠标左击做的操作
+    handler.setInputAction(function (click) {
+        if (operation == 1) {
+            var cartesian = viewer.camera.pickEllipsoid(click.position, scene.globe.ellipsoid);
+            var ray = viewer.scene.camera.getPickRay(click.position);
+            var position1 = viewer.scene.globe.pick(ray, viewer.scene);
+            var cartographic1 = Cesium.Ellipsoid.WGS84.cartesianToCartographic(position1);
+
+            //获取坐标点
+            var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+            var currentClickLon = Cesium.Math.toDegrees(cartographic1.longitude);
+            var currentClickLat = Cesium.Math.toDegrees(cartographic1.latitude);
+            var height = cartographic1.height;
+            console.log(currentClickLon, currentClickLat, height);
+            //flight=1为飞行，存储飞行画线的所有点
+            if (flight == 1) {
+                flightArray.push([currentClickLon, currentClickLat, height]);
+            }
+            //划线事件
+            mouseLeft(cartesian, cartographic, currentClickLon, currentClickLat, height);
+        } else {
+            var pickedObject = scene.pick(click.position);
+            dianjiditu(pickedObject);
+        }
+
+
+        //	assignment(movement);
+        //
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+
+    //鼠标右键点击时做的操作
+    handler.setInputAction(function (click) {
+        var cartesian = viewer.camera.pickEllipsoid(click.position, scene.globe.ellipsoid);
+        var ray = viewer.scene.camera.getPickRay(click.position);
+        var position1 = viewer.scene.globe.pick(ray, viewer.scene);
+        var cartographic1 = Cesium.Ellipsoid.WGS84.cartesianToCartographic(position1);
+        if (cartesian && isStartDraw) {
+            //获取坐标点
+            var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+            var endPointLon = Cesium.Math.toDegrees(cartographic1.longitude);
+            var endPointLat = Cesium.Math.toDegrees(cartographic1.latitude);
+            console.log(endPointLon, endPointLat, height);
+            var height = cartographic1.height;
+            //flight=1为飞行，存储飞行画线的所有点
+            if (flight == 1) {
+                flightArray.push([endPointLon, endPointLat, height]);
+            }
+            //结束画线画面事件
+            mouseMiddle(cartesian, cartographic, endPointLon, endPointLat, height);
+        }
+        // mouseMiddle(click);
+    }, Cesium.ScreenSpaceEventType.RIGHT_UP);
+
+
+</script>
+<script src="js/zijan/MathUtil.js"></script>
+<script src="js/zijan/dotted.js"></script>
+<script src="js/zijan/flight.js"></script>
+<script src="js/zijan/prompt.js"></script>
+</body>
+
+</html>

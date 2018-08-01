@@ -1,0 +1,53 @@
+{
+    "features": [{
+            "geometry": {
+                "coordinates": [
+                    [
+                        112.82536,
+                        23.071506
+                    ],
+                    [
+                        112.82742,
+                        23.067512
+                    ],
+                    [
+                        112.828878,
+                        23.064659
+                    ],
+                    [
+                        112.830799,
+                        23.060947
+                    ],
+                    [
+                        112.832166,
+                        23.058329
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "city": 440600,
+                "name": "\u6052\u6d32\u7532\u4e59\u7ebf",
+                "pid": 440000,
+                "powerline": 1,
+                "voltage": "220KV"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    112.82536,
+                    23.071506
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "id": "1",
+                "powerpoint": 1
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}

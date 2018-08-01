@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="../../../../LIBS/Cesium/Widgets/widgets.css">
+    <script src="../../../../LIBS/Cesium/Cesium.js"></script>
+    <script src="../../../../LIBS/JS/jquery-3.2.1.min.js"></script>
+    <script src="../../../../LIBS/Cesium/CesiumCordinateDisplay.js"></script>
+</head>
+<body>
+<div id="cesiumContainer"></div>
+<script>
+    var viewer = new Cesium.Viewer('cesiumContainer');
+
+
+    var elon =110;
+    var elat=40;
+    var r=1000;
+    var points = [];
+    points.push( elon );
+    points.push( elat );
+    for ( var i = 0; i < 60; i += 2 )
+    {
+        var coord = offsetToLongLat(
+                [elon, elat], [Math.cos( Math.PI * i / 180 ) * r, Math.sin( Math.PI * i / 180 ) * r] );
+        points.push( coord[0] );
+        points.push( coord[1] );
+    }
+    function offsetToLongLat( start, offset )
+    {
+        var er = 6378137;
+        var lat = parseFloat( start[1] );
+        var lon = parseFloat( start[0] );
+        var dn = parseFloat( offset[1] );
+        var de = parseFloat( offset[0] );
+
+        dLat = dn / er;
+        var pi = Math.PI;
+        var dLon = de / ( er * Math.cos( pi * lat / 180 ) );
+        return [
+            lon + dLon * 180 / pi, lat + dLat * 180 / pi
+        ];
+    }
+    viewer.entities.add({
+        polygon : {
+            hierarchy : Cesium.Cartesian3.fromDegreesArray(points),
+            perPositionHeight : true,
+            outline : false,
+            material : Cesium.Color.RED.withAlpha(0.5),
+            heigthReference: Cesium.HeightReference.RELATIVE_TO_GROUND
+        }
+    });
+    viewer.zoomTo(viewer.entities);
+
+
+    var codiantepaenl = new CesiumCordinateDisplay(viewer);
+    codiantepaenl.AddStatusPanelHTML();
+    codiantepaenl.InitialStatusPanel();
+    codiantepaenl.SetMouseMoveEvent();
+
+
+</script>
+</body>
+</html>

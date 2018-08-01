@@ -1,0 +1,72 @@
+﻿<html>
+	<head>
+		<title>Popup Demo</title>
+		<link rel="stylesheet" type="text/css" href="jquery.popup.css">
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.popup.min.js"></script>
+		
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #75A5DB;
+				font-size: 20px;
+			}
+
+			a {	
+				color: #FFF;
+				display:  block;
+				padding: 20px;
+				margin: 20px;
+				text-decoration: none;
+				background-color: #3A75B8;
+				text-align:center;
+			}
+
+			#window {
+				display:none;
+				background:#7AB0DE;
+				padding:30px;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+
+		<a id="a1" href="#window">Window 1<br/>( top: 50px, overlay: 0.5 )</a>
+		<a id="a2" href="#window">Window 2<br/>( overlay:0.1 )</a>
+		<a id="a3" href="#window">Window 3<br/>( left: 10px )</a>
+		<a id="a4" href="#window">Window 4<br/>( right: 10px, bottom: 10% )</a>
+		
+		<div id="window">
+			<a class="close" href="#">CloseWindow</a><br/>
+			<input id="input" type="text"/>
+		</div>
+
+		<script type="text/javascript">
+			$("#a1").popup({
+				top:"50px",
+				overlay:0.5,
+				focus:"#input",
+				close:".close"
+			});
+			$("#a2").popup({
+				overlay:0.1,
+				focus:"#input",
+				close:".close"
+			});
+			$("#a3").popup({
+				left:"10px",
+				focus:"#input",
+				close:".close"
+			});
+			$("#a4").popup({
+				right:"10px",
+				bottom:"10%",
+				focus:"#input",
+				close:".close"
+			});
+		</script>
+
+	</body>
+</html>

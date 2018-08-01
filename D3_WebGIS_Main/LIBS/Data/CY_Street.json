@@ -1,0 +1,6 @@
+{"type":"GeometryCollection", "geometries": [
+{"type":"Point","coordinates":[119.742140578,29.896877225,23.26687513159709,1],"properties":{"featureid":1,"featurenam":"A"}},
+{"type":"Point","coordinates":[119.741790364,29.897391014,25.42637357159778,2],"properties":{"featureid":2,"featurenam":"B"}},
+{"type":"Point","coordinates":[119.742350517,29.899192903,23.87239946879657,3],"properties":{"featureid":3,"featurenam":"C"}},
+{"type":"Point","coordinates":[119.741435925,29.898754147,27.14944212260444,4],"properties":{"featureid":4,"featurenam":"D"}}
+]}
