@@ -4,18 +4,6 @@
 这个项目是进行小型3D WebGIS开发测试的工程。
 
 ## 缺失库的情况
-
-<style>
-table th:first-of-type{
-width:100px;
-height:30px;
-font-wight:bold;
-text-align:left;
-background:rgba(158,188,226,0.2);
-}</style>
-
-
-
 <table>
 <thead>
 <tr>
@@ -50,9 +38,11 @@ background:rgba(158,188,226,0.2);
 <th>openlayer 库</th>
 </tr>
 </table>
+
 例如，从github上获取的cesium的整个源码结构如下图所示，上表中的"Cesium/Build/".
 
 ![](LIBS/IMGS/Cesium Struct.jpg)
+
 
 
 
