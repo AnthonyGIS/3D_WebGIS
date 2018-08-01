@@ -49,8 +49,7 @@ background:rgba(158,188,226,0.2);
 </table>
 例如，从github上获取的cesium的整个源码结构如下图所示，上表中的"Cesium/Build/".
 
-<div align=center>
-
 ![](LIBS/IMGS/Cesium Struct.jpg)
-</div>
+
+
 
