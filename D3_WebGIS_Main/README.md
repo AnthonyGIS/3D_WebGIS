@@ -3,14 +3,23 @@
 ## 概述
 这个项目是进行小型3D WebGIS开发测试的工程。
 
-## 缺失的库的获取
+## 缺失库的情况
+<style>
+table th:first-of-type{
+width:100px;
+height:30px;
+font-wight:bold;
+text-align:left;
+background:rgba(158,188,226,0.2);
+}
+</style>
 
 <table>
 <thead>
 <tr>
 <th>缺失的目录</th>
 <th>获取途径</th>
-<th>备注</th>
+<th">备注</th>
 </tr>
 </thead>
 <tr>
@@ -21,7 +30,7 @@
 <tr>
 <th>T_WebGIS/cesium/Cesium</th>
 <th>https://cesiumjs.org/downloads/</th>
-<th>同上，但可以使用build后的Cesium发布包</th>
+<th>同上，但可以使用build后的Cesium发布包,其目录为"Cesium/Build/"</th>
 </tr>
 <tr>
 <th>T_WebGIS/LIB/GISServer</th>
@@ -39,4 +48,6 @@
 <th>openlayer 库</th>
 </tr>
 </table>
+例如，从github上获取的cesium的整个源码结构如下图所示，上表中的"Cesium/Build/".
+<br>![Cesium源码结构](LIBS/IMGS/Cesium Struct.jpg)
 
