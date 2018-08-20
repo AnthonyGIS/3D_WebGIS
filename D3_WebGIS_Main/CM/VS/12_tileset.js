@@ -110,24 +110,28 @@ var promise = viewer.dataSources.add(Cesium.GeoJsonDataSource.load('../../LIBS/D
     strokeWidth:2
 }));
 
+// cordinate display
+// var displayPanel = new CesiumCordinateDisplay(viewer);
+// displayPanel.AddStatusPanelHTML();
+// displayPanel.InitialStatusPanel();
+// displayPanel.SetMouseMoveEvent();
+
 
 
 
 // osgb 2 tiles set add
 var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     // note that this is the ip and endpoint
-    url : 'http://10.33.168.64:8003/tilesets/3D_Tiles_Street7' //3D_Tiles_Street (ChenYang 18.3), Berlin_AreaD [柏林地区的白模型]
+    // F:\JOBS\Design\Dev\Cesium_LOD\3d-tiles-samples-master
+    url : 'http://10.33.169.1:8003/tilesets/3D_Tiles_Street7' //3D_Tiles_Street7 (ChenYang 18.3), Berlin_AreaD [柏林地区的白模型]
     // or url: Cesium.IonResource.fromAssetId(3836)
 }));
+
 
 tileset.readyPromise.then(function(tileset) {
     viewer.camera.viewBoundingSphere(tileset.boundingSphere, new Cesium.HeadingPitchRange(0, -0.5, 0));
     viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
 });
-
-
-
-
 
 
 

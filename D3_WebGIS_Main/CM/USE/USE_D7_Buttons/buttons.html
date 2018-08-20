@@ -10,6 +10,7 @@
     <title>H+ 后台主题UI框架 - 按钮</title>
     <meta name="keywords" content="XXX">
     <meta name="description" content="ZZ">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -17,11 +18,13 @@
     <link href="css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/clockpicker.css">
 
+
     <link rel="stylesheet" href="../../../LIBS/Cesium/Widgets/widgets.css">
     <script src="../../../LIBS/Cesium/Cesium.js"></script>
     <script src="../../../LIBS/JS/jquery-3.2.1.min.js"></script>
 
     <style>
+
         /*leaflet风格气泡窗口样式模板*/
         .leaflet-popup {
             position: absolute;
@@ -201,11 +204,11 @@
             imageryProviderViewModels: Cesium.createDefaultImageryProviderViewModels(),//可供BaseLayerPicker选择的图像图层ProviderViewModel数组
             selectedTerrainProviderViewModel: undefined,//当前地形图层的显示模型，仅baseLayerPicker设为true有意义
             terrainProviderViewModels: Cesium.createDefaultTerrainProviderViewModels(),//可供BaseLayerPicker选择的地形图层ProviderViewModel数组
-            terrainProvider: new Cesium.CesiumTerrainProvider({
-                url: "http://192.168.0.107:8080/terrain_tiles2",
-                requestWaterMask: true,
-                requestVertexNormals: true
-            }),
+            // terrainProvider: new Cesium.CesiumTerrainProvider({
+            //     url: "http://192.168.0.107:8080/terrain_tiles2",
+            //     requestWaterMask: true,
+            //     requestVertexNormals: true
+            // }),
             //添加BingMaps影像服务
             imageryProvider: new Cesium.BingMapsImageryProvider({
                 key: "AjQhMyw76oicHqFz7cUc3qTEy3M2fC2YIbcHjqgyMPuQprNVBr3SsvVdOfmlVc0v",
@@ -354,10 +357,10 @@
 
 
 </script>
-<script src="js/zijan/MathUtil.js"></script>
-<script src="js/zijan/dotted.js"></script>
-<script src="js/zijan/flight.js"></script>
-<script src="js/zijan/prompt.js"></script>
+<script src="js/MathUtil.js"></script>
+<script src="js/dotted.js"></script>
+<script src="js/flight.js"></script>
+<script src="js/prompt.js"></script>
 </body>
 
 </html>

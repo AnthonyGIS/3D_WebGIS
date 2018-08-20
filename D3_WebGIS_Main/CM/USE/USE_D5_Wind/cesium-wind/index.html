@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cesium Dynamic Wind</title>
+    <link rel="stylesheet" href="../../../../LIBS/Cesium/Widgets/widgets.css"/>
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .bts {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, .7);
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+    <script src="../../../../LIBS/JS/jquery-3.2.1.min.js"></script>
+    <script src="../../../../LIBS/Cesium/Cesium.js"></script>
+</head>
+<body>
+<div id="cesiumContainer"></div>
+<div class="bts">
+    <button type="button" id="grid">格网数据</button>
+    <button type="button" id="czml">CZML模拟</button>
+    <button type="button" id="storm">单点龙卷轨迹模拟</button>
+</div>
+</body>
+</html>
+<script src="index.js"></script>

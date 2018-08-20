@@ -40,7 +40,7 @@ viewer.camera.flyToBoundingSphere(boundingSphere, {duration: 0});
 // Add tileset. Do not forget to reduce the default screen space error to 2
 var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     // note that this is the ip and endpoint
-    url: 'http://10.33.168.159:8003/tilesets/3D_Tiles_Net_Demo/Production_1.json',
+    url: 'http://10.33.168.94:8003/tilesets/3D_Tiles_Net_Demo/Production_1.json',
     // or url: Cesium.IonResource.fromAssetId(3836)
     maximumScreenSpaceError: 2,
     maximumNumberOfLoadedTiles: 1000

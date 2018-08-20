@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Cesium Drawing</title>
+
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="Cesium/Cesium.js"></script>
+  <script src="js/DynamicProperty.js"></script>
+  <script src="js/CesiumDrawing.js"></script>
+
+
+  <style>
+    @import url(Cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        top: 0px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .toolbar {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #ffffff;
+      }
+
+      .toolbar > .button {
+        cursor: pointer;
+        padding: 2px;
+      }
+
+      .toolbar > .button:hover {
+        background: #eee;
+      }
+
+      #properties {
+        position: absolute;
+        bottom: 150px;
+        left: 10px;
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      #geojson {
+        height: 400px;
+        width: 300px;
+      }
+
+
+  </style>
+
+</head>
+<body>
+
+    <div id="cesiumContainer"></div>
+
+    <div class="toolbar">
+      <div id="drawPolyline" class="button">
+          <span><img src="img/drawPolyline.png"></img></span>
+      </div>
+      <div id="drawPolygon" class="button">
+          <span><img src="img/drawPolygon.png"></img></span>
+      </div>
+      <div id="drawExtrudedPolygon" class="button">
+          <span><img src="img/drawExtrudedPolygon.png"></img></span>
+      </div>
+      <div id="drawCircle" class="button">
+          <span><img src="img/drawCircle.png"></img></span>
+      </div>
+      <div id="drawCorridor" class="button">
+          <span><img src="img/drawCircle.png"></img></span>
+      </div>
+      <div id="drawCorridor2" class="button">
+          <span><img src="img/drawCircle.png"></img></span>
+      </div>
+    </div>
+
+    <div id="properties">
+      <div>Selected Feature</div>
+      <div>GeoJSON</div>
+      <textarea id="geojson" readonly>
+      </textarea>
+    </div>
+
+    <script>
+
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+      selectionIndicator : false
+    });
+
+    var cesiumTerrainProviderMeshes = new Cesium.CesiumTerrainProvider({
+      url : 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
+      requestWaterMask : true,
+      requestVertexNormals : true
+    });
+    viewer.terrainProvider = cesiumTerrainProviderMeshes;
+
+
+    // Disable the default entity double click action.
+    viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+    viewer.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    var editor = new CesiumDrawing.Editor( viewer );
+
+
+    /**
+     * Convert an array of positions to GeoJSON
+     */
+    function positionsToGeoJSON( positions, type ) {
+
+      var coordinates = [];
+
+      for (var i = 0; i < positions.length; i++) {
+        var carto = Cesium.Cartographic.fromCartesian( positions[i] );
+        coordinates.push( [Cesium.Math.toDegrees( carto.longitude ), Cesium.Math.toDegrees( carto.latitude), carto.height]);
+      }
+
+      if (type === "Polygon") {
+        // Make sure the first and the last coordinates are the same.
+        var first = coordinates[0];
+        var last = coordinates[coordinates.length-1];
+        if (first[0] != last[0] || first[1] != last[1] || first[2] != last[2]) {
+          coordinates.push(first);
+        }
+        coordinates = [coordinates];
+      }
+
+      return {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: type,
+              coordinates: coordinates
+            }
+          }
+        ]
+      }
+    }
+
+
+    function startEdit(entity) {
+        // Editing mode is starting, so change the style.
+        if (entity.polyline) {
+          entity.polyline.material = Cesium.Color.YELLOW;
+        }
+        if (entity.polygon) {
+          entity.polygon.material = Cesium.Color.YELLOW;
+        }
+        if (entity.corridor) {
+          entity.corridor.material = Cesium.Color.YELLOW;
+        }
+
+        updateGeoJSON( entity );
+    }
+
+    function stopEdit(entity) {
+       // Editing mode is ended, so change the style.
+        if (entity.polyline) {
+          entity.polyline.material = Cesium.Color.RED;
+        }
+        if (entity.polygon) {
+          entity.polygon.material = Cesium.Color.RED;
+        }
+        if (entity.corridor) {
+          entity.corridor.material = Cesium.Color.RED;
+        }
+
+        updateGeoJSON( entity );
+    }
+
+    function onEdit(entity) {
+      updateGeoJSON( entity );
+    }
+
+    function updateGeoJSON(entity) {
+      if (entity.polyline) {
+        $("#geojson").val( JSON.stringify( positionsToGeoJSON( entity.polyline.positions._value, "LineString")));
+      }
+      else if (entity.polygon){
+        $("#geojson").val( JSON.stringify( positionsToGeoJSON( entity.polygon.hierarchy._value, "Polygon" )));
+      }
+    }
+
+    function drawPolyline() {
+
+      // Create the entity
+      var entity = viewer.entities.add({
+          name : 'Entity ' + viewer.entities.values.length,
+          polyline : {
+              positions: new DynamicProperty([]),
+              width : 2,
+              material : Cesium.Color.RED
+          }
+      });
+      CesiumDrawing.extendEntity(entity);
+
+      entity.inProgress = true;
+      editor.createPositionsHandler( entity, entity.polyline.positions._value );
+
+      entity.startEdit.addEventListener(startEdit);
+      entity.stopEdit.addEventListener(stopEdit);
+      entity.edited.addEventListener(onEdit);
+    }
+
+    function drawPolygon() {
+
+      // Create the entity
+      var entity = viewer.entities.add({
+          name : 'Entity ' + viewer.entities.values.length,
+          polygon : {
+            hierarchy: new DynamicProperty([]),
+            material : Cesium.Color.RED,
+            perPositionHeight: true
+          }
+      });
+      CesiumDrawing.extendEntity( entity );
+
+      editor.createPositionsHandler( entity, entity.polygon.hierarchy._value );
+
+      entity.startEdit.addEventListener(startEdit);
+      entity.stopEdit.addEventListener(stopEdit);
+      entity.edited.addEventListener(onEdit);
+    }
+
+    function drawCorridor() {
+
+      var entity = viewer.entities.add({
+        name : 'Entity ' + viewer.entities.values.length,
+        corridor : {
+            positions : new DynamicProperty(Cesium.Cartesian3.fromDegreesArray([
+                                                        -100.0, 40.0,
+                                                        -105.0, 40.0,
+                                                        -105.0, 35.0
+                                                    ])),
+            width : 200000.0,
+            material : Cesium.Color.RED.withAlpha(0.5),
+            outline : true,
+            outlineColor : Cesium.Color.RED
+        }
+      });
+      CesiumDrawing.extendEntity( entity );
+
+      editor.createPositionsHandler( entity, entity.corridor.positions._value );
+
+      entity.startEdit.addEventListener(startEdit);
+      entity.stopEdit.addEventListener(stopEdit);
+      entity.edited.addEventListener(onEdit);
+    }
+
+    function drawCorridor2() {
+      var entity = viewer.entities.add({
+        name : 'Entity ' + viewer.entities.values.length,
+        corridor : {
+            positions : new DynamicProperty(Cesium.Cartesian3.fromDegreesArray([
+                                                        -100.0, 40.0,
+                                                        -105.0, 40.0,
+                                                        -105.0, 35.0
+                                                    ])),
+            extrudedHeight : 100000.0,
+            width : 200000.0,
+            cornerType: Cesium.CornerType.BEVELED,
+            material : Cesium.Color.RED.withAlpha(0.5),
+            outline : true,
+            outlineColor : Cesium.Color.RED
+        }
+      });
+      CesiumDrawing.extendEntity( entity );
+
+      editor.createPositionsHandler( entity, entity.corridor.positions._value );
+
+      entity.startEdit.addEventListener(startEdit);
+      entity.stopEdit.addEventListener(stopEdit);
+      entity.edited.addEventListener(onEdit);
+    }
+
+
+    function drawExtrudedPolygon() {
+
+      // Create the entity
+      var entity = viewer.entities.add({
+          name : 'Entity ' + viewer.entities.values.length,
+          polygon : {
+            hierarchy: new DynamicProperty([]),
+            extrudedHeight: 50000,
+            material : Cesium.Color.RED,
+            outline : true,
+            outlineColor : Cesium.Color.BLACK
+        }
+      });
+      CesiumDrawing.extendEntity( entity );
+
+      editor.createPositionsHandler( entity, entity.polygon.hierarchy._value );
+
+      entity.startEdit.addEventListener(startEdit);
+      entity.stopEdit.addEventListener(stopEdit);
+      entity.edited.addEventListener(onEdit);
+    }
+
+    function drawCircle() {
+
+      // Create an ellipse.
+      // Should really wait for the first click.
+      var entity = viewer.entities.add({
+        position: new DynamicProperty(Cesium.Cartesian3.fromDegrees(-103.0, 40.0)),
+        name : 'Entity ' + viewer.entities.values.length,
+        ellipse : {
+            semiMinorAxis : 300000.0,
+            semiMajorAxis : 300000.0,
+            material : Cesium.Color.GREEN.withAlpha(0.5),
+            outline : true,
+            outlineColor : Cesium.Color.BLACK
+        }
+      });
+      CesiumDrawing.extendEntity( entity );
+
+      entity.inProgress = false;
+    }
+
+    function drawCircle2() {
+
+      var handler = new Cesium.ScreenSpaceEventHandler(this.viewer.scene.canvas);
+      handler.setInputAction(function(movement) {
+        var cartesian = viewer.camera.pickEllipsoid(movement.position, this.viewer.scene.globe.ellipsoid);
+        if (cartesian) {
+          var entity = viewer.entities.add({
+            position: new DynamicProperty(cartesian),
+            name : 'Entity ' + viewer.entities.values.length,
+            ellipse : {
+                semiMinorAxis : 300000.0,
+                semiMajorAxis : 300000.0,
+                material : Cesium.Color.GREEN.withAlpha(0.5),
+                outline : true,
+                outlineColor : Cesium.Color.BLACK
+            }
+          });
+          CesiumDrawing.extendEntity( entity );
+          entity.inProgress = false;
+          handler.destroy();
+        }
+      }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+    }
+
+    var currentEntity = null;
+    var selectEntityHandler = new Cesium.ScreenSpaceEventHandler(viewer.canvas);
+    selectEntityHandler.setInputAction(
+        function(e) {
+            var picked = viewer.scene.pick( e.position );
+
+            var pickedEntity = null;
+
+            if (Cesium.defined(picked)) {
+                var id = Cesium.defaultValue(picked.id, picked.primitive.id);
+                if (id instanceof Cesium.Entity) {
+                    var inProgress = Cesium.defaultValue( id.inProgress, true);
+                    if (!inProgress) {
+                        pickedEntity = id;
+                    }
+                }
+            }
+
+            if (pickedEntity !== currentEntity) {
+              if (currentEntity) {
+                editor.stopEditing( currentEntity );
+                currentEntity = null;
+              }
+
+              currentEntity = pickedEntity;
+
+              if (currentEntity) {
+                editor.startEditing(currentEntity);
+              }
+            }
+        },
+        Cesium.ScreenSpaceEventType.LEFT_CLICK
+    );
+
+
+    $(function() {
+      $("#drawPolyline").click(function() {
+        drawPolyline();
+      });
+
+      $("#drawPolygon").click(function() {
+        drawPolygon();
+      });
+
+      $("#drawExtrudedPolygon").click(function() {
+        drawExtrudedPolygon();
+      });
+
+      $("#drawCircle").click(function() {
+        drawCircle2();
+      });
+
+      $("#drawCorridor2").click(function() {
+        drawCorridor2();
+      });
+
+    });
+
+    </script>
+
+</body>
+</html>
+
+

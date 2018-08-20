@@ -29,7 +29,7 @@
                     <option value="GCJ2_BD09"> GCJ2   -> Baidu</option>
                     <option value="GCJ2_WGS84">GCJ2   -> WGS84</option>
                     <option value="WGS84_GCJ2">WGS84  -> GCJ2</option>
-
+                    <option value="BD09_WGS84">Baidu  -> WGS84</option>
 
                 </select>
             </div>
@@ -156,7 +156,12 @@
             var result = GPS.WGS84_To_GCJ2(pointArr[0].lat, pointArr[0].lng);
             DisplayAndMarkCordinate(result.lon, result.lat, "WGS84转换后的坐标GCJ2");
         }
-    }
+        else if(convert_type === "BD09_WGS84") {
+            var result = GPS.BD09_To_GCJ2(pointArr[0].lat, pointArr[0].lng);
+            result = GPS.GCJ2_To_WGS84( result.lat,result.lon);
+            DisplayAndMarkCordinate(result.lon, result.lat, "Baidu09转换后的坐标WGS84坐标");
+        }
+    };
 
     var mapClick = function (e) {
         //alert(e.point.lng + "," + e.point.lat);

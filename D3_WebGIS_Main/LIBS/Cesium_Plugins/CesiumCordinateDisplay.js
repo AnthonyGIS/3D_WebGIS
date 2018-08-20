@@ -36,6 +36,7 @@ function CesiumCordinateDisplay(viewer) {
 
             //具体事件的实现
             var ray, position1, cartographic1, lng, lat, height, terrain_height, status_length_plus;
+
             var handler = new Cesium.ScreenSpaceEventHandler(this.canvas);
             handler.setInputAction(function (event) {
 
@@ -96,7 +97,7 @@ function CesiumCordinateDisplay(viewer) {
                 this.status_panel_disp.style.width = (500 + 130 * status_length_plus).toString() + 'px';
 
 
-            }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+            }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);//MOUSE_MOVE
 
 
         };

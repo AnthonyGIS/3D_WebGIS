@@ -23,7 +23,8 @@ var terrainProvider = new Cesium.CesiumTerrainProvider({ //GeoserverTerrainProvi
     // M3 node.js Server Method
     // F:\JOBS\Design\Dev\Cesium_LOD\3d-tiles-samples-master\tilesets
     // should start tile server first, heightmap-1.0
-    url: "http://10.33.168.242:8003/tilesets/testtiles" //QINGDAO_Terrain14
+    // cmd: node server.js
+    url: "http://10.33.168.94:8003/tilesets/testtiles" //QINGDAO_Terrain14
 
 
     // M5 Default
