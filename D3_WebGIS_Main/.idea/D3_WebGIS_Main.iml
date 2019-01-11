@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="d3.v4" level="application" />
+    <orderEntry type="library" name="html5shiv" level="application" />
   </component>
 </module>

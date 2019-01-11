@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery超酷谷歌Material Design元素点击波特效</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" href="css/jquery.ripple.css">
+	<style>
+        .container {
+            box-sizing: border-box;
+            margin: 0 auto;
+            max-width: 960px;
+            padding: 20px;
+            width: 100%;
+        }
+        .example {
+            border-bottom: 1px solid #eee;
+            margin: 10px 0;
+            padding: 10px 0;
+        }
+        .example-1, .example-2 {
+            border: none;
+            outline: none;
+            padding: 25px 75px;
+        }
+        .example-2 {
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+    </style>
+	<!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jq22-container">
+		<header class="jq22-header bgcolor-10">
+			<h1>jQuery超酷谷歌Material Design元素点击波特效 <span>A jQuery Plugin for a ripple effect inspired by Google Material Design</span></h1>			
+		</header>
+		<section class="container">
+            <h3>jQuery Ripple</h3>
+
+            <div class="example">
+                <h4>Simple Button</h4>
+                <button class="example-1" data-ripple>Run Effect</button>
+                <h5>Code:</h5>
+                <code>
+                    $('.example-1[data-ripple]').ripple();
+                </code>
+            </div>
+
+            <div class="example">
+                <h4>Alternate Colors</h4>
+                <button class="example-2" data-ripple>Run Effect</button>
+                <h5>Code:</h5>
+                <code>
+                    $('.example-2[data-ripple]').ripple({ color: 'rgba(14,98,221,0.7)' });
+                </code>
+            </div>
+        </section>
+		
+	</div>
+	
+	<script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.ripple.js"></script>
+
+    <script>
+        $('.example-1[data-ripple]').ripple();
+        $('.example-2[data-ripple]').ripple({ color: 'rgba(246,148,45,0.7)' });
+    </script>
+</body>
+</html>

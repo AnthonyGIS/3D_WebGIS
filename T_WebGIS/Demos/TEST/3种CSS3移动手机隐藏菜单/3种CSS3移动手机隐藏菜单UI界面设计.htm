@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3种CSS3移动手机隐藏菜单UI界面设计</title>
+<link rel="stylesheet" type="text/css" href="default.css">
+<link href="css.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="demo-1.css">
+<!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="htmleaf-container">
+<header class="htmleaf-header">
+<h1>3种CSS3移动手机隐藏菜单UI界面设计 - DEMO1<span>A few CSS Menu Animations</span></h1>
+<div class="htmleaf-demo center">
+<a href="http://www.jq22.com/demo/jquery-leftNav20150909/index.html" class="current">DEMO1</a>
+<a href="http://www.jq22.com/demo/jquery-leftNav20150909/index2.html">DEMO2</a>
+<a href="http://www.jq22.com/demo/jquery-leftNav20150909/index3.html">DEMO3</a>
+</div>
+</header>
+<div id="wrapper">
+<div class="menu">
+<img id="menu-bg" src="golden-gate-lights.jpg">
+<ul>
+<li><a href="">About</a></li>
+<li><a href="">Share</a></li>
+<li><a href="">Activity</a></li>
+<li><a href="">Settings</a></li>
+<li><a href="">Contact</a></li>
+</ul>
+</div>
+<div class="screen">
+<div class="navbar"></div>
+<div class="list">
+<div class="item">
+<div class="img"></div>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="item">
+<div class="img"></div>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="item">
+<div class="img"></div>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="item">
+<div class="img"></div>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<div class="burger">
+<div class="x"></div>
+<div class="y" style="display: block;"></div>
+<div class="z"></div>
+</div>
+</div>
+</div>
+</div>
+<script src="stopExecutionOnTimeout.js"></script>
+<script src="jquery.js"></script><script src="jquery_002.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>
+<script>
+      if ('ontouchstart' in window) {
+		    var click = 'touchstart';
+		} else {
+		    var click = 'click';
+		}
+		$('div.burger').on(click, function () {
+		    if (!$(this).hasClass('open')) {
+		        openMenu();
+		    } else {
+		        closeMenu();
+		    }
+		});
+		$('div.menu ul li a').on(click, function (e) {
+		    e.preventDefault();
+		    closeMenu();
+		});
+		function openMenu() {
+		    $('div.burger').addClass('open');
+		    $('div.y').fadeOut(100);
+		    $('div.screen').addClass('animate');
+		    setTimeout(function () {
+		        $('div.x').addClass('rotate30');
+		        $('div.z').addClass('rotate150');
+		        $('.menu').addClass('animate');
+		        setTimeout(function () {
+		            $('div.x').addClass('rotate45');
+		            $('div.z').addClass('rotate135');
+		        }, 100);
+		    }, 10);
+		}
+		function closeMenu() {
+		    $('div.screen, .menu').removeClass('animate');
+		    $('div.y').fadeIn(150);
+		    $('div.burger').removeClass('open');
+		    $('div.x').removeClass('rotate45').addClass('rotate30');
+		    $('div.z').removeClass('rotate135').addClass('rotate150');
+		    setTimeout(function () {
+		        $('div.x').removeClass('rotate30');
+		        $('div.z').removeClass('rotate150');
+		    }, 50);
+		    setTimeout(function () {
+		        $('div.x, div.z').removeClass('collapse');
+		    }, 70);
+		}
+    </script>
+
+</body></html>

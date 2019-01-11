@@ -2,13 +2,16 @@
   <dictionary name="Weng_Seals">
     <words>
       <w>baidu</w>
+      <w>conventin</w>
       <w>cordinate</w>
       <w>disp</w>
       <w>epsg</w>
       <w>exton</w>
+      <w>fakeelement</w>
       <w>featureid</w>
       <w>featurenam</w>
       <w>fullscreen</w>
+      <w>gally</w>
       <w>gbcode</w>
       <w>geocento</w>
       <w>geocoder</w>
@@ -18,6 +21,7 @@
       <w>heightmap</w>
       <w>henan</w>
       <w>hhch</w>
+      <w>htmleaf</w>
       <w>infobox</w>
       <w>inputtext</w>
       <w>keydown</w>
@@ -30,6 +34,7 @@
       <w>osgb</w>
       <w>polyline</w>
       <w>rman</w>
+      <w>roboto</w>
       <w>slidein</w>
       <w>tabindex</w>
       <w>thead</w>
@@ -38,6 +43,8 @@
       <w>timeline</w>
       <w>transformlat</w>
       <w>transformlng</w>
+      <w>transistions</w>
+      <w>transitionend</w>
       <w>zepto</w>
       <w>zjhh</w>
     </words>

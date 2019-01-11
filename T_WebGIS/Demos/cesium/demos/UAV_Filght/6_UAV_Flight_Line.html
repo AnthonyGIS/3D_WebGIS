@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <script src="http://localhost:8080/Build/Cesium/Cesium.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/Build/Cesium/Widgets/widgets.css"></link>-->
+    <link href="../../Cesium/Widgets/widgets.css" rel="stylesheet" />
+    <script src="../../Cesium/Cesium.js"></script>
+    <script src="../../../LIB/JS/jquery-3.2.1.min.js"></script>
+    <script src="jquery.panelslider.js"></script>
+    <link href="6_UAV_FL.css" rel="stylesheet" />
+    <link href="Wnd/main.css" rel="stylesheet" />
+    <title>UAV Flight line</title>
+
+</head>
+<body>
+    <div id="cesiumContainer"></div>
+    <div id="content">
+        <div id="coords">I am text</div>
+        <div id ="toolbar">
+            <a id="left-panel-link" href="#left-panel">Left panel</a> |
+            <a id="right-panel-link" href="#right-panel">Right panel</a>
+            <a id="id_get_data" >Get Uav Line</a>
+        </div>
+    </div>
+
+
+     <!-- Left panel -->
+    <div id="left-panel" class="panel">
+        <h2>Menu panel</h2>
+        <p>UAV Result i Display</p>
+        <!--<p>Usage instructions and source code <a href="https://github.com/eduardomb/jquery-panelslider">here</a></p>-->
+    </div>
+
+    <!-- Right panel -->
+    <div id="right-panel" class="panel">
+        <h2>Tools Panel</h2>
+        <button id="close-panel-bt" style="margin:10px;">Close</button>
+        <button type="button" id="ClickMe">About UAV</button>
+    </div>
+
+
+    <div id="goodcover" style="display: none;"></div>
+    <div id="code" style="position: absolute; top: 131.5px; left: 650px; display: none;">
+        <div class="close1">
+            <a href="javascript:void(0)" id="closebt"><img src="Wnd/close.gif"></a>
+        </div>
+        <div class="goodtxt">
+            <p>ZJECMS UAV</p>
+            <p>让您海量的文件管理更加便捷</p>
+            <p>欢迎参与进来</p>
+        </div>
+        <div class="code-img">
+            <img id="ewmsrc" src="Wnd/code2.png" />
+        </div>
+    </div>
+</body>
+</html>
+<script src="Wnd/ZZ.js"></script>
+<script src="cesium_helper.js"></script>
+<script type="text/javascript" src="6_UAV_Flight_Line.js"></script>
+

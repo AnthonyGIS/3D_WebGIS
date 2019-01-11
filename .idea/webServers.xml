@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e1c043d7-c7e4-4a35-b242-9012a2b774a6" name="D3_WebGIS_Main" url="http://localhost:8082/D3_WebGIS/D3_WebGIS_Main/">
+        <fileTransfer port="0" mountedRoot="D:\Program\apache-tomcat-9.0.10\webapps\D3_WebGIS\D3_WebGIS_Main" accessType="MOUNT" />
+      </webServer>
+      <webServer id="1eb799f3-0ecd-4d10-b1c7-aa38ea3cb750" name="T_WebGIS" url="http://localhost:8082/D3_WebGIS/T_WebGIS/">
+        <fileTransfer port="0" mountedRoot="D:\Program\apache-tomcat-9.0.10\webapps\D3_WebGIS\T_WebGIS" accessType="MOUNT" />
+      </webServer>
+      <webServer id="2be1c2a8-6fe2-442b-b794-887ac9d3c5d6" name="T_WebGL" url="http://localhost:8082/D3_WebGIS/T_WebGL/">
+        <fileTransfer port="0" mountedRoot="D:\Program\apache-tomcat-9.0.10\webapps\D3_WebGIS\T_WebGL" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

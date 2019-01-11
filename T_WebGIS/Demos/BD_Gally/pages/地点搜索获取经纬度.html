@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="百度地图,地点搜索,获取经纬度,改变地图鼠标样式,启用滚轮缩放">
+    <title>百度地图API地点搜索-获取经纬度DEMO</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+    <style type="text/css">
+        * {
+            font-family: "微软雅黑";
+        }
+
+        #where, #lonlat, #lonlat2 {
+            width: 300px;
+            height: 30px;
+            font-size: 24px;
+            color: blue;
+        }
+
+        #but {
+            width: 100px;
+            height: 36px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div style="text-align: center;">
+    <h1>点击地图获取经纬度</h1>
+    <hr><br>
+    <div id="container" style="width:100%;height:500px"></div>
+    <form action="" method="post">
+
+        <h3 style="color: red;">介绍：输入地点然后点击“地图查找”搜索，再点击地图地点获取相应经纬度</h3>
+        <label>输入地点：</label>
+        <input id="where" name="where" placeholder="请输入地址" value="杭州" type="text">
+        <input id="but" value="地图查找" onclick="sear(document.getElementById('where').value);" type="button">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        经度：<input id="lonlat" name="lonlat" maxlength="10" value="120.184105" type="number">
+        纬度：<input id="lonlat2" name="lonlat2" maxlength="9" value="30.222754" type="number">
+    </form>
+</div>
+
+
+<script type="text/javascript">
+
+    var map = new BMap.Map("container");
+    map.setDefaultCursor("crosshair");
+
+    map.enableScrollWheelZoom();
+    var point = new BMap.Point(105.386515, 28.91124);
+    map.centerAndZoom(point, 13);
+    var gc = new BMap.Geocoder();
+
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.OverviewMapControl());
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.MapTypeControl());
+    map.addControl(new BMap.CopyrightControl());
+
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker);
+
+    marker.addEventListener("click", function (e) {
+        document.getElementById("lonlat").value = e.point.lng;
+        document.getElementById("lonlat2").value = e.point.lat;
+    });
+
+
+    marker.enableDragging();
+
+    marker.addEventListener("dragend", function (e) {
+        gc.getLocation(e.point, function (rs) {
+            showLocationInfo(e.point, rs);
+        });
+    });
+
+
+    function showLocationInfo(pt, rs) {
+        var opts = {width: 250, height: 150, title: "当前位置"};
+        var addComp = rs.addressComponents;
+        var addr = "当前位置：" + addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber + "<br/>";
+        addr += "纬度: " + pt.lat + ", " + "经度：" + pt.lng;
+        var infoWindow = new BMap.InfoWindow(addr, opts);
+        marker.openInfoWindow(infoWindow);
+    }
+
+    map.addEventListener("click", function (e) {
+        document.getElementById("lonlat").value = e.point.lng;
+        document.getElementById("lonlat2").value = e.point.lat;
+    });
+
+
+    var traffic = new BMap.TrafficLayer();
+    map.addTileLayer(traffic);
+
+
+    function iploac(result) {
+        var cityName = result.name;
+    }
+
+    var myCity = new BMap.LocalCity();
+    myCity.get(iploac);
+
+    function sear(result) {
+        var local = new BMap.LocalSearch(map, {renderOptions: {map: map}});
+        local.search(result);
+    }
+
+</script>
+</body>
+</html>

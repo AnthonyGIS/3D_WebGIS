@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>leaflet实例(Error_now see Esri Leaflet Quickstart Demos)</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--添加leaflet样式文件-->
+    <link rel="stylesheet" href="../../../LIB/leaflet_1_4_0/leaflet.css">
+    <link rel="stylesheet" href="../../../LIB/leaflet_1_4_0/Leaflet_MousePosition/L.Control.MousePosition.css">
+    <!--添加leaflet引用-->
+    <script src="../../../LIB/leaflet_1_4_0/leaflet.js"></script>
+    <script src="../../../LIB/leaflet_1_4_0/Proj4Leaflet/lib/proj4.js"></script>
+    <script src="../../../LIB/leaflet_1_4_0/Proj4Leaflet/src/proj4leaflet.js"></script>
+    <script src="../../../LIB/leaflet_1_4_0/esri_leaflet_v2_2_3/esri-leaflet.js"></script>
+    <script src="../../../LIB/leaflet_1_4_0/Leaflet_MousePosition/L.Control.MousePosition.js"></script>
+    <style>
+        html,body{
+            margin:0;
+            padding: 0;
+        }
+        #divclass{
+            height:calc(100% - 50px) ;
+            width: 100%;
+            background: white;
+            position: absolute;
+        }
+    </style>
+
+</head>
+<body>
+<div id="divclass"></div>
+</body>
+</html>
+
+<script>
+
+    //3.加载切片图层
+    /**
+     * Your map service must be published using the Web Mercator Auxiliary Sphere tiling scheme (WKID 102100/3857)
+     * and the default scale options used by Google Maps, Bing Maps and .
+     * Esri Leaflet will not support any other spatial reference for tile layers.
+     */
+    let tileMapUrl ="http://192.168.1.99:6080/arcgis/rest/services/ZJCEMS/Tantu2016/MapServer";
+    // CGCS 2000坐标系
+    let CRS_4490 = new L.Proj.CRS("EPSG:4490", "+proj=longlat +ellps=GRS80 +no_defs", {
+        resolutions: [
+            1.40625,
+            0.703125,
+            0.3515625,
+            0.17578125,
+            0.087890625,
+            0.0439453125,
+            0.02197265625,
+            0.010986328125,
+            0.0054931640625,
+            0.00274658203125,
+            0.001373291015625,
+            6.866455078125E-4,
+            3.4332275390625E-4,
+            1.71661376953125E-4,
+            8.58306884765625E-5,
+            4.291534423828125E-5,
+            2.1457672119140625E-5,
+            1.0728836059570312E-5,
+            5.364418029785156E-6,
+            2.682209064925356E-6,
+            1.3411045324626732E-6
+        ],
+        origin: [-179.9999, 90.00016],
+        bounds: L.bounds([117.75370429660006, 26.99449191557761, ], [123.63262097540007, 32.2668788575695])
+        //这里可以有origin、transformation、scales、resulutions、bounds几个参数提供
+        //选择，其中scales与resolutions不能同时配置
+    });
+    var res=[
+        0.703125, // Level 0
+        0.3515625, // Level 1
+        0.17578125, // Level 2
+        0.087890625, // Level 3
+        0.0439453125, // Level 4
+        0.02197265625,
+        0.010986328125,
+        0.0054931640625,
+        0.00274658203125,
+        0.001373291015625,
+        6.866455078125E-4,
+        3.4332275390625E-4,
+        1.71661376953125E-4,
+        8.58306884765625E-5,
+        4.291534423828125E-5,
+        2.1457672119140625E-5,
+        1.0728836059570312E-5,
+        5.364418029785156E-6,
+        2.682209014892578E-6,
+        1.341104507446289E-6
+    ];
+    var CRS_WGS84 = new L.Proj.CRS('EPSG:4326',
+        '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs ',
+        {
+            resolutions: res,
+            origin: [-180,90],
+        });
+    let map = L.map('divclass'
+        ,{crs:CRS_WGS84}
+    ).setView([29.108339,119.647787],13);
+    let tileMapLayer = L.esri.tiledMapLayer({
+        url:tileMapUrl
+    });
+    L.esri.basemapLayer('Gray').addTo(map);
+    map.addLayer(tileMapLayer);
+
+    L.control.mousePosition({
+        'position': 'bottomright'
+    }).addTo(map);
+</script>

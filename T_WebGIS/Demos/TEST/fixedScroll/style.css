@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float:right;
+}
+.main {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.usage {
+	margin-bottom: 20px;
+	padding: 14px;
+	background-color: #efefef;
+}
+.usage h3{
+	margin-bottom: 6px;
+}
+
+
+pre {
+	background-color: #dadada;
+	padding: 8px 10px;
+	border-radius: 4px;
+	color: #333;
+}
+.foot{
+	height: 500px;
+	background-color: #fcfcfc;
+}

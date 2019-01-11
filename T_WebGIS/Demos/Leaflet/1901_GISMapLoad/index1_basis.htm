@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="https://leafletjs.com/examples/quick-start/docs/images/favicon.ico">
+	<!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"-->
+		  <!--integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="-->
+		  <!--crossorigin=""/>-->
+	<!--&lt;!&ndash; Make sure you put this AFTER Leaflet's CSS &ndash;&gt;-->
+	<!--<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"-->
+			<!--integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="-->
+			<!--crossorigin=""></script>-->
+	<link rel="stylesheet" href="../../../LIB/leaflet_1_4_0/leaflet.css">
+	<link rel="stylesheet" href="../../../LIB/leaflet_1_4_0/Leaflet_MousePosition/L.Control.MousePosition.css">
+	<script src="../../../LIB/leaflet_1_4_0/leaflet.js"></script>
+	<script src="../../../LIB/leaflet_1_4_0/esri_leaflet_v2_2_3/esri-leaflet.js"></script>
+	<script src="../../../LIB/leaflet_1_4_0/Leaflet_MousePosition/L.Control.MousePosition.js"></script>
+
+</head>
+<body>
+<div id="mapid" style="width: 1000px; height: 700px; position: relative;" ></div>
+</body></html>
+<script>
+
+	// wms map
+
+	let map =  L.map('mapid').setView([33,88.5],3);
+	let dynamicLayer = L.esri.dynamicMapLayer({
+		//url:'http://192.168.1.99:6080/arcgis/rest/services/SampleWorldCities/MapServer',
+		url:'http://192.168.1.99:6080/arcgis/rest/services/ZJCEMS/Tantu2016/MapServer',
+		//url:'ttp://192.168.1.99:6080/arcgis/rest/services/SampleWorldCities/MapServer',
+		opacity: 1.0,
+		f:'json'
+	});
+	map.addLayer(dynamicLayer);
+
+
+	// let map =  L.map('mapid').setView([33,88.5],3);
+	// let featureLayer = L.esri.featureLayer({
+	// 	url:'http://192.168.1.99:6080/arcgis/services/SampleWorldCities/MapServer/WFSServer'
+	// });
+	// map.addLayer(featureLayer);
+
+
+
+	// add mouse position show
+	L.control.mousePosition().addTo(map);
+</script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esri Leaflet Stream Layer Plugin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/leaflet/1.0.0-rc.1/leaflet-src.js"></script>
+    <script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.0/esri-leaflet.js"></script>
+
+    <!-- 	<script type="text/javascript" src="../dist/esri-leaflet-stream.min.js"></script>
+     -->
+    <script type="text/javascript" src="../src/socket.js"></script>
+
+    <style>
+        body { margin:0; padding:0; }
+        #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+        #query {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 1em;
+        }
+        #query select {
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="map"></div>
+<div id="query" class="leaflet-bar">
+    <label>
+        Track which Bus Run?
+        <select id="whichBus">
+            <option value='1=1'>All</option>
+            <option value="id='8318'">76_173_1</option>
+        </select>
+    </label>
+    <label>
+        Show where
+        <select id="showWhere">
+            <option value='everywhere'>Everywhere</option>
+            <option value="mapextent">Current Extent</option>
+        </select>
+    </label>
+    <button id="clear">Clear markers</button>
+</div>
+<script>
+    var map = L.map('map', {
+        center: [34.05, -118.24],
+        zoom: 14
+    });
+    L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+    function createRandomFill(){
+        return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    }
+    var buses = L.esri.streamFeatureLayer({
+        url: 'https://geoeventsample1.esri.com:6443/arcgis/rest/services/LABus/StreamServer',
+        wss: true,
+        pointToLayer: function (geojson, latlng) {
+            return L.circleMarker(latlng, {
+                fillColor: createRandomFill(),
+                fillOpacity: 0.8,
+                color: "#cccccc",
+                weight: 2
+            });
+        },
+    }).addTo(map);
+    buses.bindPopup(function (evt) {
+        return L.Util.template('<p><strong>Route:</strong> {route_id}<br>' +
+            '<strong>Heading:</strong> {heading}<br>' +
+            '<strong>Run ID:</strong> {run_id }</p>',
+            evt.feature.properties);
+    });
+    var whichBus = document.getElementById('whichBus');
+    whichBus.addEventListener('change', function() {
+        buses.setWhere("run_id='76_173_1'");
+    });
+    var whereBuses = document.getElementById('showWhere');
+    whereBuses.addEventListener('change', function() {
+        if (whereBuses.value === 'mapextent') {
+            buses.useMapViewExtent(true);
+        } else {
+            buses.useMapViewExtent(false);
+        }
+    });
+    var button = document.getElementById('clear');
+    button.addEventListener('click', function (){
+        buses.clearLayers();
+    })
+</script>
+</body>
+</html>

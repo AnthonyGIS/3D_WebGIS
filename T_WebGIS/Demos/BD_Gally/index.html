@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDMapGally(Material Design)</title>
+    <link rel="stylesheet" type="text/css" href="template/css/default.css">
+    <link rel="stylesheet" href="template/css/Roboto_300_700.css">
+    <link rel="stylesheet" href="template/css/style.css">
+    <!--[if IE]>
+    <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="template/js/production/materialMenu.min.js"></script>
+    <script src="../../LIB/JS/jquery-3.2.1.js"></script>
+    <script src="pages/Location/location.js"></script>
+</head>
+<body>
+
+<!-- main page content -->
+<div id="wrapper" class="wrapper">
+    <button id="btn_measurement" style="margin-left: 100px" >Map Measurement</button>
+</div>
+
+<!--左侧的Material Design的导航-->
+<div id="left_menu">
+    <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
+    <nav id="mm-menu" class="mm-menu">
+        <div class="mm-menu__header">
+            <h2 class="mm-menu__title">Anthony</h2>
+        </div>
+        <ul class="mm-menu__items">
+            <li class="mm-menu__item">
+                <a class="mm-menu__link" href="#">
+                    <span class="mm-menu__link-text"><i class="md md-home"></i> Home</span>
+                </a>
+            </li>
+            <li class="mm-menu__item">
+                <a class="mm-menu__link" href="pages/ConvertCordinate/MapCorConvert.html">
+                    <span class="mm-menu__link-text"><i class="md md-person"></i> Convert</span>
+                </a>
+            </li>
+            <li class="mm-menu__item">
+                <a class="mm-menu__link" href="#">
+                    <span class="mm-menu__link-text"><i class="md md-drafts"></i> Draw</span>
+                </a>
+            </li>
+            <li class="mm-menu__item">
+                <a class="mm-menu__link" href="#">
+                    <span class="mm-menu__link-text"><i class="md md-favorite"></i> Effect</span>
+                </a>
+            </li>
+            <li class="mm-menu__item">
+                <a  id="menu_Help" class="mm-menu__link" href="#">
+                    <span class="mm-menu__link-text"><i class="md md-help"></i> Help</span>
+                </a>
+            </li>
+        </ul>
+    </nav><!-- /nav -->
+</div>
+
+<script type="text/javascript">
+    let menu = new Menu();
+
+
+    let menu_help = $("#btn_measurement");
+    menu_help.bind("click",function (ev) {
+        $("#wrapper").load('pages/about.html #about_page');
+        var obj = new ATLocation({});
+        obj.BDLocation();
+    });
+
+
+</script>
+
+
+</body>
+</html>
+

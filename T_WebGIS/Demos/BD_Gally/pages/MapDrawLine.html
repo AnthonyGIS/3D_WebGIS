@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #l-map {
+            height: 100%;
+            width: 78%;
+            float: left;
+            border-right: 2px solid #bcbcbc;
+        }
+
+        #r-result {
+            height: 100%;
+            width: 20%;
+            float: left;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+    <!--http://api.map.baidu.com/api?v=1.4-->
+    <!-- 1cwGOrMEyf3AGWIs6dcFCkj0B9cCwmjl -->
+    <title>百度地图画线</title>
+</head>
+<body>
+    <div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(120.21937542, 30.25924446);
+    map.centerAndZoom(point, 14);
+    map.addControl(new BMap.NavigationControl());
+    map.enableScrollWheelZoom();
+
+
+    var polyline = new BMap.Polyline([
+      //new BMap.Point(116.399, 39.910),  
+      new BMap.Point(120.205, 30.220),
+      new BMap.Point(120.225, 30.21936),
+      new BMap.Point(120.215, 30.23936),
+    // new BMap.Point(116.415,39.92936),  
+    ], { strokeColor: "blue", strokeWeight: 3, strokeOpacity: 0.5 });
+    map.addOverlay(polyline);
+    addArrow(polyline, 10, Math.PI / 7);
+
+    function addArrow(polyline, length, angleValue) {
+        var linePoint = polyline.getPath();
+        var arrowCount = linePoint.length;
+        for (var i = 1; i < arrowCount; i++) {
+            var pixelStart = map.pointToPixel(linePoint[i - 1]);
+            var pixelEnd = map.pointToPixel(linePoint[i]);
+            var angle = angleValue;//��ͷ�����ߵļн�  
+            var r = length; // r/Math.sin(angle)�����ͷ����  
+            var delta = 0; //����б�ʣ���ֱʱ��б��  
+            var param = 0; //�����࿼��  
+            var pixelTemX, pixelTemY;//��ʱ������  
+            var pixelX, pixelY, pixelX1, pixelY1;//��ͷ������  
+            if (pixelEnd.x - pixelStart.x == 0) { //б�ʲ�������ʱ  
+                pixelTemX = pixelEnd.x;
+                if (pixelEnd.y > pixelStart.y) {
+                    pixelTemY = pixelEnd.y - r;
+                }
+                else {
+                    pixelTemY = pixelEnd.y + r;
+                }
+                //��ֱ֪�����������������꼰����һ���ǣ�������һ���������㷨
+                pixelX = pixelTemX - r * Math.tan(angle);
+                pixelX1 = pixelTemX + r * Math.tan(angle);
+                pixelY = pixelY1 = pixelTemY;
+            }
+            else  //б�ʴ���ʱ  
+            {
+                delta = (pixelEnd.y - pixelStart.y) / (pixelEnd.x - pixelStart.x);
+                param = Math.sqrt(delta * delta + 1);
+
+                if ((pixelEnd.x - pixelStart.x) < 0) //�ڶ���������  
+                {
+                    pixelTemX = pixelEnd.x + r / param;
+                    pixelTemY = pixelEnd.y + delta * r / param;
+                }
+                else//��һ��������  
+                {
+                    pixelTemX = pixelEnd.x - r / param;
+                    pixelTemY = pixelEnd.y - delta * r / param;
+                }
+                //��ֱ֪�����������������꼰����һ���ǣ�������һ���������㷨  s
+                pixelX = pixelTemX + Math.tan(angle) * r * delta / param;
+                pixelY = pixelTemY - Math.tan(angle) * r / param;
+
+                pixelX1 = pixelTemX - Math.tan(angle) * r * delta / param;
+                pixelY1 = pixelTemY + Math.tan(angle) * r / param;
+            }
+
+            var pointArrow = map.pixelToPoint(new BMap.Pixel(pixelX, pixelY));
+            var pointArrow1 = map.pixelToPoint(new BMap.Pixel(pixelX1, pixelY1));
+            var Arrow = new BMap.Polyline([
+                pointArrow,
+             linePoint[i],
+                pointArrow1
+            ], { strokeColor: "blue", strokeWeight: 3, strokeOpacity: 0.5 });
+            map.addOverlay(Arrow);
+        }
+    }
+</script>

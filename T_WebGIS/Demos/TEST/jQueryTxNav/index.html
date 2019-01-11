@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery弹性展开收缩菜单插件gooey.js - 非凡图库</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+<link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+<link rel="stylesheet" href="css/gooey.min.css">
+<link rel="stylesheet" href="css/livedemo.css">
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/gooey.min.js"></script>
+<style>
+.prettyprint ol.linenums > li {
+	list-style-type: decimal;
+}
+</style>
+</head>
+<body>
+<script>
+	$(function($) {
+		$("#gooey-upper").gooeymenu({
+			bgColor: "#ff6666",
+			contentColor: "white",
+			style: "circle",
+			horizontal: {
+				menuItemPosition: "glue"
+			},
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			},
+			circle: {
+				radius: 80
+			},
+			margin: "small",
+			size: 90,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+			hover: "#e55b5b"
+		});
+$("#gooey-h").gooeymenu({
+			bgColor: "#68d099",
+			contentColor: "white",
+			style: "horizontal",
+			horizontal: {
+				menuItemPosition: "glue"
+			},
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			},
+			circle: {
+				radius: 90
+			},
+			margin: "small",
+			size: 80,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+			hover: "#5dbb89"
+		});
+$("#gooey-round").gooeymenu({
+			bgColor: "#68d099",
+			contentColor: "white",
+			style: "circle",
+			horizontal: {
+				menuItemPosition: "spaced"
+			},
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			},
+			circle: {
+				radius: 85
+			},
+			margin: "small",
+			size: 80,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+			hover: "#5dbb89"
+		});
+$("#gooey-API").gooeymenu({
+			bgColor: "#68d099",
+			contentColor: "white",
+			style: "circle",
+			circle: {
+				radius: 85
+			},
+			margin: "small",
+			size: 70,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+			hover: "#5dbb89",
+			open: function() {
+				$(this).find(".gooey-menu-item").css("background-color", "steelblue");
+				$(this).find(".open-button").css("background-color", "steelblue");
+			},
+			close: function() {
+				$(this).find(".gooey-menu-item").css("background-color", "#ffdf00");
+				$(this).find(".open-button").css("background-color", "#ffdf00");
+			}
+		});
+$("#gooey-v").gooeymenu({
+			bgColor: "#68d099",
+			contentColor: "white",
+			style: "vertical",
+			horizontal: {
+				menuItemPosition: "glue"
+			},
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			},
+			circle: {
+				radius: 90
+			},
+			margin: "small",
+			size: 70,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+			hover: "#68d099"
+		});
+
+	});
+</script>
+<header class="plugin-demo-header">
+ <h1>Gooey Menu</h1>
+<nav id="gooey-upper">
+<input type="checkbox" class="menu-open" name="menu-open1" id="menu-open1"/>
+<label class="open-button" for="menu-open1">
+<span class="burger burger-1"></span>
+<span class="burger burger-2"></span>
+<span class="burger burger-3"></span>
+</label>
+
+<a href="#features" class="gooey-menu-item"> <i title="Features" class="fa fa-cog fa-2x"></i> </a>
+<a href="#h-spaced-menu" class="gooey-menu-item"> <i title="Horizontal Menu" class="fa fa-arrows-h fa-2x"></i> </a>
+<a href="#menu-v-example" class="gooey-menu-item"> <i title="Vertical Menu" class="fa fa-arrows-v fa-2x"></i> </a>
+<a href="#docs" class="gooey-menu-item"> <i title="Docs" class="fa fa-book fa-2x"></i> </a>
+<a href="#event-api" class="gooey-menu-item"> <i title="Event API" class="fa fa-code fa-2x"></i> </a>
+<a href="#round" class="gooey-menu-item"> <i title="Round Menu" class="fa fa-circle fa-2x"></i> </a>
+
+</nav>
+</header>
+<div class="container">
+	<div id="page1">
+	<h1 class="section-label">Menu Styles</h1>
+	<div class="section-cont" id="h-spaced-menu">
+  <i class="desc">Horizontal menu with glued items</i>
+<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-5">
+		
+		<nav id="gooey-h">
+			<input type="checkbox" class="menu-open" name="menu-open2" id="menu-open2"/>
+<label class="open-button" for="menu-open2">
+<span class="burger burger-1"></span>
+<span class="burger burger-2"></span>
+<span class="burger burger-3"></span>
+</label>
+
+<a href="#" class="gooey-menu-item"> <i class="fa fa-train"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-bicycle"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-rocket"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-automobile"></i> </a>
+		</nav>   
+	</div>
+	<div class="col-xs-12 col-md-7 code-example">
+	 <pre class="prettyprint linenums">
+	$(function() {
+	 $("#gooey-h").gooeymenu({
+	  style: "horizontal",
+	  contentColor: "white",
+	  horizontal: {
+				menuItemPosition: "glue"
+			}
+	 });
+	 });
+</pre> 
+	</div>
+</div>
+	</div>
+	<div class="section-cont" id="round">
+		
+<div class="row">
+	<div class="col-md-5 col-xs-12 col-sm-6 round-example">
+		<i class="desc">Round menu with glued items (the glued effect may be achieved by adjusting "size" and circle radius property values closer (e.g, 80 and 85))
+		</i>
+		<nav id="gooey-round">
+<input type="checkbox" class="menu-open" name="menu-open3" id="menu-open3"/>
+<label class="open-button" for="menu-open3">
+<span class="burger burger-1"></span>
+<span class="burger burger-2"></span>
+<span class="burger burger-3"></span>
+</label>
+
+<a href="#" class="gooey-menu-item"> <i class="fa fa-train"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-bicycle"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-rocket"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-automobile"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-plane"></i> </a>
+</nav>
+	</div>
+	<div class="col-md-7 col-xs-12 code-example">
+		 <pre class="prettyprint linenums">
+	$(function() {
+	 $("#gooey-round").gooeymenu({
+			bgColor: "#ffc0cb",
+			contentColor: "white",
+			style: "circle",
+			circle: {
+				radius: 85
+			},
+			size: 80
+	 });
+   });
+</pre> 
+</div>
+	</div>
+	</div>  
+	<div class="section-cont" id="menu-v-example">
+<div class="row">
+	<div class="col-md-5 col-xs-12 vertical-example">
+		<i class="desc">Vertical menu ("up" and "down" direction may be achieved by changing corresponding properties).
+		</i>
+		<nav id="gooey-v">
+<input type="checkbox" class="menu-open" name="menu-open4" id="menu-open4"/>
+<label class="open-button" for="menu-open4">
+<span class="burger burger-1"></span>
+<span class="burger burger-2"></span>
+<span class="burger burger-3"></span>
+</label>
+
+<a href="#" class="gooey-menu-item"> <i class="fa fa-train"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-bicycle"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-rocket"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-automobile"></i> </a>
+</nav>
+	</div>
+	<div class="col-md-7 col-xs-12 code-example">
+		<pre class="prettyprint linenums">
+		 $(function() {
+			$("#gooey-v").gooeymenu({
+			style: "vertical",
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			}
+		  });
+		});
+		</pre>
+	</div>
+</div>
+	</div>
+	<h1 class="section-label">Event API</h1>
+	<div class="section-cont" id="event-api">
+		<div class="row">
+			<div class="col-md-5 col-xs-12 event-api-ex">
+				<i class="desc">
+					Use event API to hook into animation "open" and "close" events. In this example, we change menu item colors when menu "open"  and "close" events are triggered.
+				</i>
+				<nav id="gooey-API">
+<input type="checkbox" class="menu-open" name="menu-open5" id="menu-open5"/>
+<label class="open-button" for="menu-open5">
+<span class="burger burger-1"></span>
+<span class="burger burger-2"></span>
+<span class="burger burger-3"></span>
+</label>
+
+<a href="#" class="gooey-menu-item"> <i class="fa fa-train"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-bicycle"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-rocket"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-automobile"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-plane"></i> </a>
+</nav>
+			</div>
+			<div class="col-md-7 col-xs-12 code-example">
+				<pre class="prettyprint linenums">
+	  $(function() {
+	  $("#gooey-round").gooeymenu({    
+			circle: {
+				radius: 85
+			},
+			open: function() {
+				$(this).find(".gooey-menu-item").css("background-color", "steelblue");
+				$(this).find(".open-button").css("background-color", "steelblue");
+			},
+			close: function(gooey) {
+				$(this).find(".gooey-menu-item").css("background-color", "#00ffff");
+				$(this).find(".open-button").css("background-color", "#00ffff");
+			}
+		});
+		});
+
+				</pre>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+</div>
+
+
+</body>
+</html>

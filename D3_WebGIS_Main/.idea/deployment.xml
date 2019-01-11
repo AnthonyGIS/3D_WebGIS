@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="8082_D3_WebGIS_Main">
+  <component name="PublishConfigData" autoUpload="Always" serverName="8082_T_WebGS">
     <serverData>
       <paths name="8082_D3_WebGIS_Main">
         <serverdata>
@@ -12,17 +12,21 @@
       <paths name="8082_JS_Plungins">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$/../WebGIS_Unit" web="/" />
-            <mapping local="$PROJECT_DIR$" web="/" />
-            <mapping deploy="" local="F:/Learnings/BS/JS/JSTEST" web="/" />
-            <mapping deploy="\" local="F:/Learnings/JS/Popup/MainOpopUp" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$/../JS_Plungins" web="/" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="8082_T_WebGIS_OL">
         <serverdata>
           <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$/../WebGIS_Unit" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$/../T_WebGL" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="8082_T_WebGS">
+        <serverdata>
+          <mappings>
+            <mapping deploy="\" local="$PROJECT_DIR$/../T_WebGIS" web="/" />
           </mappings>
         </serverdata>
       </paths>

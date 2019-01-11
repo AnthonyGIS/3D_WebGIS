@@ -5,11 +5,14 @@
       <webServer id="b2a22098-3d42-41fd-81c9-1dff0d623b4a" name="8082_D3_WebGIS_Main" url="http://localhost:8082/D3_WebGIS_Main/D3_WebGIS_Main">
         <fileTransfer port="0" mountedRoot="E:\Program Files\apache-tomcat-9.0.6\webapps\D3_WebGIS_Main\D3_WebGIS_Main" accessType="MOUNT" />
       </webServer>
-      <webServer id="c98a4041-4e14-4f03-bc68-f59d813087e1" name="8082_T_WebGIS_OL" url="http://localhost:8082/D3_WebGIS_Main/T_WebGIS">
-        <fileTransfer port="0" mountedRoot="E:\Program Files\apache-tomcat-9.0.6\webapps\D3_WebGIS_Main\T_WebGIS" accessType="MOUNT" />
+      <webServer id="c98a4041-4e14-4f03-bc68-f59d813087e1" name="8082_T_WebGIS_OL" url="http://localhost:8082/D3_WebGIS_Main/T_WebGIS_OL">
+        <fileTransfer port="0" mountedRoot="E:\Program Files\apache-tomcat-9.0.6\webapps\D3_WebGIS_Main\T_WebGIS_OL" accessType="MOUNT" />
       </webServer>
       <webServer id="7d2abf59-4a1f-4ec3-8819-d32d2309c462" name="8082_JS_Plungins" url="http://localhost:8082/D3_WebGIS_Main/JS_Plungins">
-        <fileTransfer port="0" mountedRoot="E:\Program Files\apache-tomcat-9.0.6\webapps\D3_WebGIS_Main\JS_Plungins" accessType="MOUNT" />
+        <fileTransfer port="0" mountedRoot="E:\Program Files\apache-tomcat-9.0.6\webapps\D3_WebGIS_Main" accessType="MOUNT" />
+      </webServer>
+      <webServer id="10b8792e-c9b5-44f5-a5be-78a760988003" name="8082_T_WebGS" url="http://localhost:8082/D3_WebGIS_Main/T_WebGIS">
+        <fileTransfer port="0" mountedRoot="E:\Program Files\apache-tomcat-9.0.6\webapps\D3_WebGIS_Main\T_WebGIS" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

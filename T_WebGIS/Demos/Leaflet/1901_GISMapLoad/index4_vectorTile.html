@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Esri Vector Basemap</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Load Mapbox GL -->
+    <link rel="stylesheet" href="https://unpkg.com/mapbox-gl/dist/mapbox-gl.css"/>
+    <script src="https://unpkg.com/mapbox-gl/dist/mapbox-gl.js"></script>
+
+    <!-- Esri Leaflet and Esri Leaflet Vector -->
+    <script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-vector/dist/esri-leaflet-vector.js"></script>
+
+    <style>
+        body {margin:0;padding:0;}
+        #map {position: absolute;top:0;bottom:0;right:0;left:0;}
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+    var map = L.map('map').setView([ 40.706, -73.926], 14);
+    L.esri.Vector.basemap('Newspaper').addTo(map);
+</script>
+
+</body>
+</html>

@@ -13,7 +13,7 @@ function Car(color,door){
     ocar.doors = door;
     //ocar.showColor = showColor;
     ocar.showColor = function(){
-        document.write(this.color)
+        document.write(this.color);
     };
     return ocar;
 }
@@ -36,7 +36,7 @@ function Car(color,door){
     this.color = color;
     this.doors = door;
     this.showColor = function(){
-        alert(this.color)
+        alert(this.color);
     };
 }
 var car1 = new Car("red",4);
@@ -79,7 +79,8 @@ Car.prototype.showColor = function(){
 }
 var car1 = new Car();
 var car2 = new Car();
-// 原型模式也不是没有缺点,首先,它忽略了构造函数传递初始化参数这一环节,结果所有实例在默认情况下都取得了相同的属性值,这样非常不方便,但这还不是原型的最大问题.原型模式最大问题在于共享的本性所导致的,由于共享,因此一个实例修改了引用,另一个也随之修改了引用.因此我们通常不单独使用原型,而是结合原型模式和构造函数模式.
+// 原型模式也不是没有缺点,首先,它忽略了构造函数传递初始化参数这一环节,结果所有实例在默认情况下都取得了相同的属性值,这样非常不方便,但这还不是原型的最大问题.
+// 原型模式最大问题在于共享的本性所导致的,由于共享,因此一个实例修改了引用,另一个也随之修改了引用.因此我们通常不单独使用原型,而是结合原型模式和构造函数模式.
 
 
 function Car(){
@@ -90,6 +91,8 @@ Car.prototype.arr = ["a","b"];
 Car.prototype.showColor = function(){
     alert(this.color);
 };
+
+
 var car1 = new Car();
 var car2 = new Car();
 car1.arr.push("cc");

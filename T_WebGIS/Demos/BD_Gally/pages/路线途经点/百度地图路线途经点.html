@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="api"></script>
+    <script type="text/javascript" src="getscript"></script>
+    <script type="text/javascript" src="baidu.js"></script>
+    <title>百度地图路线途经点</title>
+    <script type="text/javascript" charset="utf-8"
+            src="http://online0.map.bdimg.com/js/?qt=vQuest&amp;styles=pl&amp;x=1552&amp;y=434&amp;z=13&amp;v=056&amp;fn=MPC_Mgr.TANGRAM__1.getPoiData"></script>
+</head>
+<body>
+<div id="allmap">
+</div>
+<script type="text/javascript">
+    //传入json坐标数据 第一个为起点最后一个为终点
+    var arrayList = '["114.253477,30.606323","114.239104,30.611607","114.282295,30.616269","114.26997,30.599827","114.302111,30.611203","114.292221,30.594853","114.301438,30.598179","114.314598,30.61414","114.304034,30.624303","114.294943,30.630518","114.303998,30.667303","114.2856,30.668918","114.261167,30.646427","114.222504,30.632693","114.162137,30.624427","114.170546,30.62076","114.17766,30.615663","114.189949,30.610069","114.203388,30.603293","114.211293,30.599314","114.218335,30.595148","114.226312,30.59148","114.246866,30.580475","114.258867,30.577863","114.270222,30.58035","114.278773,30.583708","114.286032,30.587066","114.341798,30.572624"]';
+    //显示轨迹
+    showPoly(arrayList);
+</script>
+</body>
+</html>

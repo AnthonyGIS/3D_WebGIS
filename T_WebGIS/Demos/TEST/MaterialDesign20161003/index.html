@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>简单的Material Design风格手机App菜单特效</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<!--[if IE]>
+		<script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="jq22-container">
+		<header class="jq22-header">
+			<h1>简单的Material Design风格手机App菜单特效</h1>
+			
+		</header>
+		<div class="phone">
+			<div class="screen">
+				<nav class="nav">
+					<ul>
+						<li><a href="#">搜　索</a></li>
+						<li><a href="#">主　页</a></li>
+						<li><a href="#">HTML5学习</a></li>
+						<li><a href="#">CSS3学习</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+				</nav>
+				<div class="nav-toggle">
+					<div class="icon"></div>
+				</div>
+				<div class="lower-screen">
+					<div class="card">
+						<h2>Material cards</h2>
+						<p>Created by Lewi Hussey.</p>
+					</div>
+					
+					<div class="card">
+						<h2>A simple cards and navigation</h2>
+						<p>This is a really simple app that has a navigation and some cards.</p>
+						
+						<p>Inspired by Material Design it uses simple design and fluid animations to make the user understand how everything works.
+						</p>
+					</div>
+					
+					<div class="card">
+						<h2>Don't forget to share!</h2>
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+	$('.nav-toggle').click(function () {
+	    $('body').toggleClass('nav-open');
+	});
+	</script>
+</body>
+</html>

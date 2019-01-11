@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="MapGrid.css">
+    <style>
+        input {
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+        }
+    </style>
+    <script src="jquery-1.js"></script>
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="MapType.js"></script>
+    <script type="text/javascript" src="MapGrid.js"></script>
+</head>
+<body>
+<input class="input_gd" id="ip_gd" readonly="readonly" placeholder="高德坐标" type="text"><br>
+<input class="input_bd" id="ip_bd" readonly="readonly" placeholder="百度坐标" type="text">
+</body>
+</html>
+
+<script type="text/javascript">
+    /**
+     * MapType.js 是地图类型,百度 高德
+     * 请在MapType.js里面把tMapKey方法里面的密钥换成自己的，目前属于测试密钥以防后期删除
+     * MapGrid.js 是调用方法
+     */
+
+    new MapGrid('.input_gd', {
+        //地图类型 高端 百度
+        type: gouldMap,//gouldMap || baiduMap
+        /**
+         * [callback description]
+         * @param  {[type]}   lng [经度：]
+         * @param  {[type]}   lat [纬度：]
+         * @return {Function}     [description]
+         */
+        callback: function (lng, lat) {
+            console.log(lng, lat)
+        }
+
+    });
+
+    new MapGrid('.input_bd', {
+        //地图类型 高端(gouldMap) 百度(baiduMap)
+        type: baiduMap,//gouldMap || baiduMap
+        /**
+         * [callback description]
+         * @param  {[type]}   lng [经度：]
+         * @param  {[type]}   lat [纬度：]
+         * @return {Function}     [description]
+         */
+        callback: function (lng, lat) {
+            console.log(lng, lat)
+        }
+
+    });
+</script>

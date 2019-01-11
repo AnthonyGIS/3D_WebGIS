@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/ConvertCor.css"/>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/RectangleZoom/1.2/src/RectangleZoom_min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js"></script>
+    <script type="text/javascript" src="../../JS/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Converter_test.js"></script>
+
+    <title>百度坐标转换模块</title>
+    
+</head>
+<body>
+    <div id="mapDiv"></div>
+    <div id="controlPanel">
+
+        <p>坐标转换</p>
+        <div class="wc_wrapper">
+            <div class="c1">
+                Choose Type:
+            </div>
+            <div>
+                <select id="basemaps_type">
+                    <option value="GG_BD09"   >Google -> Baidu</option>
+                    <option value="WGS84_BD09">WGS84  -> Baidu</option>
+                    <option value="GCJ2_BD09"> GCJ2   -> Baidu</option>
+                    <option value="GCJ2_WGS84">GCJ2   -> WGS84</option>
+                    <option value="WGS84_GCJ2">WGS84  -> GCJ2</option>
+                    <option value="BD09_WGS84">Baidu  -> WGS84</option>
+
+                </select>
+            </div>
+            <div class="io_message_box">
+                <input id="lng_input" placeholder="lng input" value ="120.16" />
+                <input id="lat_input" placeholder="lat input" value ="30.208" />
+                <button id="btn_convert" onclick="onConvertProcess()">Convert</button>
+                <input id="result_output" style="width:280px" placeholder="result" />
+            </div>
+        </div>
+
+        <p>常见功能</p>
+         <div class="wc_wrapper">
+            <button id="btn_getCordinateByMouse" onclick="onPickCordinate()">Pick Cordinate</button>&nbsp;
+             <a href="http://lbsyun.baidu.com/index.php?title=jspopular">BD地图开放平台</a><br/>
+            <button id="btn_dragZoomClick" onclick="onDragZoomClick()">Drag Map For Zoom</button>
+            <button id="btn_measurement" onclick="onMeasurementClick()">Map Measurement</button>
+            <div id="r-result">Focus City: 
+                <input id="cityName" type="text" style="width:100px; margin-right:10px;" />
+                <input type="button" value="City Locate" onclick="navToCity()" />
+                <input type="button" value="Locate City by IP" onclick="navToCityByIP()" />
+                <input type="button" value="Locate City by Browser" onclick="navToCityByBrowser()" />
+
+            </div>
+             <div id="Div1">Map Type: 
+                <input type="button" value="Normal" onclick="mapTypeClick(BMAP_NORMAL_MAP)" />
+                <input type="button" value="3D" onclick="mapTypeClick(BMAP_PERSPECTIVE_MAP)" />
+                <input type="button" value="Satellite" onclick="mapTypeClick(BMAP_SATELLITE_MAP)" />
+                <input type="button" value="Hybrid" onclick="mapTypeClick(BMAP_HYBRID_MAP)" />
+            </div>
+         </div>
+
+
+    </div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    // 参考文章
+    // 百度地图开放平台 http://lbsyun.baidu.com/jsdemo.htm?a#f0_3
+
+    // 百度地图API功能
+    // 谷歌坐标
+    var center_lng = 120.16;
+    var center_lat = 30.208;
+    var ggPoint = new BMap.Point(center_lng, center_lat);
+
+    //地图初始化
+    var bdMap = new BMap.Map("mapDiv");
+    var mapDrag = new BMapLib.RectangleZoom(bdMap, { followText: "Drag Area" });
+    var mapDis = new BMapLib.DistanceTool(bdMap);
+
+    bdMap.centerAndZoom(ggPoint, 15);
+    // bdMap.addControl(new BMap.NavigationControl());
+    // bdMap.setDefaultCursor("url('bird.cur')");   //设置地图默认的鼠标指针样式
+    // map.addEventListener("tilesloaded", function () { alert("地图加载完毕"); });// 地图加载完毕的事件
+    // map.addEventListener("click", showInfo); //给地图添加或者注销事件
+    // map.removeEventListener("click", showInfo);
+    bdMap.enableScrollWheelZoom();//启动鼠标滚轮缩放地图
+    bdMap.enableKeyboard();//启动键盘操作地图
+    bdMap.addControl(new BMap.ScaleControl());
+    bdMap.addControl(new BMap.MapTypeControl({
+        mapTypes: [BMAP_NORMAL_MAP, BMAP_SATELLITE_MAP, BMAP_HYBRID_MAP]
+    }));
+
+
+
+
+
+    //坐标转换完之后的回调函数
+    translateCallback = function (data) {
+        if (data.status === 0) {
+
+            var point = data.points[0];
+            AddGGMarker(point, bdMap, "转换后的百度标注（正确）");
+            bdMap.setCenter(point);
+
+            // output to the input
+            document.getElementById("result_output").value = "lng, lat:" + point.lng + "," + point.lat;
+        }
+    }
+
+
+    //setTimeout(function () {
+    //    // .... dp some things
+    //},1000)
+
+    // 事件处理
+    // -----------------------------------
+    var onConvertProcess = function () {
+        var lng_input = document.getElementById('lng_input').value;
+        var lat_input = document.getElementById('lat_input').value;
+        var convertor = new BMap.Convertor();
+        var pointArr = [];
+        var point = new BMap.Point(lng_input, lat_input);
+        pointArr.push(point);
+
+        //添加谷歌marker和label
+        bdMap.clearOverlays(); //removeOverlay("指定点")
+        AddGGMarker(pointArr[0], bdMap, "转换前");
+
+
+
+        // 1,WGS84; 2, GCJ02; 3 GG; 4 XX; 5 BD09;
+        var convert_type = document.getElementById('basemaps_type').value;
+        if (convert_type == "GG_BD09") {
+            convertor.translate(pointArr, 3, 5, translateCallback) // Google --> baidu
+        }
+        else if (convert_type == "WGS84_BD09") {
+            convertor.translate(pointArr, 1, 5, translateCallback)
+        } 
+        else if (convert_type == "GCJ2_BD09") {
+            var result = GPS.GCJ2_To_BD09(pointArr[0].lat, pointArr[0].lng);
+            var point = new BMap.Point(result.lon, result.lat);
+            AddGGMarker(point, bdMap, "转换后的坐标BD09");
+            document.getElementById("result_output").value = "lng, lat:" + point.lng + "," + point.lat;
+        }
+        else if (convert_type == "GCJ2_WGS84") {
+            var result = GPS.GCJ2_To_WGS84(pointArr[0].lat, pointArr[0].lng);
+            DisplayAndMarkCordinate(result.lon, result.lat,"转换后的坐标WGS84");
+        }
+        else if (convert_type == "WGS84_GCJ2") {
+            var result = GPS.WGS84_To_GCJ2(pointArr[0].lat, pointArr[0].lng);
+            DisplayAndMarkCordinate(result.lon, result.lat, "WGS84转换后的坐标GCJ2");
+        }
+        else if(convert_type === "BD09_WGS84") {
+            var result = GPS.BD09_To_GCJ2(pointArr[0].lat, pointArr[0].lng);
+            result = GPS.GCJ2_To_WGS84( result.lat,result.lon);
+            DisplayAndMarkCordinate(result.lon, result.lat, "Baidu09转换后的坐标WGS84坐标");
+        }
+    };
+
+    var mapClick = function (e) {
+        //alert(e.point.lng + "," + e.point.lat);
+        document.getElementById("result_output").value = "picked DB09 lng, lat:" + e.point.lng + "," + e.point.lat;
+    };
+
+    var onPickCordinate = function()
+    {
+        /// <summary>
+        /// 拾取的好像是火星坐标（GCJ02）
+        /// </summary>
+        var btn_pick_cordinate = document.getElementById("btn_getCordinateByMouse");
+        if (btn_pick_cordinate.getAttribute("title") === "running") {
+            bdMap.removeEventListener("click",mapClick);
+            btn_pick_cordinate.removeAttribute("title");
+            btn_pick_cordinate.removeAttribute("color");
+            //document.getelementbyid(mapDiv).style.cursor = "default";
+            bdMap.setDefaultCursor("default");
+        }
+        else {
+            bdMap.addEventListener("click", mapClick);
+            btn_pick_cordinate.setAttribute("title", "running");
+            btn_pick_cordinate.setAttribute("color", "#00ff90");
+            bdMap.setDefaultCursor("crosshair");
+        }
+    }
+
+    var onDragZoomClick = function ()
+    {
+        var btn_dragZoomClick = document.getElementById("btn_dragZoomClick");
+        var title_text = btn_dragZoomClick.getAttribute("title");
+        if (title_text == "" || title_text == null ) {
+            btn_dragZoomClick.setAttribute("title", "running");
+            mapDrag.open();  //开启拉框放大
+        }
+        else {
+            btn_dragZoomClick.setAttribute("title", "");
+            mapDrag.close();  //关闭拉框放大
+        }
+    }
+
+    var onMeasurementClick = function () {
+        var btn = document.getElementById("btn_measurement");
+        var title_text = btn.getAttribute("title");
+        if (title_text == "" || title_text == null) {
+            btn.setAttribute("title", "running");
+            mapDis.open();  //开启拉框放大
+        }
+        else {
+            btn.setAttribute("title", "");
+            mapDis.close();  //关闭拉框放大
+        }
+    }
+
+    function navToCity() {
+        var city = document.getElementById("cityName").value;
+        if (city != "") {
+            bdMap.centerAndZoom(city, 11);      // 用城市名设置地图中心点
+        }
+    }
+
+    function navToCityByIP()
+    {
+        function myFun(result) {
+            var cityName = result.name;
+            bdMap.setCenter(cityName);
+            bdMap.setZoom(12);
+            //alert("当前定位城市:" + cityName);
+            document.getElementById("cityName").value = cityName;
+        }
+
+        var myCity = new BMap.LocalCity();
+        myCity.get(myFun);
+    }
+
+    function navToCityByBrowser()
+    {
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function (r) {
+            if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                var mk = new BMap.Marker(r.point);
+                bdMap.clearOverlays(); //removeOverlay("指定点")
+                bdMap.addOverlay(mk);
+                bdMap.panTo(r.point);
+                alert('您的位置：' + r.point.lng + ',' + r.point.lat);
+            }
+            else {
+                alert('failed' + this.getStatus());
+            }
+        }, { enableHighAccuracy: true })
+        //关于状态码
+        //BMAP_STATUS_SUCCESS	检索成功。对应数值“0”。
+        //BMAP_STATUS_CITY_LIST	城市列表。对应数值“1”。
+        //BMAP_STATUS_UNKNOWN_LOCATION	位置结果未知。对应数值“2”。
+        //BMAP_STATUS_UNKNOWN_ROUTE	导航结果未知。对应数值“3”。
+        //BMAP_STATUS_INVALID_KEY	非法密钥。对应数值“4”。
+        //BMAP_STATUS_INVALID_REQUEST	非法请求。对应数值“5”。
+        //BMAP_STATUS_PERMISSION_DENIED	没有权限。对应数值“6”。(自 1.1 新增)
+        //BMAP_STATUS_SERVICE_UNAVAILABLE	服务不可用。对应数值“7”。(自 1.1 新增)
+        //BMAP_STATUS_TIMEOUT	超时。对应数值“8”。(自 1.1 新增)
+    }
+
+    function mapTypeClick(mapType)
+    {
+        //bdMap.mapType = mapType;
+        bdMap.setAttribute("mapType", mapType);
+    }
+
+    function AddRandomPt()
+    {
+        // 编写自定义函数,创建标注
+        function addMarker(point) {
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+        // 随机向地图添加25个标注
+        var bounds = map.getBounds();
+        var sw = bounds.getSouthWest();
+        var ne = bounds.getNorthEast();
+        var lngSpan = Math.abs(sw.lng - ne.lng);
+        var latSpan = Math.abs(ne.lat - sw.lat);
+        for (var i = 0; i < 25; i++) {
+            var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
+            addMarker(point);
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    function AddGGMarker (ggPoint, bdMap, text) {
+        /// <summary>
+        /// 添加Google类型的标注
+        /// </summary>
+        /// <param name="ggPoint" type="type"></param>
+        /// <param name="bdMap" type="type"></param>
+        /// <param name="text" type="type"></param>
+        var markergg = new BMap.Marker(ggPoint);
+        bdMap.addOverlay(markergg); //添加谷歌marker
+        var labelgg = new BMap.Label(text, { offset: new BMap.Size(20, -10) });
+        markergg.setLabel(labelgg); //添加谷歌label
+
+        //获取marker的位置
+        //var p = markergg.getPosition();       
+        //alert("marker的位置是" + p.lng + "," + p.lat);
+    }
+
+    function AddTextLabel(lng,lat,text)
+    {
+
+        var gpt = new BMap.Point(lng, lat);
+
+        var opts = {
+            position: gpt,                  // 指定文本标注所在的地理位置
+            offset: new BMap.Size(30, -30)    //设置文本偏移量
+        }
+        var label = new BMap.Label(text, opts);  // 创建文本标注对象
+        label.setStyle({
+            color: "red",
+            fontSize: "12px",
+            height: "20px",
+            lineHeight: "20px",
+            fontFamily: "微软雅黑"
+        });
+        map.addOverlay(label);
+    }
+
+
+    function DisplayAndMarkCordinate(lng, lat, text)
+    {
+        var point = new BMap.Point(lng, lat);
+        AddGGMarker(point, bdMap, text);
+        document.getElementById("result_output").value = "lng, lat:" + point.lng + "," + point.lat;
+    }
+
+    function RemoveBDLogoEtc()
+    {
+        // 版权和信息去除
+        $("#mapDiv .anchorBL img:first").hide();//$("#mapDiv .anchorBL:first img").hide() / .remove()
+        $("#mapDiv .BMap_cpyCtrl").hide();
+    }
+    
+    $(function () {
+        // 区别
+        // 1.执行时间
+        // window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行。
+        // $(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。
+
+        // 2.编写个数不同
+        // window.onload不能同时编写多个，如果有多个window.onload方法，只会执行一个
+        // $(document).ready()可以同时编写多个，并且都可以得到执行
+
+        // 3.简化写法
+        // window.onload没有简化写法
+        // $(document).ready(function(){})可以简写成$(function(){});
+        RemoveBDLogoEtc();
+    });
+
+   
+</script>
