@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>960 Grid System</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.21/dijit/themes/tundra/tundra.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/960.css">
+    <link rel="stylesheet" href="css/global.css">
+
+    <script>var dojoConfig = { parseOnLoad: true };</script>
+    <script src="https://js.arcgis.com/3.21/"></script>
+    <script>
+    dojo.require("dijit.layout.BorderContainer");
+    dojo.require("dijit.layout.ContentPane");
+    dojo.require("dijit.layout.StackContainer");
+    dojo.require("esri.map");
+    dojo.require("esri.dijit.Legend");
+    dojo.require("esri.dijit.Scalebar");
+    dojo.require("esri.arcgis.utils");
+    dojo.require("esri.IdentityManager");
+
+    var map, urlObject;
+    var configOptions;
+
+    function init() {
+
+      configOptions = {
+        //The ID for the map from ArcGIS.com
+        webmap: "1e79439598494713b553f990a4040886",
+        //Enter the configurable application id
+        appid: '',
+        //Enter a theme for the template. Valid values are ('blue', 'red', 'green')
+        theme: 'blue',
+        //Enter a title, if no title is specified, the webmap's title is used.
+        title: "",
+        //Enter a subtitle, if not specified the ArcGIS.com web map's summary is used
+        subtitle: "",
+        //If the webmap uses Bing Maps data, you will need to provided your Bing Maps Key
+        bingmapskey: "",
+        //specify a proxy url if needed
+        proxyurl: "",
+        //specify the url to a geometry service
+        geometryserviceurl: "https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+        //Modify this to point to your sharing service URL if you are using the portal
+        sharingurl: "https://www.arcgis.com/sharing/rest/content/items"
+      };
+      dojo.connect(dojo.byId('showAbout'), 'click', function (event) {
+        tabMenu('aboutMenu', this);
+      });
+      dojo.connect(dojo.byId('showLegend'), 'click', function (event) {
+        tabMenu('legendMenu', this);
+      });
+
+      initMap();
+    }
+
+    function initMap() {
+
+      dojo.byId('footerText').innerHTML = "A map from:";
+      dojo.byId('legendHeader').innerHTML = 'Legend';
+      if (configOptions.geometryserviceurl && location.protocol === "https:") {
+        configOptions.geometryserviceurl = configOptions.geometryserviceurl.replace('http:', 'https:');
+      }
+      esri.config.defaults.geometryService = new esri.tasks.GeometryService(configOptions.geometryserviceurl);
+      if (!configOptions.sharingurl) {
+        configOptions.sharingurl = location.protocol + '//' + location.host + "/sharing/rest/content/items";
+      }
+      esri.arcgis.utils.arcgisUrl = configOptions.sharingurl;
+      esri.config.defaults.io.proxyUrl = "/proxy/";
+
+      esri.config.defaults.io.proxyUrl = configOptions.proxyurl;
+      esri.config.defaults.io.alwaysUseProxy = false;
+      urlObject = esri.urlToObject(document.location.href);
+      urlObject.query = urlObject.query || {};
+      if (configOptions.appid || (urlObject.query && urlObject.query.appid)) {
+        var appid = configOptions.appid || urlObject.query.appid;
+        var requestHandle = esri.request({
+          url: configOptions.sharingurl + "/" + appid + "/data",
+          content: {
+            f: "json"
+          },
+          callbackParamName: "callback",
+          load: function (response) {
+            if (response.values.theme !== undefined) {
+              configOptions.theme = response.values.theme;
+            }
+            if (response.values.webmap !== undefined) {
+              configOptions.webmap = response.values.webmap;
+            }
+            createMap();
+          },
+          error: function (response) {
+            var e = response.message;
+            alert("Unable to create map : " + e);
+          }
+        });
+      } else {
+        //not a configured app
+        createMap();
+      }
+    }
+
+    function createMap() {
+      if (urlObject.query.title) {
+        configOptions.title = urlObject.query.title;
+      }
+      if (urlObject.query.subtitle) {
+        configOptions.title = urlObject.query.subtitle;
+      }
+      if (urlObject.query.webmap) {
+        configOptions.webmap = urlObject.query.webmap;
+      }
+      if (urlObject.query.bingMapsKey) {
+        configOptions.bingmapskey = urlObject.query.bingMapsKey;
+      }
+      if (urlObject.query.theme) {
+        configOptions.theme = urlObject.query.theme;
+      }
+      //add the custom theme
+      //load the specified theme
+      var ss = document.createElement("link");
+      ss.type = "text/css";
+      ss.rel = "stylesheet";
+      ss.href = "css/" + configOptions.theme + ".css";
+      document.getElementsByTagName("head")[0].appendChild(ss);
+      var mapDeferred = esri.arcgis.utils.createMap(configOptions.webmap, "map", {
+        mapOptions: {
+          slider: true,
+          nav: false,
+          wrapAround180: true
+        },
+        ignorePopups: false,
+        bingMapsKey: configOptions.bingmapskey
+      });
+      mapDeferred.addCallback(function (response) {
+        document.title = configOptions.title || response.itemInfo.item.title;
+        dojo.byId("title").innerHTML = configOptions.title || response.itemInfo.item.title;
+        dojo.byId("subtitle").innerHTML = configOptions.subtitle || response.itemInfo.item.snippet || "";
+        var descriptionInfo = configOptions.description || response.itemInfo.item.description || "";
+        dojo.byId("descriptionContent").innerHTML = '<h2>About this map</h2>' + descriptionInfo + '<div class="clear"></div>';
+        dojo.byId("owner").innerHTML = response.itemInfo.item.owner;
+        map = response.map;
+        var layers = response.itemInfo.itemData.operationalLayers;
+        if (map.loaded) {
+          initUI(layers);
+        } else {
+          dojo.connect(map, "onLoad", function () {
+            initUI(layers);
+          });
+        }
+        //resize the map when the browser resizes
+        dojo.connect(dijit.byId('map'), 'resize', map, map.resize);
+      });
+      mapDeferred.addErrback(function (error) {
+        alert("Unable to create map : " + error.message);
+      });
+    }
+
+    function initUI(layers) {
+      //resize the layout and map to match the specified theme
+      //dijit.byId('mainWindow').resize();
+      map.reposition();
+      map.resize();
+      //add theme for popup
+      dojo.addClass(map.infoWindow.domNode, configOptions.theme);
+      //add the scalebar
+      var scalebar = new esri.dijit.Scalebar({
+        map: map,
+        scalebarUnit: "english"
+      });
+      var layerInfo = buildLayersList(layers);
+      if (layerInfo.length > 0) {
+        var legendDijit = new esri.dijit.Legend({
+          map: map,
+          layerInfos: layerInfo
+        }, "legendDiv");
+        legendDijit.startup();
+      } else {
+        dojo.byId('legendDiv').innerHTML = "Legend";
+      }
+    }
+
+    function buildLayersList(layers) {
+      var layerInfo = [];
+      dojo.forEach(layers, function (mapLayer, index) {
+        if (mapLayer.featureCollection && !mapLayer.layerObject) {
+          if (mapLayer.featureCollection.layers && mapLayer.featureCollection) {
+            if (mapLayer.featureCollection.layers.length === 1) {
+              layerInfo.push({
+                "layer": mapLayer.featureCollection.layers[0].layerObject,
+                "title": mapLayer.title
+              });
+            } else {
+              dojo.forEach(mapLayer.featureCollection.layers, function (layer) {
+                layerInfo.push({
+                  layer: layer.layerObject,
+                  title: mapLayer.title
+                });
+              });
+            }
+          }
+        } else if (mapLayer.layerObject) {
+          layerInfo.push({
+            layer: mapLayer.layerObject,
+            title: mapLayer.title
+          });
+        }
+      });
+      return layerInfo;
+    }
+
+    function tabMenu(menuObj, buttonObj) {
+      if (menuObj === 'aboutMenu') {
+        esri.hide(dojo.byId('legendMenu'));
+        dojo.removeClass(dojo.byId('showLegend'), 'buttonSelected');
+        esri.show(dojo.byId(menuObj));
+      } else {
+        esri.hide(dojo.byId('aboutMenu'));
+        dojo.removeClass(dojo.byId('showAbout'), 'buttonSelected');
+        esri.show(dojo.byId(menuObj));
+      }
+      dojo.addClass(buttonObj, 'buttonSelected');
+    }
+    //show map on load
+    dojo.addOnLoad(init);
+    </script>
+  </head>
+
+  <body class="tundra">
+    <div id="header">
+      <div class="container_12 headerContainer">
+        <div class="grid_12">
+          <ul id="pmgNav">
+            <li id="homeItem">
+              <a title="Home" href="index.html" id="siteTitle">My Organization</a>
+            </li>
+            <li>
+              <a href="#">Link</a>
+            </li>
+            <li>
+              <a href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container_12">
+        <div class="grid_9 contentLeft">
+          <div class="titleContainer">
+            <h1 class="tundra" id="title"></h1>
+            <div id="subtitle"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="mapContainer">
+            <div id="map"></div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="grid_3 dataLayers">
+          <div id="tabMenu">
+            <span id="showLegend" title="Map Legend" class="toggleButton buttonLeft buttonSelected">Legend</span>
+            <span id="showAbout" title="About Map" class="toggleButton buttonRight">About</span>
+            <div class="clear"></div>
+          </div>
+          <div id="legendMenu" class="tabMenu defaultMenu">
+            <div id="legendDivContainer">
+              <div class="marginBottom15" id="mapLayers"></div>
+              <h2 id="legendHeader"></h2>
+              <div id="legendDiv"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div id="aboutMenu" class="tabMenu">
+            <div id="description">
+              <div class="marginBottom15" id="descriptionContent"></div>
+              <div id="owner"></div>
+              <div id="mapMoreInfo"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footerCon">
+        <div class="container_12">
+          <div class="grid_6">
+            <div class="Pad">
+              <h2 id="footerHeading">About My Map</h2>
+              <p id="footerText"></p>
+            </div>
+          </div>
+          <div class="prefix_3 grid_3">
+            <div id="footerLogoDiv" class="logoDiv footBorder">
+              <a id="yourLogo" href="https://www.example.com"><img src="images/yourLogo.png" alt="" title=""></a>
+              <a id="footerEmail" href="mailto:email@example.com?subject=Your%20Site%20Gallery&amp;body=Hello%20">email@example.com</a>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>

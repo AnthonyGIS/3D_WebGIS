@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+<title>WFS Layer</title>
+<link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
+<style>
+  html, body, #map {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<script src="https://js.arcgis.com/3.21/"></script>
+<script>
+  var map;
+
+  require(["esri/map", "esri/InfoTemplate","esri/layers/WFSLayer", "esri/config", "dojo/domReady!"], function(Map, InfoTemplate, WFSLayer, esriConfig) {
+    map = new Map("map", {
+      basemap: "topo",
+      center: [-122.836, 42.346],
+      zoom: 13
+    });
+
+    var layer = new WFSLayer(); 
+    
+    var opts = {
+        "url": "http://suite.opengeo.org/geoserver/wfs",
+        "version": "1.1.0",
+        "name": "citylimits",
+        "wkid": 3857,
+        "maxFeatures": 100
+    };
+
+    esriConfig.defaults.io.proxyUrl = "/sproxy/";
+
+    layer.fromJson(opts);
+    
+    map.addLayer(layer);
+
+  });
+</script>
+</head>
+
+<body>
+  <div id="map"></div>
+</body>
+</html>

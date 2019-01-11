@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Add WMTS Layer - Resource Info</title>
+
+    <style>
+      html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+      #map { padding:0; }
+      #citationInfo { position:absolute; color:black; font-weight:bold; font-size:12pt; left:10px; bottom:10px; z-Index:999; }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
+
+    <script src="https://js.arcgis.com/3.21compact/"></script>
+    <script>
+      var map, wmtsLayer;
+      require([
+        "esri/map", "esri/layers/WMTSLayer", "esri/layers/WMTSLayerInfo",
+        "esri/geometry/Extent", "esri/layers/TileInfo", "esri/SpatialReference",
+        "dojo/parser",
+
+        "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/domReady!"
+      ], function(
+        Map, WMTSLayer, WMTSLayerInfo,
+        Extent, TileInfo, SpatialReference,
+        parser
+      ) {
+        parser.parse();
+
+        var bounds = new Extent({
+          "xmin": -128.816, "ymin": 25.076, "xmax": -72.855, "ymax": 51.385,
+          "spatialReference": { "wkid": 4326 }
+        });
+        map = new Map("map", {
+          extent: bounds
+        });
+
+        var tileInfo1 = new TileInfo({
+          "dpi": 90.71428571428571,
+          "format": "image/png",
+          "compressionQuality": 0,
+          "spatialReference": new SpatialReference({
+            "wkid": 3857
+          }),
+          "rows": 256,
+          "cols": 256,
+          "origin": {
+            "x": -20037508.34,
+            "y": 20037508.34
+          },
+          "lods": [{
+            "level": "EPSG:900913:8",
+            "scale": 2183915.0935581755,
+            "resolution": 611.4962261962892
+          }, {
+            "level": "EPSG:900913:9",
+            "scale": 1091957.5467790877,
+            "resolution": 305.7481130981446
+          }, {
+            "level": "EPSG:900913:10",
+            "scale": 545978.7733895439,
+            "resolution": 152.8740565490723
+          }, {
+            "level": "EPSG:900913:11",
+            "scale": 272989.38669477194,
+            "resolution": 76.43702827453615
+          }, {
+            "level": "EPSG:900913:12",
+            "scale": 136494.69334738597,
+            "resolution": 38.21851413726807
+          }, {
+            "level": "EPSG:900913:13",
+            "scale": 68247.34667369298,
+            "resolution": 19.109257068634037
+          }, {
+
+            "level": "EPSG:900913:14",
+            "scale": 34123.67333684649,
+            "resolution": 9.554628534317018
+          }, {
+
+            "level": "EPSG:900913:15",
+            "scale": 17061.836668423246,
+            "resolution": 4.777314267158509
+          }, {
+            "level": "EPSG:900913:16",
+            "scale": 8530.918334211623,
+            "resolution": 2.3886571335792546
+          }, {
+            "level": "EPSG:900913:17",
+            "scale": 4265.4591671058115,
+            "resolution": 1.1943285667896273
+          }, {
+            "level": "EPSG:900913:18",
+            "scale": 2132.7295835529058,
+            "resolution": 0.5971642833948136
+          }, {
+            "level": "EPSG:900913:19",
+            "scale": 1066.3647917764529,
+            "resolution": 0.2985821416974068
+          }]
+        });
+        var tileExtent1 = new Extent(-13686470, 5203832, -13669272, 5215298, new SpatialReference({
+          wkid: 3857
+        }));
+        var layerInfo1 = new WMTSLayerInfo({
+          tileInfo: tileInfo1,
+          fullExtent: tileExtent1,
+          initialExtent: tileExtent1,
+          identifier: "medford:zoning",
+          tileMatrixSet: "EPSG:900913",
+          format: "gif",
+          style: "_null"
+        });
+
+        var tileInfo2 = new TileInfo({
+          "dpi": 90.71428571428571,
+          "format": "image/png",
+          "compressionQuality": 0,
+          "spatialReference": new SpatialReference({
+            "wkid": 4326
+          }),
+          "rows": 256,
+          "cols": 256,
+          "origin": {
+            "x": -180,
+            "y": 90
+          },
+          "lods": [{
+            "level": "EPSG:4326:0",
+            "scale": 279541132.0143589,
+            "resolution": 0.7039144025535298
+          }, {
+            "level": "EPSG:4326:1",
+            "scale": 139770566.00717944,
+            "resolution": 0.3519572012767649
+          }, {
+            "level": "EPSG:4326:2",
+            "scale": 69885283.00358972,
+            "resolution": 0.17597860063838244
+          }, {
+            "level": "EPSG:4326:3",
+            "scale": 34942641.50179486,
+            "resolution": 0.08798930031919122
+          }, {
+            "level": "EPSG:4326:4",
+            "scale": 17471320.75089743,
+            "resolution": 0.04399465015959561
+          }, {
+            "level": "EPSG:4326:5",
+            "scale": 8735660.375448715,
+            "resolution": 0.021997325079797805
+          }, {
+            "level": "EPSG:4326:6",
+            "scale": 4367830.1877243575,
+            "resolution": 0.010998662539898903
+          }, {
+            "level": "EPSG:4326:7",
+            "scale": 2183915.0938621787,
+            "resolution": 0.005499331269949451
+          }, {
+            "level": "EPSG:4326:8",
+            "scale": 1091957.5469310894,
+            "resolution": 0.0027496656349747257
+          }, {
+            "level": "EPSG:4326:9",
+            "scale": 545978.7734655447,
+            "resolution": 0.0013748328174873628
+          }]
+        });
+        var tileExtent2 = new Extent(-179.99999, -89.99999, 179.99999, 89.99999, new SpatialReference({
+          wkid: 4326
+        }));
+        var layerInfo2 = new WMTSLayerInfo({
+          tileInfo: tileInfo2,
+          fullExtent: tileExtent2,
+          initialExtent: tileExtent2,
+          identifier: "usa:states",
+          tileMatrixSet: "EPSG:4326",
+          format: "png",
+          style: "_null"
+        });
+
+        var resourceInfo = {
+          version: "1.0.0",
+          layerInfos: [layerInfo1, layerInfo2],
+          copyright: "open layer"
+        };
+
+        var options = {
+          serviceMode: "KVP",
+          resourceInfo: resourceInfo,
+          layerInfo: layerInfo2
+        };
+
+        wmtsLayer = new WMTSLayer("http://v2.suite.opengeo.org/geoserver/gwc/service/wmts", options);
+        map.addLayer(wmtsLayer);
+      });
+
+    </script>
+  </head>
+
+  <body>
+    <div data-dojo-type="dijit/layout/BorderContainer"
+         data-dojo-props="design:'headline', gutters:false"
+         style="width: 100%; height: 100%; margin: 0;">
+
+      <div id="map"
+           data-dojo-type="dijit/layout/ContentPane"
+           data-dojo-props="region:'center'">
+        <div id="citationInfo">
+          <a href="http://v2.suite.opengeo.org/geoserver/gwc/service/wmts">WMTS</a>
+          served by
+          <a href="http://opengeo.org/">OpenGeo</a>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

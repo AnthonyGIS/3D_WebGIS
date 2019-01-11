@@ -1,0 +1,58 @@
+{  
+   "label":"Japan Prefectures",
+   "primaryKey":"UID",
+   "fields":[  
+      {  
+         "name":"UID",
+         "alias":"OID",
+         "type":"esriFieldTypeInteger"
+      },
+      {  
+         "name":"Prefecture",
+         "alias":"Prefecture (Label)",
+         "type":"esriFieldTypeString"
+      },
+      {  
+         "name":"Population",
+         "alias":"Population (Label)",
+         "type":"esriFieldTypeInteger"
+      }
+   ],
+   "records":[  
+      {  
+         "attributes":{  
+            "Prefecture":"愛知県",
+            "Population":"7,043,235",
+            "UID":0
+         }
+      },
+      {  
+         "attributes":{  
+            "Prefecture":"愛媛県",
+            "Population":"1,493,126",
+            "UID":1
+         }
+      },
+      {  
+         "attributes":{  
+            "Prefecture":"茨城県",
+            "Population":"2,985,424",
+            "UID":2
+         }
+      },
+      {  
+         "attributes":{  
+            "Prefecture":"岡山県",
+            "Population":"1,950,656",
+            "UID":3
+         }
+      },
+      {  
+         "attributes":{  
+            "Prefecture":"青森県",
+            "Population":"1,475,635",
+            "UID":4
+         }
+      }
+   ]
+}

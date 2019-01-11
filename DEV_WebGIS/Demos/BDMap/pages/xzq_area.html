@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html, #BdMapContainer {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+    <title>多行政区划的添加</title>
+</head>
+<body>
+    <div id="BdMapContainer"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    // STEP1
+    // 百度地图API功能
+    var map = new BMap.Map("BdMapContainer");
+    map.centerAndZoom(new BMap.Point(120.169989, 30.2158969), 10);
+    map.enableScrollWheelZoom();
+    // 百度地图的标注样式设置
+    map.setMapStyle({
+        styleJson: [
+                // {
+                //     "featureType": "background",
+                //     "elementType": "all",
+                //     "stylers": {
+                //         "color": "#212121"
+                //     }
+                // },
+                {
+                    "featureType": "road",
+                    "elementType": "all",
+                    "stylers": {
+                        "color": "#b4b4b4",
+                        "visibility": "off"
+                    }
+                },
+                {
+                    "featureType": "label",
+                    "elementType": "all",
+                    "stylers": {
+                        //"color": "#deedde",
+                        //"visibility": "off"
+                    }
+                },
+                {
+                    "featureType": "boundary",
+                    "elementType": "all",
+                    "stylers": {
+                        "color": "#ffffff"
+                    }
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": {
+                        //"color": "#ffffff"
+                        "visibility": "off"
+                    }
+                }
+        ]
+    });
+
+    // STEP2
+    // 获取不同行政区的边界
+    cityJSONZ = [{ "name": "拱墅区", "color": "#9F79EE" },
+               { "name": "上城区", "color": "#9F79EE" },
+               { "name": "下城区", "color": "#9F79EE" },
+               { "name": "江干区", "color": "#9F79EE" },
+               { "name": "西湖区", "color": "#9F79EE" },
+               { "name": "滨江区", "color": "#9F79EE" },
+               { "name": "萧山区", "color": "#9F79EE" },
+               { "name": "余杭区", "color": "#9F79EE" },
+               { "name": "富阳区", "color": "#9F79EE" },
+               { "name": "临安区", "color": "#9F79EE" },
+               { "name": "桐庐县", "color": "#9F79EE" },
+               { "name": "淳安县", "color": "#9F79EE" },
+               { "name": "建德市", "color": "#9F79EE" }];
+
+
+    var city = [];
+    var i;
+    for (i = 0; i < cityJSONZ.length; i++) {
+        var cityJSON = {};
+        cityJSON.name = cityJSONZ[i].name;
+        cityJSON.color = cityJSONZ[i].color;
+
+        city.push(cityJSON);
+    }
+    for (i = 0; i < city.length; i++) {
+        getBoundary(city[i]);
+    }
+
+    function getBoundary(city) {
+        var jsonObj = city; //使用eval解析成对象
+        var boundary_get = new BMap.Boundary();
+        boundary_get.get(jsonObj.name, function (rs) {      //获取行政区域
+            //map.clearOverlays();        //清除地图覆盖物
+            var count = rs.boundaries.length; //行政区域的点有多少个
+            if (count === 0) {
+                alert('未能获取当前输入行政区域');
+                return;
+            }
+            var pointArray = [];
+            for (var i = 0; i < count; i++) {
+                var ply = new BMap.Polygon(rs.boundaries[i], { strokeWeight: 2, strokeColor: "#15ff28" }); //建立多边形覆盖物
+                map.addOverlay(ply);  //添加覆盖物
+                //pointArray = pointArray.concat(ply.getPath());
+            }
+            //map.setViewport(pointArray);    //调整视野
+        });
+    }
+
+    //SETP3
+    // 添加标注
+    var pt_zj_jjmetro = new BMap.Point(120.20373, 30.236725), //近江地铁
+    pt_zj_fxlmetro = new BMap.Point(120.169989, 30.215896); //复兴路地铁
+    var marker = new BMap.Marker(pt_zj_fxlmetro, {
+        // 指定Marker的icon属性为Symbol
+        icon: new BMap.Symbol(BMap_Symbol_SHAPE_POINT, {
+            scale: 1.5,//图标缩放大小
+            fillColor: "red",//填充颜色
+            fillOpacity: 1//填充透明度
+        })
+    });
+    map.addOverlay(marker);
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+
+    //  曲线
+    var point1 = [pt_zj_jjmetro, pt_zj_fxlmetro];
+    var curve1 = new BMapLib.CurveLine(point1, { strokeColor: "yellow", strokeWeight: 10, strokeOpacity: 0.8 });
+    map.addOverlay(curve1);
+    curve.enableEditing(); //开启编辑功能
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Add WMTS Layer</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
+    <style>
+      html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+      #map{
+        padding: 0;
+      }
+      #citationInfo{
+        position:absolute;
+        color:black;
+        font-weight:bold;
+        font-size:12pt;
+        left:10px;
+        bottom:10px;
+        z-Index:999;
+      }
+    </style>
+
+    <script src="https://js.arcgis.com/3.21/"></script>
+    <script>
+      var map;
+      require([
+        "esri/map", "esri/layers/WMTSLayer", "esri/layers/WMTSLayerInfo",
+        "esri/config",
+        "dojo/domReady!"
+      ], function(
+        Map, WMTSLayer, WMTSLayerInfo,
+        esriConfig
+      ) {
+        esriConfig.defaults.io.proxyUrl = "/proxy/";
+        map = new Map("map");
+
+        var layerInfo = new WMTSLayerInfo({
+          identifier: "opengeo:countries",
+          tileMatrixSet: "EPSG:4326",
+          format: "png"
+        });
+        var options = {
+          serviceMode: "KVP",
+          layerInfo: layerInfo
+        };
+        var wmtsLayer = new WMTSLayer("http://v2.suite.opengeo.org/geoserver/gwc/service/wmts", options);
+        map.addLayer(wmtsLayer);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="map">
+      <div id="citationInfo">
+        <a href="http://v2.suite.opengeo.org/geoserver/gwc/service/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetCapabilities">WMTS</a>
+        served by
+        <a href="http://opengeo.org/">OpenGeo</a>
+      </div>
+    </div>
+  </body>
+</html>

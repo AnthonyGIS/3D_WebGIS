@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+	<title>纯文本的信息窗口</title>
+</head>
+<body>
+	<div id="allmap"></div>
+	<p>点击标注点，可查看由纯文本构成的简单型信息窗口</p>
+</body>
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.417854, 39.921988);
+    var marker = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker);              // 将标注添加到地图中
+    map.centerAndZoom(point, 15);
+    var opts = {
+        width: 200,     // 信息窗口宽度
+        height: 100,     // 信息窗口高度
+        title: "海底捞王府井店", // 信息窗口标题
+        enableMessage: true,//设置允许信息窗发送短息
+        message: "亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
+    };
+    var infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts);  // 创建信息窗口对象 
+    marker.addEventListener("click", function () {
+        map.openInfoWindow(infoWindow, point); //开启信息窗口
+    });
+
+
+    // 百度地图API功能
+    var sContent =
+	"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>天安门</h4>" +
+	"<img style='float:right;margin:4px' id='imgDemo' src='../img/tianAnMen.jpg' width='139' height='104' title='天安门'/>" +
+	"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+	"</div>";
+    var point2 = new BMap.Point(116.517854, 39.821988);
+    var infoWindow2 = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+    map.centerAndZoom(point2, 15);
+    map.addOverlay(marker);
+    marker.addEventListener("click", function () {
+        this.openInfoWindow(infoWindow2);
+        //图片加载完毕重绘infowindow
+        document.getElementById('imgDemo').onload = function () {
+            infoWindow2.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+        }
+    });
+
+
+
+
+
+
+
+
+</script>

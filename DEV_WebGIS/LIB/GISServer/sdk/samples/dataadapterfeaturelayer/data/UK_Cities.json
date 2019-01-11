@@ -1,0 +1,251 @@
+{
+  "label" : "UK Cities",
+  "primaryKey":"OBJECTID",
+  "fields" : [
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "CITY_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "CITY_NAME",
+      "length" : 30
+    },
+    {
+      "name" : "FIPS_CNTRY",
+      "type" : "esriFieldTypeString",
+      "alias" : "FIPS_CNTRY",
+      "length" : 2
+    },
+    {
+      "name" : "CNTRY_NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "CNTRY_NAME",
+      "length" : 30
+    },
+    {
+      "name" : "POP",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "POP"
+    },
+    {
+      "name" : "BNG_X",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "BNG_X"
+    },
+    {
+      "name" : "BNG_Y",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "BNG_Y"
+    },
+    {
+      "name" : "WGS84_X",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "WGS84_X"
+    },
+    {
+      "name" : "WGS84_Y",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "WGS84_Y"
+    }
+  ],
+  "records" : [
+    {
+      "attributes" : {
+        "OBJECTID" : 1,
+        "CITY_NAME" : "Dundee",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 151592,
+        "BNG_X" : 340444.69084580662,
+        "BNG_Y" : 730914.6653192651,
+        "WGS84_X" : -2.9666965544456048,
+        "WGS84_Y" : 56.466701948063132
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 2,
+        "CITY_NAME" : "Southampton",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 246201,
+        "BNG_X" : 442187.73102697451,
+        "BNG_Y" : 111402.58438473186,
+        "WGS84_X" : -1.4000036765251593,
+        "WGS84_Y" : 50.900003926010925
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 3,
+        "CITY_NAME" : "Fawley",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : -999,
+        "BNG_X" : 446961.756428744,
+        "BNG_Y" : 102180.25740021016,
+        "WGS84_X" : -1.3332955587243305,
+        "WGS84_Y" : 50.816699948494602
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 4,
+        "CITY_NAME" : "Belfast",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 274770,
+        "BNG_X" : 147409.15610328835,
+        "BNG_Y" : 528353.60335604299,
+        "WGS84_X" : -5.9100026495050884,
+        "WGS84_Y" : 54.586998052913202
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 5,
+        "CITY_NAME" : "Sheffield",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 447047,
+        "BNG_X" : 435722.80585755472,
+        "BNG_Y" : 386517.34352519311,
+        "WGS84_X" : -1.4629947003763846,
+        "WGS84_Y" : 53.374041058780278
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 6,
+        "CITY_NAME" : "Birmingham",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 984333,
+        "BNG_X" : 409277.41525237879,
+        "BNG_Y" : 288365.32089547656,
+        "WGS84_X" : -1.8633417044748057,
+        "WGS84_Y" : 52.492752040565676
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 7,
+        "CITY_NAME" : "London",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 7421209,
+        "BNG_X" : 526486.44170018518,
+        "BNG_Y" : 178179.06157746736,
+        "WGS84_X" : -0.17800167655565247,
+        "WGS84_Y" : 51.487910936698427
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 8,
+        "CITY_NAME" : "Hunterston",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : -999,
+        "BNG_X" : 220664.37374252378,
+        "BNG_Y" : 652956.12188606744,
+        "WGS84_X" : -4.856777598887561,
+        "WGS84_Y" : 55.736748067019846
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 9,
+        "CITY_NAME" : "Teesport",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : -999,
+        "BNG_X" : 453828.33803819842,
+        "BNG_Y" : 523090.85793254059,
+        "WGS84_X" : -1.1666967052930204,
+        "WGS84_Y" : 54.600003082710828
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 10,
+        "CITY_NAME" : "Edinburgh",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 435791,
+        "BNG_X" : 321897.2719363686,
+        "BNG_Y" : 670804.02422211261,
+        "WGS84_X" : -3.2499986213326792,
+        "WGS84_Y" : 55.924001928839459
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 11,
+        "CITY_NAME" : "Glasgow",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 610268,
+        "BNG_X" : 257955.11732813422,
+        "BNG_Y" : 665618.08377062436,
+        "WGS84_X" : -4.2699415984415054,
+        "WGS84_Y" : 55.862811036231449
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 12,
+        "CITY_NAME" : "Leeds",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 455123,
+        "BNG_X" : 433084.33182273497,
+        "BNG_Y" : 434853.43057543458,
+        "WGS84_X" : -1.4975276648638101,
+        "WGS84_Y" : 53.808705071191241
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 13,
+        "CITY_NAME" : "Manchester",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 395515,
+        "BNG_X" : 382628.81466501846,
+        "BNG_Y" : 398164.48704975517,
+        "WGS84_X" : -2.2617806819843622,
+        "WGS84_Y" : 53.479664975778633
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 14,
+        "CITY_NAME" : "Cardiff",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 302139,
+        "BNG_X" : 315526.85323062859,
+        "BNG_Y" : 176798.53874109953,
+        "WGS84_X" : -3.2166626001510394,
+        "WGS84_Y" : 51.483338954166129
+      }
+    },
+    {
+      "attributes" : {
+        "OBJECTID" : 15,
+        "CITY_NAME" : "Liverpool",
+        "FIPS_CNTRY" : "UK",
+        "CNTRY_NAME" : "United Kingdom",
+        "POP" : 468945,
+        "BNG_X" : 335481.69553578715,
+        "BNG_Y" : 392268.32354510011,
+        "WGS84_X" : -2.9709986331300797,
+        "WGS84_Y" : 53.423001054147676
+      }
+    }
+  ]
+}

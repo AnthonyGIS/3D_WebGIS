@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Using DataAdapterFeatureLayer</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/3.21/dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
+  <script src="https://js.arcgis.com/3.21/"></script>
+
+  <style>
+    html,body, #map {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .roundedCorners {
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px #adadad;
+    }
+    #lppanel {
+      position: absolute;
+      height: 80px;
+      font-family: arial;
+      top: 10px;
+      margin: 5px;
+      padding: 5px;
+      z-index: 40;
+      background: #fff;
+      color: #444;
+      width: 440px;
+      right: 10px;
+      box-shadow: 0 0 5px #888;
+    }
+  </style>
+</head>
+
+<body class="claro">
+ <script>
+    "use strict";
+    
+    var map, layer;
+    require({
+      packages: [{
+        name: "sample",
+        location: location.pathname.replace(/\/[^/]+$/, "")
+      }]
+    }, [
+      "dojo/query",
+      "dojo/_base/array",
+      "esri/config",
+      "esri/graphicsUtils",
+      "esri/map",
+      "esri/SpatialReference",
+      "esri/tasks/locationproviders/StandardGeographyQueryLocationProvider",
+      "esri/tasks/locationproviders/GeometryLocationProvider",
+      "esri/tasks/locationproviders/CoordinatesLocationProvider",
+      "esri/tasks/locationproviders/QueryTaskLocationProvider",
+      "esri/tasks/locationproviders/LocatorLocationProvider",
+      "esri/layers/DataAdapterFeatureLayer",
+      "esri/tasks/geoenrichment/StandardGeographyQueryTask",
+      "esri/tasks/QueryTask",
+      "esri/tasks/locator",
+      "esri/tasks/GeometryService",
+      "esri/urlUtils",
+      "sample/SampleDataAdapter",
+      "esri/IdentityManager",
+      "dojo/domReady!"
+    ], function(
+      query,
+      array,
+      esriConfig,
+      graphicsUtils,
+      Map,
+      SpatialReference,
+      StandardGeographyQueryLocationProvider,
+      GeometryLocationProvider,
+      CoordinatesLocationProvider,
+      QueryTaskLocationProvider,
+      LocatorLocationProvider,
+      DataAdapterFeatureLayer,
+      StandardGeographyQueryTask,
+      QueryTask,
+      Locator,
+      GeometryService,
+      urlUtils,
+      SampleDataAdapter
+    ) {
+      // Need this for the project operation for CoordinateLocationProvider and GeometryLocationProvider.
+      esriConfig.defaults.geometryService = new GeometryService("https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+      
+      // credentials needed for the LocatorLP example
+      urlUtils.addProxyRule({
+        proxyUrl: "/sproxy/",
+        urlPrefix: "geocode.arcgis.com"
+      });
+      
+      // credentials needed for the StandardGeography examples
+      urlUtils.addProxyRule({
+        proxyUrl: "/sproxy/",
+        urlPrefix: "geoenrich.arcgis.com"
+      });
+      
+      map = new Map("map", {
+        basemap: "gray",
+        center: [-25, 0],
+        zoom: 4,
+        slider: false
+      });
+      
+      map.on("load", function() {
+        query("#lplist").on("change", function(e) {
+          var value = e.currentTarget.value;
+          
+          // Remove previously added layer
+          if (layer) {
+            map.removeLayer(layer);
+            layer = null;
+          }
+          
+          switch (value) {
+            case "wgs84":
+            case "bng":
+              layer = createLayerWithCoordinatesLocationProvider(value);
+              break;
+            case "usaddress":
+              layer = createLayerWithLocatorLocationProvider();
+              break;
+            case "jsongeom":
+              layer = createLayerWithGeometryLocationProvider();
+              break;
+            case "query":
+              layer = createLayerWithQueryTaskLocationProvider();
+              break;
+            case "us_state_by_name":
+            case "us_state_by_code":
+            case "ca_prov_by_name":
+            case "countries_by_name":
+            case "countries_by_iso2":
+              layer = createLayerWithStandardGeographyQueryLocationProvider(value);
+              break;
+          }
+          
+          if (layer) {
+            layer.on("update-start", function() { console.log("[ update-start ]", layer.id); });
+            layer.on("update-end", function() { console.log("[ update-end ]", layer.id); });
+            
+            layer.locationProvider.on("locate-complete", function() {
+              console.log("[ locate-complete ]", layer.id);
+    
+              var extent = graphicsUtils.graphicsExtent(array.filter(layer.graphics, function(graphic) {
+                return graphic.geometry;
+              }));
+    
+              if (extent) {
+                map.centerAt(extent.getCenter());
+              }
+            });
+            
+            map.addLayer(layer);
+          }
+        });
+      });
+      
+      function createLayerWithLocatorLocationProvider() {
+        return new DataAdapterFeatureLayer(new SampleDataAdapter(), {
+          dataAdapterQuery: {
+            tableId: "Esri_Offices",
+            outFields: ["Name", "Street", "City", "State", "Zip"]
+          },
+          locationProvider: new LocatorLocationProvider({
+            locator: new Locator("https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"),
+            addressFields: {
+              "Address": "Street",
+              "City": "City",
+              "State": "State",
+              "Zip": "Zip"
+            }
+          })
+        });
+      }
+      
+      function createLayerWithQueryTaskLocationProvider() {
+        return new DataAdapterFeatureLayer(new SampleDataAdapter(), {
+          dataAdapterQuery: {
+            tableId: "Japan_Prefectures",
+            outFields: ["UID", "Population", "Prefecture"]
+          },
+          locationProvider: new QueryTaskLocationProvider({
+            queryTask: new QueryTask("https://services.arcgis.com/wlVTGRSYTzAbjjiC/ArcGIS/rest/services/Japan_Locators/FeatureServer/2"),
+            queryParameters: {
+              outFields: ["JCODE", "PREFECTURE"]
+            },
+            whereFields: {
+              PREFECTURE: "Prefecture"
+            },
+            unicode: true
+          })
+        });
+      }
+      
+      function createLayerWithCoordinatesLocationProvider(coordinateType) {
+        var query, lp;
+        
+        if (coordinateType === "wgs84") {
+          query = {
+            tableId: "Esri_Offices",
+            outFields: ["X", "Y"]
+          };
+          lp = new CoordinatesLocationProvider({
+            xField: "X",
+            yField: "Y"
+          });
+        } else if (coordinateType === "bng") {
+          query = {
+            tableId: "UK_Cities",
+            outFields: ["BNG_X", "BNG_Y"]
+          };
+          lp = new CoordinatesLocationProvider({
+            xField: "BNG_X",
+            yField: "BNG_Y"
+          });
+          lp.inSpatialReference = new SpatialReference(27700);
+        }
+        
+        return query && new DataAdapterFeatureLayer(new SampleDataAdapter(), {
+            dataAdapterQuery: query,
+            locationProvider: lp
+          });
+      }
+      
+      function createLayerWithGeometryLocationProvider() {
+        return new DataAdapterFeatureLayer(new SampleDataAdapter(), {
+          dataAdapterQuery: {
+            tableId: "Esri_Offices",
+            outFields: ["Id", "City", "JsonGeom"]
+          },
+          locationProvider: new GeometryLocationProvider({
+            geometryField: "JsonGeom",
+            geometryType: "esriGeometryPoint"
+          })
+        });
+      }
+      
+      function createLayerWithStandardGeographyQueryLocationProvider(lookupType) {
+        var dataAdapterQuery, geographyQueryTemplate, queryParameters;
+        
+        if (lookupType === "us_state_by_name") {
+          dataAdapterQuery = {
+            tableId: "US_States",
+            outFields: ["STATE_NAME"]
+          };
+          geographyQueryTemplate = "MajorSubdivisionName:${STATE_NAME}";
+          queryParameters = {
+            countryID: "US",
+            geographyLayerIDs: ["US.States"]
+          };
+        } else if (lookupType === "us_state_by_code") {
+          dataAdapterQuery = {
+            tableId: "US_States",
+            outFields: ["STATE_ABBR"]
+          };
+          geographyQueryTemplate = "MajorSubdivisionAbbr:${STATE_ABBR}";
+          queryParameters = {
+            countrID: "US",
+            geographyLayerIDs: ["US.States"]
+          };
+        } else if (lookupType === "ca_prov_by_name") {
+          dataAdapterQuery = {
+            tableId: "CA_Provinces",
+            outFields: ["ADMIN_NAME"]
+          };
+          geographyQueryTemplate = "NAME:${ADMIN_NAME}";
+          queryParameters = {
+            countrID: "CA",
+            geographyLayerIDs: ["CAN.PR"]
+          };
+        } else if (lookupType === "countries_by_name") {
+          dataAdapterQuery = {
+            tableId: "All_Countries",
+            outFields: ["COUNTRY"]
+          };
+          geographyQueryTemplate = "NAME:${COUNTRY}";
+          queryParameters = {
+            geographyLayerIDs: ["countries"]
+          };
+        } else if (lookupType === "countries_by_iso2") {
+          dataAdapterQuery = {
+            tableId: "All_Countries",
+            outFields: ["ISO_ALHPA2"]
+          };
+          geographyQueryTemplate = "MajorSubdivisionAbbr:${ISO_ALHPA2}";
+          queryParameters = {
+            geographyLayerIDs: ["countries"]
+          };
+        }
+        
+        return query && new DataAdapterFeatureLayer(new SampleDataAdapter(), {
+            dataAdapterQuery: dataAdapterQuery,
+            locationProvider: new StandardGeographyQueryLocationProvider({
+              geographyQueryTemplate: geographyQueryTemplate,
+              queryParameters: queryParameters,
+              standardGeographyQueryTask: new StandardGeographyQueryTask()
+            })
+          });
+      }
+    });
+  </script>
+  
+
+  <div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-pros="region:'center'">
+    <div id="lppanel" class="roundedCorners">
+      <table>
+        <tr>
+          <td style="padding:5px;">
+            <div style="font-size: 16pt; font-weight:bold;">
+              Choose an option to add layer to Map:
+            </div>
+            <div style="padding:10px;">
+              <select id="lplist">
+                <option value="choose" selected="selected">(Select an option)</option>
+                <option value="wgs84">XY Coordinates: WGS 84 (CoordinateLocationProvider)</option>
+                <option value="bng">XY Coordinates: British National Grid (CoordinateLP)</option>
+                <option value="usaddress">US Street Address (LocatorLP)</option>
+                <option value="query">Query ArcGIS Layer (QueryTaskLP)</option>
+                <option value="jsongeom">JSON Geometry (GeometryLP)</option>
+                <option value="us_state_by_name">U.S States by Name (StandardGeographyQueryLP)</option>
+                <option value="us_state_by_code">U.S States by Abbreviation (StandardGeographyQueryLP)</option>
+                <option value="ca_prov_by_name">Canada Provinces (StandardGeographyQueryLP)</option>
+                <option value="countries_by_name">Countries by Name (StandardGeographyQueryLP)</option>
+                <option value="countries_by_iso2">Countries by Code (StandardGeographyQueryLP)</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

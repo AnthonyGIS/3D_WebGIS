@@ -1,0 +1,446 @@
+﻿{  
+   "label":"Esri Offices",
+   "primaryKey":"UID",
+   "fields":[  
+      {  
+         "name":"Name",
+         "label":"Name (Label)",
+         "type":"esriFieldTypeString",
+         "index":0
+      },
+      {  
+         "name":"Street",
+         "label":"Street",
+         "type":"esriFieldTypeString",
+         "index":1
+      },
+      {  
+         "name":"City",
+         "label":"City",
+         "type":"esriFieldTypeString",
+         "index":2
+      },
+      {  
+         "name":"State",
+         "label":"State",
+         "type":"esriFieldTypeString",
+         "index":3
+      },
+      {  
+         "name":"Zip",
+         "label":"Zip",
+         "type":"esriFieldTypeString",
+         "index":4
+      },
+      {  
+         "name":"X",
+         "label":"X",
+         "type":"esriFieldTypeString",
+         "index":6
+      },
+      {  
+         "name":"Y",
+         "label":"Y",
+         "type":"esriFieldTypeDouble",
+         "index":7
+      },
+      {  
+         "name":"JsonGeom",
+         "label":"Json Geometry",
+         "type":"esriFieldTypeString",
+         "index":8
+      },
+      {  
+         "name":"StateName",
+         "label":"State (Name)",
+         "type":"esriFieldTypeString",
+         "index":9
+      },
+      {  
+         "name":"UID",
+         "label":"Unique Key",
+         "type":"esriFieldTypeOID",
+         "index":10
+      }
+   ],
+   "records":[  
+      {  
+         "attributes":{  
+            "Name":"ESRI-Boston",
+            "Street":"n/a",
+            "City":"Danvers",
+            "State":"MA",
+            "Zip":"",
+            "X":-70.967736111,
+            "Y":42.595220556,
+            "JsonGeom": "{\"x\": -70.967736111,\"y\":42.595220556,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Massachusetts",
+            "UID":0
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-California",
+            "Street":"",
+            "City":"",
+            "State":null,
+            "Zip":"",
+            "X":-117.195731667,
+            "Y":34.056687222,
+            "JsonGeom": "{\"x\": -117.195731667,\"y\":34.056687222,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"",
+            "UID":1
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-Denver",
+            "Street":"One International Court",
+            "City":"Broomfield",
+            "State":"CO",
+            "Zip":"80021-3200",
+            "X":-105.117066111,
+            "Y":39.918428889,
+            "JsonGeom": "{\"x\": -105.117066111,\"y\":34.056687222,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Colorado",
+            "UID":2
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-Olympia",
+            "Street":"606 Columbia Street NW",
+            "City":"Olympia",
+            "State":"WA",
+            "Zip":"98501-1099",
+            "X":-122.903323333,
+            "Y":47.049011667,
+            "JsonGeom": "{\"x\": -122.903323333,\"y\": 47.049011667,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Washington",
+            "UID":3
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-Washington, DC",
+            "Street":"8615 Westwood Center Dr.",
+            "City":"Vienna",
+            "State":"VA",
+            "Zip":"22182-2218",
+            "X":-77.244887778,
+            "Y":38.928942778,
+            "JsonGeom": "{\"x\": -77.244887778,\"y\":38.928942778,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Virginia",
+            "UID":4
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-Charlotte",
+            "Street":"3325 Springbank Lane",
+            "City":"Charlotte",
+            "State":"NC",
+            "Zip":"28226-3343",
+            "X":-80.783008512,
+            "Y":35.100184504,
+            "JsonGeom": "{\"x\": -80.783008512,\"y\":35.100184504,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"North Carolina",
+            "UID":5
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-Minneapolis",
+            "Street":"880 Blue Gentian Road",
+            "City":"St. Paul",
+            "State":"MN",
+            "Zip":"55121-1596",
+            "X":-93.131051701,
+            "Y":44.858781462,
+            "JsonGeom": "{\"x\": -93.131051701,\"y\":44.858781462,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Minnesota",
+            "UID":6
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-Philadelphia",
+            "Street":"1400 Morris Drive",
+            "City":"Chesterbrook",
+            "State":"PA",
+            "Zip":"19087-5512",
+            "X":-75.467028877,
+            "Y":40.068923187,
+            "JsonGeom": "{\"x\": -75.467028877,\"y\":40.068923187,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Pennsylvania",
+            "UID":7
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-San Antonio",
+            "Street":"227 North Loop 1604 East",
+            "City":"San Antonio",
+            "State":"TX",
+            "Zip":"78232-1260",
+            "X":-98.492915455,
+            "Y":29.555139521,
+            "JsonGeom": "{\"x\": -98.492915455,\"y\":29.555139521,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Texas",
+            "UID":8
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"ESRI-St. Louis",
+            "Street":"820 S Main Street",
+            "City":"St. Charles",
+            "State":"MO",
+            "Zip":"63301-3306",
+            "X":-90.491334858,
+            "Y":38.777677095,
+            "JsonGeom": "{\"x\": -90.491334858,\"y\":38.777677095,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Missouri",
+            "UID":9
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Atlanta Satellite Office",
+            "Street":"11465 Johns Creek Pkwy",
+            "City":"Duluth",
+            "State":"GA",
+            "Zip":"30097",
+            "X":-84.168368333,
+            "Y":34.057201111,
+            "JsonGeom": "{\"x\": -84.168368333,\"y\":34.057201111,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Georgia",
+            "UID":10
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Chicago Satellite Office",
+            "Street":"221 N. LaSalle Street",
+            "City":"Chicago",
+            "State":"IL",
+            "Zip":"60601",
+            "X":-87.632450556,
+            "Y":41.886393889,
+            "JsonGeom": "{\"x\": -87.632450556,\"y\":41.886393889,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Illinois",
+            "UID":11
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Dallas (Business Map)",
+            "Street":"1202 Richardson",
+            "City":"Richardson",
+            "State":"TX",
+            "Zip":"75080",
+            "X":-96.727687222,
+            "Y":32.965670556,
+            "JsonGeom": "{\"x\": -96.727687222,\"y\":32.965670556,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Texas",
+            "UID":12
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Honolulu Satellite Office",
+            "Street":"1357 Kapiolani Blvd.",
+            "City":"Honolulu",
+            "State":"HI",
+            "Zip":"96814",
+            "X":-157.844822778,
+            "Y":21.293962778,
+            "JsonGeom": "{\"x\": -157.844822778,\"y\":21.293962778,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Hawaii",
+            "UID":13
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Houston Satellite Office",
+            "Street":"1 Fluor Daniel Drive",
+            "City":"Sugarland",
+            "State":"TX",
+            "Zip":"77478-3838",
+            "X":-95.627047778,
+            "Y":29.60546,
+            "JsonGeom": "{\"x\": -95.627047778,\"y\":29.60546,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Texas",
+            "UID":14
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Johnstown Satellite Office",
+            "Street":"1001 Broad Street",
+            "City":"Johnstown",
+            "State":"PA",
+            "Zip":"15906",
+            "X":-78.93423,
+            "Y":40.342613333,
+            "JsonGeom": "{\"x\": -78.93423,\"y\":40.342613333,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Pennsylvania",
+            "UID":15
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Kansas City Satellite Office",
+            "Street":"8700 State Line Rd.",
+            "City":"Leawood",
+            "State":"KS",
+            "Zip":"66206-1569",
+            "X":-94.608262778,
+            "Y":38.971187778,
+            "JsonGeom": "{\"x\": -94.608262778,\"y\":38.971187778,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Kansas",
+            "UID":16
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"La Jolla Satellite Office",
+            "Street":"3252 Holiday Court",
+            "City":"La Jolla",
+            "State":"CA",
+            "Zip":"92037",
+            "X":-117.233209444,
+            "Y":32.869903333,
+            "JsonGeom": "{\"x\": -117.233209444,\"y\":32.869903333,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"California",
+            "UID":17
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Lodi Sattellite Office",
+            "Street":"113 South Main Street",
+            "City":"Lodi",
+            "State":"WI",
+            "Zip":"53555",
+            "X":-89.526696111,
+            "Y":43.314059444,
+            "JsonGeom": "{\"x\": -89.526696111,\"y\":43.314059444,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Wisconsin",
+            "UID":18
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"New York City Office",
+            "Street":"75 Broad Street",
+            "City":"New York",
+            "State":"NY",
+            "Zip":"10004-2475",
+            "X":-74.011321667,
+            "Y":40.704913889,
+            "JsonGeom": "{\"x\": -74.011321667,\"y\":40.704913889,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"New York",
+            "UID":19
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Phoenix Development Office",
+            "Street":"One East Camelback Rd.",
+            "City":"Phoenix",
+            "State":"AZ",
+            "Zip":"85012",
+            "X":-112.073665,
+            "Y":33.509042222,
+            "JsonGeom": "{\"x\": -112.073665,\"y\":33.509042222,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Arizona",
+            "UID":20
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Portland Satellite Office",
+            "Street":"280 Fore Street",
+            "City":"Portland",
+            "State":"ME",
+            "Zip":"04101",
+            "X":-70.251035556,
+            "Y":43.658080556,
+            "JsonGeom": "{\"x\": -70.251035556,\"y\":43.658080556,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Oregon",
+            "UID":21
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Sacramento Satellite Office",
+            "Street":"1600 K. Street",
+            "City":"Sacramento",
+            "State":"CA",
+            "Zip":"95814",
+            "X":-121.485721111,
+            "Y":38.576777222,
+            "JsonGeom": "{\"x\": -121.485721111,\"y\":38.576777222,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"California",
+            "UID":22
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Seattle Satellite Office",
+            "Street":"100 S. King Street",
+            "City":"Seattle",
+            "State":"WA",
+            "Zip":"98104",
+            "X":-122.334093889,
+            "Y":47.59852,
+            "JsonGeom": "{\"x\": -122.334093889,\"y\":47.59852,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Washington",
+            "UID":23
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"West Palm Beach Satellite",
+            "Street":"303 Evernia Street",
+            "City":"W Palm Beach",
+            "State":"FL",
+            "Zip":"33401",
+            "X":-80.052075556,
+            "Y":26.711582778,
+            "JsonGeom": "{\"x\": -80.052075556,\"y\":26.711582778,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Florida",
+            "UID":24
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Columbus Satellite Office",
+            "Street":"1085 Beecher Crossing North",
+            "City":"Gahanna",
+            "State":"OH",
+            "Zip":"43230-4563",
+            "X":-82.868730052,
+            "Y":40.048467164,
+            "JsonGeom": "{\"x\": -82.868730052,\"y\":40.048467164,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Ohio",
+            "UID":25
+         }
+      },
+      {  
+         "attributes":{  
+            "Name":"Nashville Satellite Office",
+            "Street":"321 Billingsly Court",
+            "City":"Franklin",
+            "State":"TN",
+            "Zip":"37067-6445",
+            "X":-86.804161008,
+            "Y":35.950842557,
+            "JsonGeom": "{\"x\": -86.804161008,\"y\":35.950842557,\"spatialReference\":{\"wkid\":4326}}",
+            "StateName":"Tennessee",
+            "UID":26
+         }
+      }
+   ]
+}

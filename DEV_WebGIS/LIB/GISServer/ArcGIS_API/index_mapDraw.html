@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Simple Image Service</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css" />
+
+    <style>
+      html, body, #map { height: 100%; width: 100%; margin: 0; padding: 0; }
+    </style>
+  </head>
+  
+  <body>
+    <div id="map"> </div>
+  </body>
+
+</html>
+ 
+
+<script src="https://js.arcgis.com/3.21/"></script>
+    <script>
+
+
+        function addDyLayer(map, serviceURL) {
+            /// <summary>
+            /// 动态图层的加载
+            /// </summary>
+            /// <param name="map"></param>
+            /// <param name="serviceURL">'http://localhost:6080/arcgis/rest/services/env/MapServer'</param>
+            var envLayer = L.esri.dynamicMapLayer({
+                url: serviceURL,
+                opacity: 0.8,
+                layers: [0, 3]
+            });
+            map.addLayer(envLayer);
+        }
+
+       
+        // 切片图层的加载
+        // http://www.cnbolgs.com/lazygis/p/6419287.html
+        //map = L.map("mapDiv").setView([23.1, 113.2], 9);//定位在广州
+        //customBaselayer = L.esri.tiledMapLayer(
+        //    { url: "http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineStreetColor/MapServer" }).addTo(map);
+
+        // 要素类图层的加载
+        //var map = L.map('map').setView([45.526, -122.667], 13);
+        //L.esri.basemapLayer('Streets').addTo(map);
+        //L.esri.featureLayer({
+        //    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Heritage_Trees_Portland/FeatureServer/0'
+
+        //}).addTo(map);
+
+        // 热点图层的加载
+        //L.esri.Heat.featureLayer({
+        //    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/ArcGIS/rest/services/Graffiti_Reports/FeatureServer/0',
+        //    radius: 12
+        //}).addTo(map);
+
+
+        var map;
+        require([
+          "esri/map", "esri/layers/ArcGISImageServiceLayer",
+          "esri/layers/ImageServiceParameters", "dojo/parser", "dojo/domReady!"
+        ], function (
+          Map, ArcGISImageServiceLayer,
+          ImageServiceParameters, parser
+        ) {
+            parser.parse();
+
+
+            map = new Map("map", {
+                basemap: "topo",
+                center: [120.3, 30.2],
+                zoom: 8,
+                logo: false,
+                maxZoom: 10,//最大空间等级  
+                minZoom: 8//最小空间等级  
+                //,slider: false
+            });
+
+            //var params = new ImageServiceParameters();
+            //params.noData = 0;
+            //var imageServiceLayer = new ArcGISImageServiceLayer("http://192.168.1.99:6080/arcgis/rest/services/UAV/zj_tdt_10/MapServer", { //https://sampleserver6.arcgisonline.com/arcgis/rest/services/Toronto/ImageServer
+            //    imageServiceParameters: params,
+            //    opacity: 0.75
+            //});
+            var layer = new esri.layers.ArcGISTiledMapServiceLayer("http://192.168.1.99:6080/arcgis/rest/services/UAV/zj_tdt_10/MapServer");
+            map.addLayer(layer);
+        });
+
+    
+        map = new esri.Map("map");
+        map.addLayer(layer);
+
+
+    </script>

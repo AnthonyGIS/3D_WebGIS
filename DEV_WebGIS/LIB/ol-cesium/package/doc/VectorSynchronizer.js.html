@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: VectorSynchronizer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: VectorSynchronizer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module
+ */
+import olSourceVector from 'ol/source/Vector';
+import olLayerLayer from 'ol/layer/Layer';
+import olSourceImageVector from 'ol/source/ImageVector';
+import olSourceCluster from 'ol/source/Cluster';
+import olLayerImage from 'ol/layer/Image';
+import googAsserts from 'goog/asserts';
+import olBase from 'ol';
+import olEvents from 'ol/events';
+import olLayerVector from 'ol/layer/Vector';
+import olcsAbstractSynchronizer from './AbstractSynchronizer.js';
+import olcsFeatureConverter from './FeatureConverter.js';
+
+const exports = function(map, scene, opt_converter) {
+
+  /**
+   * @protected
+   */
+  this.converter = opt_converter || new olcsFeatureConverter(scene);
+
+  /**
+   * @private
+   */
+  this.csAllPrimitives_ = new Cesium.PrimitiveCollection();
+  scene.primitives.add(this.csAllPrimitives_);
+  this.csAllPrimitives_.destroyPrimitives = false;
+
+  olcsAbstractSynchronizer.call(this, map, scene);
+};
+
+olBase.inherits(exports, olcsAbstractSynchronizer);
+
+
+/**
+ * @inheritDoc
+ */
+exports.prototype.addCesiumObject = function(counterpart) {
+  googAsserts.assert(counterpart);
+  counterpart.getRootPrimitive()['counterpart'] = counterpart;
+  this.csAllPrimitives_.add(counterpart.getRootPrimitive());
+};
+
+
+/**
+ * @inheritDoc
+ */
+exports.prototype.destroyCesiumObject = function(object) {
+  object.getRootPrimitive().destroy();
+};
+
+
+/**
+ * @inheritDoc
+ */
+exports.prototype.removeSingleCesiumObject = function(object, destroy) {
+  object.destroy();
+  this.csAllPrimitives_.destroyPrimitives = destroy;
+  this.csAllPrimitives_.remove(object.getRootPrimitive());
+  this.csAllPrimitives_.destroyPrimitives = false;
+};
+
+
+/**
+ * @inheritDoc
+ */
+exports.prototype.removeAllCesiumObjects = function(destroy) {
+  this.csAllPrimitives_.destroyPrimitives = destroy;
+  if (destroy) {
+    for (let i = 0; i &lt; this.csAllPrimitives_.length; ++i) {
+      this.csAllPrimitives_.get(i)['counterpart'].destroy();
+    }
+  }
+  this.csAllPrimitives_.removeAll();
+  this.csAllPrimitives_.destroyPrimitives = false;
+};
+
+/**
+ * Synchronizes the layer visibility properties
+ * to the given Cesium Primitive.
+ * @param {olcsx.LayerWithParents} olLayerWithParents
+ * @param {!Cesium.Primitive} csPrimitive
+ */
+exports.prototype.updateLayerVisibility = function(olLayerWithParents, csPrimitive) {
+  let visible = true;
+  [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach((olLayer) => {
+    const layerVisible = olLayer.getVisible();
+    if (layerVisible !== undefined) {
+      visible &amp;= layerVisible;
+    } else {
+      visible = false;
+    }
+  });
+  csPrimitive.show = visible;
+};
+/**
+ * @inheritDoc
+ */
+exports.prototype.createSingleLayerCounterparts = function(olLayerWithParents) {
+  const olLayer = olLayerWithParents.layer;
+  if (!(olLayer instanceof olLayerVector) &amp;&amp;
+      !(olLayer instanceof olLayerImage &amp;&amp;
+      olLayer.getSource() instanceof olSourceImageVector)) {
+    return null;
+  }
+  googAsserts.assertInstanceof(olLayer, olLayerLayer);
+
+  let source = olLayer.getSource();
+  if (source instanceof olSourceImageVector) {
+    source = source.getSource();
+  }
+  if (source instanceof olSourceCluster) {
+    source = source.getSource();
+  }
+
+  googAsserts.assertInstanceof(source, olSourceVector);
+  googAsserts.assert(this.view);
+
+  const view = this.view;
+  const featurePrimitiveMap = {};
+  const counterpart = this.converter.olVectorLayerToCesium(olLayer, view,
+      featurePrimitiveMap);
+  const csPrimitives = counterpart.getRootPrimitive();
+  const olListenKeys = counterpart.olListenKeys;
+
+  [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach((olLayerItem) => {
+    olListenKeys.push(olEvents.listen(olLayerItem, 'change:visible', () => {
+      this.updateLayerVisibility(olLayerWithParents, csPrimitives);
+    }));
+  });
+  this.updateLayerVisibility(olLayerWithParents, csPrimitives);
+
+  const onAddFeature = (function(feature) {
+    googAsserts.assert(
+        (olLayer instanceof olLayerVector) ||
+        (olLayer instanceof olLayerImage)
+    );
+    const context = counterpart.context;
+    const prim = this.converter.convert(olLayer, view, feature, context);
+    if (prim) {
+      featurePrimitiveMap[olBase.getUid(feature)] = prim;
+      csPrimitives.add(prim);
+    }
+  }).bind(this);
+
+  const onRemoveFeature = (function(feature) {
+    const geometry = feature.getGeometry();
+    const id = olBase.getUid(feature);
+    if (!geometry || geometry.getType() == 'Point') {
+      const context = counterpart.context;
+      const bb = context.featureToCesiumMap[id];
+      delete context.featureToCesiumMap[id];
+      if (bb instanceof Cesium.Billboard) {
+        context.billboards.remove(bb);
+      }
+    }
+    const csPrimitive = featurePrimitiveMap[id];
+    delete featurePrimitiveMap[id];
+    if (csPrimitive) {
+      csPrimitives.remove(csPrimitive);
+    }
+  }).bind(this);
+
+  olListenKeys.push(olEvents.listen(source, 'addfeature', (e) => {
+    googAsserts.assert(e.feature);
+    onAddFeature(e.feature);
+  }, this));
+
+  olListenKeys.push(olEvents.listen(source, 'removefeature', (e) => {
+    googAsserts.assert(e.feature);
+    onRemoveFeature(e.feature);
+  }, this));
+
+  olListenKeys.push(olEvents.listen(source, 'changefeature', (e) => {
+    const feature = e.feature;
+    googAsserts.assert(feature);
+    onRemoveFeature(feature);
+    onAddFeature(feature);
+  }, this));
+
+  return counterpart ? [counterpart] : null;
+};
+export default exports;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-AbstractSynchronizer.html">AbstractSynchronizer</a></li><li><a href="module-AutoRenderLoop.html">AutoRenderLoop</a></li><li><a href="module-Camera.html">Camera</a></li><li><a href="module-core.html">core</a></li><li><a href="module-FeatureConverter.html">FeatureConverter</a></li><li><a href="module-OLCesium.html">OLCesium</a></li><li><a href="module-OverlaySynchronizer.html">OverlaySynchronizer</a></li><li><a href="module-RasterSynchronizer.html">RasterSynchronizer</a></li><li><a href="module-SynchronizedOverlay.html">SynchronizedOverlay</a></li><li><a href="module-util.html">util</a></li><li><a href="module-VectorSynchronizer.html">VectorSynchronizer</a></li></ul><h3>Namespaces</h3><ul><li><a href="olcs.core.html">core</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Nov 28 2017 09:10:37 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

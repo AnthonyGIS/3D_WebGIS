@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Cross Origin Resource Sharing (CORS) - buffer</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
+    <style>
+      html, body, #map { height: 100%; width: 100%; margin: 0; padding: 0; }
+      #controls {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 40;
+        width: 240px;
+        height: 70px;
+        background: #fff;
+        color: #000;
+        padding: 5px;
+        font-family: arial;
+        -moz-box-shadow: 0 0 5px #888;
+        -webkit-box-shadow: 0 0 5px #888;
+        box-shadow: 0 0 5px #888;
+      }
+    </style>
+
+    <script src="javascript/graphics.js"></script>
+    <script src="https://js.arcgis.com/3.21/"></script>
+    <script>
+      var map, graphics, gs, ela = {};
+      require([
+        "esri/map", "esri/tasks/GeometryService",
+        "esri/SpatialReference", "esri/tasks/BufferParameters", "esri/config",
+        "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol",
+        "esri/graphic", "esri/layers/GraphicsLayer",
+        "esri/Color", "dojo/_base/array",
+        "dojo/on", "dojo/dom", "dojo/parser", "dojo/domReady!"
+      ], function(
+        Map, GeometryService,
+        SpatialReference, BufferParameters, esriConfig,
+        SimpleFillSymbol, SimpleLineSymbol,
+        Graphic, GraphicsLayer,
+        Color, arrayUtils,
+        on, dom, parser
+      ) {
+        parser.parse();
+
+        // fallback to proxy for non-CORS capable browsers
+        esriConfig.defaults.io.proxyUrl = "/proxy/";
+
+        // graphic to be simplified then buffered
+        // g1 and g2 are JSON from graphics.js
+        graphics = { simple: g2, complex: g1 };
+
+        // set up geometry service
+        gs = new GeometryService("https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+
+        map = new Map("map", {
+          basemap: "topo",
+          center: [-113.302, 41.384],
+          zoom: 7,
+          logo: false,
+          slider: false
+        });
+
+        var bufferGraphics = new GraphicsLayer({ id: "bufferGraphics" });
+        map.addLayer(bufferGraphics);
+
+        map.on("load", function() {
+          // add the graphic to the map
+          map.getLayer("bufferGraphics").add(new Graphic(graphics.complex));
+          on(dom.byId("buffer"), "click", buffer);
+          on(dom.byId("graphicSel"), "change", updateGraphic);
+        });
+
+        function buffer() {
+          dom.byId("ela").innerHTML = "Buffering...";
+          var bufferGraphics = map.getLayer("bufferGraphics");
+          arrayUtils.forEach(bufferGraphics.graphics, function(g) {
+            if ( g.attributes && g.attributes.hasOwnProperty("buffer") ) {
+              bufferGraphics.remove(g);
+            }
+          });
+
+          // used for timing
+          if ( ela.hasOwnProperty('start') ) {
+            delete ela.start;
+            delete ela.end;
+          }
+          ela.start = new Date().getTime();
+
+          var params = new BufferParameters();
+          params.distances = [ 25 ];
+          params.bufferSpatialReference = new SpatialReference({ wkid: 102100 });
+          params.outSpatialReference = map.spatialReference;
+          params.unit = GeometryService.UNIT_STATUTE_MILE; // 9093
+          gs.simplify([bufferGraphics.graphics[0].geometry], function(geometries) {
+            params.geometries = geometries;
+            gs.buffer(params, showBuffer);
+          });
+        }
+        function showBuffer(bufferedGeometries) {
+          ela.end = new Date().getTime();
+          dom.byId("ela").innerHTML = (ela.end - ela.start) + "ms";
+
+          var symbol = new SimpleFillSymbol(
+            SimpleFillSymbol.STYLE_SOLID,
+            new SimpleLineSymbol(
+              SimpleLineSymbol.STYLE_SOLID,
+              new Color([255,0,0,0.65]), 2
+            ),
+            new Color([255,0,0,0.35])
+          );
+
+          arrayUtils.forEach(bufferedGeometries, function(geometry) {
+            var graphic = new Graphic(geometry, symbol, { buffer: true });
+            map.getLayer("bufferGraphics").add(graphic);
+          });
+        }
+        function updateGraphic(e) {
+          var bufferGraphics = map.getLayer("bufferGraphics");
+          bufferGraphics.clear();
+          bufferGraphics.add(new Graphic(graphics[e.target.value]));
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div data-dojo-type="dijit/layout/BorderContainer"
+         data-dojo-props="design:'headline',gutters:false"
+         style="width: 100%; height: 100%; margin: 0;">
+      <div id="map"
+           data-dojo-type="dijit/layout/ContentPane"
+           data-dojo-props="region:'center'">
+
+        <div id="controls">
+          Select graphic:
+          <select id="graphicSel">
+            <option value="simple">simple</option>
+            <option selected value="complex">complex</option>
+          </select>
+          <br>
+          Elapsed time: <span id="ela">N/A</span>
+          <br>
+          <button id="buffer">Buffer Graphic</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
