@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <title>drawHelper-with-cesium-v1.53</title>
+    <meta name="description" content="cesium标绘功能">
+    <meta name="author" content="xxx">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../LIB/Cesium_1_53/Widgets/widgets.css">
+    <link href="DrawHelper.css" rel="stylesheet" />
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .cesium-viewer-bottom {
+            display: none;
+        }
+
+        #toolbar {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            display: inline;
+            margin: 10px;
+            padding: 0px;
+            background: rgba(255, 255, 255, 0.69);
+        }
+
+        #logging {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            display: inline;
+            margin: 10px;
+            padding: 10px;
+            background: white;
+        }
+    </style>
+    <script src="../../../../../LIB/Cesium_1_53/Cesium.js"></script>
+    <script src="../../../../../LIB/JS/jquery-3.2.1.min.js"></script>
+    <script src="../../../../../LIB/Cesium_LIBS/Cesium_Plugins/CesiumCoordinateDisplay.js"></script>
+
+</head>
+<body>
+    <div id="cesiumContainer">
+    </div>
+    <script src="DrawHelper.js?v=1.01"></script>
+    <script src="index.js?v=1.01"></script>
+</body>
+</html>

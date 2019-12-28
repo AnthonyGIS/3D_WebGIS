@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="T_WebGIS">
+  <component name="PublishConfigData" autoUpload="Always" serverName="DEV_WebGIS">
     <serverData>
-      <paths name="D3_WebGIS_Main">
+      <paths name="DEV_WebGIS">
         <serverdata>
           <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$/D3_WebGIS_Main" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="T_WebGIS">
-        <serverdata>
-          <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$/T_WebGIS" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$/DEV_WebGIS" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -4,18 +4,22 @@
       <w>allmap</w>
       <w>arcgis</w>
       <w>cgcs</w>
+      <w>coor</w>
       <w>crossorigin</w>
       <w>esri</w>
       <w>fakeelement</w>
       <w>gally</w>
       <w>geocoder</w>
+      <w>gltf</w>
       <w>heatmap</w>
       <w>mapid</w>
+      <w>osgb</w>
       <w>proj</w>
       <w>roboto</w>
       <w>skybox</w>
       <w>transitionend</w>
       <w>unpkg</w>
+      <w>weng</w>
     </words>
   </dictionary>
 </component>

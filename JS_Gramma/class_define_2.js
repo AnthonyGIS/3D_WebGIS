@@ -2,7 +2,7 @@
 
 // 1 工厂方式
 function createPerson(name,age,job) {
-    var o = new Object();
+    var o = new Object(); //or var o = {};
     o.name = name;
     o.age = age;
     o.job = job;
@@ -80,7 +80,7 @@ var person_5 = new Person();
 // 6 寄生构造函数模式
 function Person(name,age,job) {
 
-    var o = new Object(); //var o = {};
+    var o = new Object(); //or var o = {};
     o.name = name;
     o.age = age;
     o.job = job;

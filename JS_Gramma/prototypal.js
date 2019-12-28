@@ -1,10 +1,10 @@
 // JavaScript语言精粹
 var myMammal = {
     name: 'Herb the Mammal',
-    get_name:function () {
+    get_name: function () {
         return this.name;
     },
-    says:function () {
+    says: function () {
         return this.saying || '';
     }
 };
@@ -14,16 +14,15 @@ var myCat = Object.create(myMammal);
 myCat.name = 'Henrietta';
 myCat.saying = 'meow';
 myCat.purr = function (n) {
-    var i,s = '';
-    for(i = 0;i<n;i+=1)
-    {
-        if(s) s+='-';
-        s+='r';
+    var i, s = '';
+    for (i = 0; i < n; i += 1) {
+        if (s) s += '-';
+        s += 'r';
     }
     return s;
 };
 myCat.get_name = function () {
-    return this.says+' '+this.name + '' + this.says;
+    return this.says + ' ' + this.name + '' + this.says;
 };
 
 // 对象的私有变量
@@ -32,7 +31,7 @@ myCat.get_name = function () {
 
 // 部件
 var eventuality = function (that) {
-    var registry ={};
+    var registry = {};
     that.fire = function (event) {
         var array, func,
             handler,
@@ -53,16 +52,15 @@ var eventuality = function (that) {
         }
         return this;
     };
-    
-    that.on = function (type,method,paramters) {
+
+    that.on = function (type, method, parameters) {
         var handler = {
-            method:method,
-            parameters:paramters
+            method: method,
+            parameters: parameters
         };
-        if(registry.hasOwnProperty(type))
-        {
+        if (registry.hasOwnProperty(type)) {
             registry[type].push(handler);
-        }else
+        } else
             registry[type] = [handler];
         return this;
     };

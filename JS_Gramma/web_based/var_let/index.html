@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        button {
+            width: 100px;
+            height: 30px;
+        }
+
+        div {
+            display: none;
+            background-color: #ccc;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #999;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .active {
+            background-color: rgba(194, 240, 72, 0.52);
+        }
+    </style>
+</head>
+<body>
+
+<button class="active">111</button>
+<button>222</button>
+<button>333</button>
+<div class="show">div1</div>
+<div>div2</div>
+<div>div3</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var tabs = document.getElementsByTagName('button');
+    var divs = document.getElementsByTagName('div');
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].onclick = function () {
+            for (var j = 0; j < tabs.length; j++) {
+                divs[j].className = '';
+                tabs[j].className = '';
+            }
+            this.className = 'active';
+            divs[i].className = 'show';
+        }
+    }
+
+    // 对比传统方式的js代码
+    /*for (var i = 0; i < tabs.length; i++) {
+        tabs[i].index = i;
+        tabs[i].onclick = function () {
+            for (var j = 0; j < tabs.length; j++) {
+                divs[j].className = '';
+                tabs[j].className = '';
+            }
+            console.log(this.index);
+            divs[this.index].className = 'show';
+            this.className = 'active';
+        }
+    }*/
+
+</script>

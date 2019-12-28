@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>将事件和函数绑定到元素</title>
+    <!--<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="../../../JS_Plungins/LIBS/JS/jquery1.9.3.min.js"></script>
+</head>
+<body>
+<h2 id="h2-caption">超实用的jQuery代码段 - jQuery将事件和函数绑定到元素</h2>
+<input id="id-button-bind" value="将事件和函数绑定到元素" type="button">
+<div id="div-log">
+    <p>日志记录：</p>
+</div>
+
+<script>
+    $(function () {
+        $('#id-button-bind').bind(
+            'click',
+            {
+                d1: 'jQuery:',
+                d2: '将事件和函数绑定到元素'
+            },
+            myBindFunc);
+    });
+
+    function myBindFunc(e) {
+        $("#div-log").html($("#div-log").html() + "<p>" + e.data.d1 + e.data.d2 + "</p>");
+    }
+</script>
+
+</body>
+</html>
