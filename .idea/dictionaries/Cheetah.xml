@@ -2,10 +2,14 @@
   <dictionary name="Cheetah">
     <words>
       <w>haha</w>
+      <w>mapbox</w>
+      <w>mediump</w>
       <w>mult</w>
       <w>ocar</w>
+      <w>openlayers</w>
       <w>plungins</w>
       <w>showcolor</w>
+      <w>stylers</w>
     </words>
   </dictionary>
 </component>

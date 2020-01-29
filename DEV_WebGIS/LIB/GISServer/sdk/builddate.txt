@@ -1,2 +1,0 @@
-JSSDK build date: Mon Jul 03 11:55:36 AM Pacific Daylight Time 2017
-Version 3.21

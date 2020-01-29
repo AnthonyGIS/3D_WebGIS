@@ -1,0 +1,3 @@
+[submodule "JS_Plungins/Models/_jquery-confirm"]
+	path = JS_Plungins/Models/_jquery-confirm
+	url = https://github.com/craftpip/jquery-confirm.git

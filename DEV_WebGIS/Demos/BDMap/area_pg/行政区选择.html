@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+        #allmap{width:80%;height:100%;}
+        .form-inline {
+            position: absolute;
+            z-index: 9999
+        }
+
+        .form-inline .form-group {
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LRKUQ2oe42TlkWh6a03zKZcQwhR4UT4D"></script>
+    <title>TEST</title>
+    <script src="../../../../LIB/Common_JS/jquery-3.2.1.js"></script>
+    <script src="../../pages/js/distpicker.js"></script>
+    <script src="../../pages/js/distpicker_002.js"></script>
+    <script src="../../pages/js/main.js"></script>
+
+</head>
+<body>
+<form class="form-inline">
+    <div id="distpicker5">
+        <div class="form-group">
+            <label class="sr-only" for="province10">省</label>
+            <select class="form-control" id="province10">
+                <option value="" data-code="" selected="selected">-- 请选择 --</option>
+                <option value="北京市" data-code="110000">北京市</option>
+                <option value="天津市" data-code="120000">天津市</option>
+                <option value="河北省" data-code="130000">河北省</option>
+                <option value="山西省" data-code="140000">山西省</option>
+                <option value="内蒙古自治区" data-code="150000">内蒙古自治区</option>
+                <option value="辽宁省" data-code="210000">辽宁省</option>
+                <option value="吉林省" data-code="220000">吉林省</option>
+                <option value="黑龙江省" data-code="230000">黑龙江省</option>
+                <option value="上海市" data-code="310000">上海市</option>
+                <option value="江苏省" data-code="320000">江苏省</option>
+                <option value="浙江省" data-code="330000">浙江省</option>
+                <option value="安徽省" data-code="340000">安徽省</option>
+                <option value="福建省" data-code="350000">福建省</option>
+                <option value="江西省" data-code="360000">江西省</option>
+                <option value="山东省" data-code="370000">山东省</option>
+                <option value="河南省" data-code="410000">河南省</option>
+                <option value="湖北省" data-code="420000">湖北省</option>
+                <option value="湖南省" data-code="430000">湖南省</option>
+                <option value="广东省" data-code="440000">广东省</option>
+                <option value="广西壮族自治区" data-code="450000">广西壮族自治区</option>
+                <option value="海南省" data-code="460000">海南省</option>
+                <option value="重庆市" data-code="500000">重庆市</option>
+                <option value="四川省" data-code="510000">四川省</option>
+                <option value="贵州省" data-code="520000">贵州省</option>
+                <option value="云南省" data-code="530000">云南省</option>
+                <option value="西藏自治区" data-code="540000">西藏自治区</option>
+                <option value="陕西省" data-code="610000">陕西省</option>
+                <option value="甘肃省" data-code="620000">甘肃省</option>
+                <option value="青海省" data-code="630000">青海省</option>
+                <option value="宁夏回族自治区" data-code="640000">宁夏回族自治区</option>
+                <option value="新疆维吾尔自治区" data-code="650000">新疆维吾尔自治区</option>
+                <option value="台湾省" data-code="710000">台湾省</option>
+                <option value="香港特别行政区" data-code="810000">香港特别行政区</option>
+                <option value="澳门特别行政区" data-code="820000">澳门特别行政区</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="city10">市</label>
+            <select class="form-control" id="city10">
+                <option value="" data-code="" selected="selected">-- 请选择 --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="district10">区</label>
+            <select class="form-control" id="district10">
+                <option value="" data-code="" selected="selected">-- 请选择 --</option>
+            </select>
+        </div>
+    </div>
+</form>
+<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    map.centerAndZoom(new BMap.Point(116.403765, 39.914850), 5);
+    map.enableScrollWheelZoom();
+
+    function getBoundary(getcity) {
+        var bdary = new BMap.Boundary();
+        bdary.get(getcity, function (rs) {       //获取行政区域
+            map.clearOverlays();        //清除地图覆盖物
+            var count = rs.boundaries.length; //行政区域的点有多少个
+            if (count === 0) {
+                alert('未能获取当前输入行政区域');
+                return;
+            }
+            var pointArray = [];
+            for (var i = 0; i < count; i++) {
+                var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "#ff0000"}); //建立多边形覆盖物
+                map.addOverlay(ply);  //添加覆盖物
+                pointArray = pointArray.concat(ply.getPath());
+            }
+            map.setViewport(pointArray);    //调整视野
+            addlabel();
+        });
+    }
+
+    /* setTimeout(function(){
+         getBoundary();
+         }, 2000);*/
+    $("#province10").change(function () {
+        getBoundary($("#province10 option:selected").html())
+    });
+    $("#city10").change(function () {
+        getBoundary($("#province10 option:selected").html() + $("#city10 option:selected").html())
+    });
+    $("#district10").change(function () {
+        getBoundary($("#province10 option:selected").html() + $("#city10 option:selected").html() + $("#district10 option:selected").html())
+    });
+
+    function addlabel() {
+        var pointArray = [
+            new BMap.Point(121.716076, 23.703799),
+            new BMap.Point(112.121885, 14.570616),
+            new BMap.Point(123.776573, 25.695422)];
+        var optsArray = [{}, {}, {}];
+        var labelArray = [];
+        var contentArray = [
+            "台湾是中国的！",
+            "南海是中国的！",
+            "钓鱼岛是中国的！"];
+        for (var i = 0; i < pointArray.length; i++) {
+            optsArray[i].position = pointArray[i];
+            labelArray[i] = new BMap.Label(contentArray[i], optsArray[i]);
+            labelArray[i].setStyle({
+                color: "red",
+                fontSize: "12px",
+                height: "20px",
+                lineHeight: "20px",
+                fontFamily: "微软雅黑"
+            });
+            map.addOverlay(labelArray[i]);
+        }
+    }
+
+</script>
+
