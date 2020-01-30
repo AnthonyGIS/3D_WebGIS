@@ -1,57 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/fixed_table_rc.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/fixed_table_rc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/sortable_table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/logs/index.html" afterDir="false" />
+    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="remove outdated parts">
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS_Gramma/es/model_test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS_Gramma/es/my_models/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS_Gramma/es/my_models/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/T_WebGL/docs/WebGL-Programming-Guide" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/js/d3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/json/shanghai.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/fixedScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/fixedScroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/solutions/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index4.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/solutions/index4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/fixedScroll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/index2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery_002.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/jquery_002.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery_003.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery_004.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/modern-menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/modern-menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/preview.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/preview.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/app.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/app.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/channel.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/channel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/line_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/line_bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/select_xl.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/select_xl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/select_xl01.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/select_xl01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/source.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/source.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/statistics.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/statistics.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/syetem_management.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/syetem_management.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/system.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/system.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/logs_float_menu/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/css/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/logs_float_menu/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/logs_float_menu/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/js/v1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/fixed_table_rc.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/fixed_table_rc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/sortable_table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/表格行列固定排序插件.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/animations.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/callback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/css/jquery-confirm.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/css/jquery-confirm.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/bs3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/bundled.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/bundled.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/logo-name.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/dist/jquery-confirm.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/dist/jquery-confirm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/jquery-confirm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/js/jquery-confirm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/themelayout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/themes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T_WebGL/Demo/HelloWord/HelloCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/T_WebGL/Demo/HelloWord/HelloPoint1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T_WebGL/Demo/HelloWord/HelloPoint1.html" beforeDir="false" afterPath="$PROJECT_DIR$/T_WebGL/Demo/HelloWord/HelloPoint1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T_WebGL/Demo/HelloWord/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/T_WebGL/Demo/HelloWord/DrawRectangle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T_WebGL/Demo/webgl-programming-code.lnk" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -111,7 +103,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="ts.external.directory.path" value="C:\Program\Dev\JetBrains\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -130,11 +122,11 @@
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\passed_libs\phone" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (4)">
-    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/index.html">
+  <component name="RunManager" selected="JavaScript Debug.HelloPoint1.html">
+    <configuration name="DrawRectangle.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/D3_WebGIS/T_WebGL/Demo/HelloWord/DrawRectangle.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Proj/main_page/logs/index.html">
+    <configuration name="HelloPoint1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/D3_WebGIS/T_WebGL/Demo/HelloWord/HelloPoint1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html (3)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/index.html">
@@ -143,19 +135,19 @@
     <configuration name="index.html (4)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/passed_libs/vintage-popup/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/passed_libs/导航/悬浮菜单/index.html">
+    <configuration name="index_portamento_type.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Proj/main_page/about/index_portamento_type.html">
       <method v="2" />
     </configuration>
-    <configuration name="index_portamento_type.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Proj/main_page/about/index_portamento_type.html">
+    <configuration name="model_test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/JS_Gramma/es/model_test.js" working-dir="$PROJECT_DIR$/JS_Gramma/es">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.HelloPoint1.html" />
+        <item itemvalue="JavaScript Debug.DrawRectangle.html" />
+        <item itemvalue="Node.js.model_test.js" />
         <item itemvalue="JavaScript Debug.index.html (4)" />
         <item itemvalue="JavaScript Debug.index.html (3)" />
-        <item itemvalue="JavaScript Debug.index.html (2)" />
-        <item itemvalue="JavaScript Debug.index.html (1)" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +256,7 @@
       <workItem from="1580290829962" duration="1073000" />
       <workItem from="1580358018735" duration="5844000" />
       <workItem from="1580363904586" duration="2548000" />
-      <workItem from="1580366482279" duration="8001000" />
+      <workItem from="1580366482279" duration="13203000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -308,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580368347921</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remove outdated parts">
+      <created>1580374567441</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580374567441</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,10 +338,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="remove outdated parts" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Deployment" timestamp="1580284218282">
+    <state x="361" y="71" key="#Deployment" timestamp="1580376583948">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1580284218282" />
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1580376583948" />
+    <state x="699" y="143" key="#Inspections" timestamp="1580376562540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="699" y="143" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1580376562540" />
     <state x="361" y="71" key="#Menus_and_Toolbars" timestamp="1580119592463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -351,10 +354,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1580278781013" />
-    <state x="487" y="207" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580290423420">
+    <state x="361" y="71" key="#Options" timestamp="1580376573773">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="487" y="207" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1580290423420" />
+    <state x="361" y="71" key="#Options/0.0.1536.824@0.0.1536.824" timestamp="1580376573773" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580376635761">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1580376635761" />
+    <state x="487" y="207" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580387758597">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="487" y="207" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1580387758597" />
     <state x="588" y="48" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1580119589475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -363,90 +374,90 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="139" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1577009934867" />
-    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2" timestamp="1580368343502">
+    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2" timestamp="1580374700781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580368343502" />
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1580367974908">
+    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580374700781" />
+    <state width="894" height="457" key="GridCell.Tab.0.bottom" timestamp="1580376908554">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.0.center" timestamp="1580367974908">
+    <state width="894" height="457" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580376908554" />
+    <state width="894" height="457" key="GridCell.Tab.0.center" timestamp="1580376908553">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.0.left" timestamp="1580367974908">
+    <state width="894" height="457" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580376908553" />
+    <state width="894" height="457" key="GridCell.Tab.0.left" timestamp="1580376908553">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.0.right" timestamp="1580367974908">
+    <state width="894" height="457" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580376908553" />
+    <state width="894" height="457" key="GridCell.Tab.0.right" timestamp="1580376908554">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.1.bottom" timestamp="1580367974908">
+    <state width="894" height="457" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580376908554" />
+    <state width="1493" height="211" key="GridCell.Tab.1.bottom" timestamp="1580374751028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.1.center" timestamp="1580367974908">
+    <state width="1493" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580374751028" />
+    <state width="1493" height="211" key="GridCell.Tab.1.center" timestamp="1580374751028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.1.left" timestamp="1580367974908">
+    <state width="1493" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580374751028" />
+    <state width="1493" height="211" key="GridCell.Tab.1.left" timestamp="1580374751028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.1.right" timestamp="1580367974908">
+    <state width="1493" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580374751028" />
+    <state width="1493" height="211" key="GridCell.Tab.1.right" timestamp="1580374751028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.2.bottom" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580374751028" />
+    <state width="1493" height="211" key="GridCell.Tab.2.bottom" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state width="1493" height="211" key="GridCell.Tab.2.center" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.2.center" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state width="1493" height="211" key="GridCell.Tab.2.left" timestamp="1580367974908">
+    <state width="1493" height="211" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.2.left" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1580367974908" />
-    <state width="1493" height="211" key="GridCell.Tab.2.right" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.2.right" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state width="1493" height="211" key="GridCell.Tab.3.bottom" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.3.bottom" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state width="1493" height="211" key="GridCell.Tab.3.center" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.3.center" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state width="1493" height="211" key="GridCell.Tab.3.left" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.3.left" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state width="1493" height="211" key="GridCell.Tab.3.right" timestamp="1580367974909">
+    <state width="1493" height="211" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
+    <state width="1493" height="211" key="GridCell.Tab.3.right" timestamp="1580374751029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="211" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
+    <state width="1493" height="211" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1580374751029" />
     <state x="154" y="50" width="778" height="735" key="RollbackChangesDialog" timestamp="1580370819091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="154" y="50" width="778" height="735" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580370819091" />
-    <state x="353" y="31" key="SettingsEditor" timestamp="1580284573888">
+    <state x="353" y="31" key="SettingsEditor" timestamp="1580376700757">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="353" y="31" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1580284573888" />
+    <state x="353" y="31" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1580376700757" />
     <state x="614" y="327" key="VCS.ChangelistChooser" timestamp="1577528460771">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="614" y="327" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1577528460771" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580368351024">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580374570290">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580368351024" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580374570290" />
     <state x="684" y="37" width="1100" height="669" key="dock-window-1" timestamp="1580359928725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

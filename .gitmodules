@@ -1,3 +1,9 @@
 [submodule "JS_Plungins/Models/_jquery-confirm"]
 	path = DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm
 	url = https://github.com/craftpip/jquery-confirm.git
+[submodule "DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm"]
+	path = DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm
+	url = https://github.com/craftpip/jquery-confirm.git
+[submodule "T_WebGL/docs/WebGL-Programming-Guide"]
+	path = T_WebGL/docs/WebGL-Programming-Guide
+	url = https://github.com/hushhw/WebGL-Programming-Guide.git
