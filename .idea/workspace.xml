@@ -1,540 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="remove outdated parts">
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/animations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/callback.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/css/jquery-confirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/css/jquery-confirm.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/bs3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/bundled.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/bundled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/libs/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/demo/logo-name.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/dist/jquery-confirm.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/dist/jquery-confirm.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/jquery-confirm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/js/jquery-confirm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/table.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/themelayout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm/themes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/移动手机隐藏菜单/index.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/移动手机隐藏菜单/mode1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/移动手机隐藏菜单/mode2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Common_JS/jquery_online_links" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Common_JS/scotch-panels/scotchPanels.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Common_JS/scotch-panels/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/index.js" afterDir="false" />
+    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/fixed_table_rc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/fixed_table_rc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/sortable_table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/logs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/config.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/base/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/base/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/base/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/base/_reset.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/config/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/config/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/config/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/config/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/layouts/_primary.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/layouts/_primary.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/modules/_fusionad.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/modules/_fusionad.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/modules/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/modules/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/modules/_menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/modules/_menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/_sass/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/_sass/sass/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/css/Roboto_300_700.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/css/Roboto_300_700.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/Material-Design-Iconic-Font.eot" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/Material-Design-Iconic-Font.svg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/Material-Design-Iconic-Font.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/Material-Design-Iconic-Font.woff" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/js/development/materialMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/js/development/materialMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/js/production/materialMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/js/production/materialMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_1/template/js/production/materialMenu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Layerout_1/template/js/production/materialMenu.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Menu/menu.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Menu/menu_files/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Menu/menu_files/jquery_002.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Menu/menu_files/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Menu/menu_files/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Menu/menu_files/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Msg/Dialog.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Msg/Dialog_files/animation.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Msg/Dialog_files/dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Msg/Dialog_files/jquery-1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Msg/Dialog_files/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Note/fade.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Note/fade_files/call_modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Note/fade_files/jquery-1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Note/fade_files/modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/Note/fade_files/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/ZZ/a.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/ZZ/a/close.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/ZZ/a/code.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/ZZ/a/code2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/ZZ/a/jquery-1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/ZZ/a/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/menu_index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/baguetteBox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/baguetteBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/bridge.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/coast.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/gallery-clean.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/park.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/rails.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/traffic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/Layerout_2/pic/pic_files/tunnel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/3种CSS3移动手机隐藏菜单UI界面设计.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/css.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/demo-1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/golden-gate-lights.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/移动手机隐藏菜单/golden-gate-lights.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/jquery_002.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/stopExecutionOnTimeout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design元素点击波特效/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design元素点击波特效/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design元素点击波特效/css/jquery.ripple.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design元素点击波特效/css/jquery.ripple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design元素点击波特效/css/jquery.ripple.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design元素点击波特效/css/jquery.ripple.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design元素点击波特效/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design元素点击波特效/css/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design元素点击波特效/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design元素点击波特效/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design元素点击波特效/js/jquery.ripple.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design元素点击波特效/js/jquery.ripple.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/Material Design风格用户登录/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/Material Design风格用户登录/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/css/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/fonts/icomoon.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/fonts/icomoon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/fonts/icomoon.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/fonts/icomoon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/MaterialDesign20161003/js/jquery-2.1.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_material/MaterialDesign20161003/js/jquery-2.1.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/css/gooey.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/css/gooey.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/css/livedemo.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/css/livedemo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/js/gooey.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/js/gooey.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/js/jquery-2.1.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_phone/TxNav/js/jquery-2.1.3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/absolute-with-bottom-limit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/bigger-gap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Common_JS/portamento/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/floated-with-bottom-limit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/jquery-1.9.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/no-limit.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/about/index_portamento_type.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/portamento-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Common_JS/portamento/portamento-min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/portamento/portamento.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Common_JS/portamento/portamento.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/淘宝右侧悬浮返回顶部和建议/index.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/淘宝右侧悬浮返回顶部和建议/jq22.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/淘宝右侧悬浮返回顶部和建议/jquery-1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/淘宝右侧悬浮返回顶部和建议/js.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/js/d3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Others/Canvas_Map_Defined/geoD3Map/json/shanghai.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/fixedScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/js/fixedScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/solutions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index4.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/solutions/index4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/fixedScroll/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/fixedScroll.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery_002.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/jquery_002.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery_003.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/jquery_004.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/modern-menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/modern-menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航/preview.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航/preview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/app.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/app.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/channel.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/channel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/cloud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/custom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/line_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/line_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/select_xl.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/select_xl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/select_xl01.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/select_xl01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/source.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/source.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/statistics.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/statistics.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/syetem_management.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/syetem_management.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/images/left/system.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/images/left/system.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/导航2/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/logs_float_menu/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/css/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/logs_float_menu/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/css/logs_float_menu/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/悬浮菜单/js/v1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/fixed_table_rc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/fixed_table_rc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/sortable_table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/表格行列固定排序/表格行列固定排序插件.htm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DEV_WebGIS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Gramma/web_based/var_let/let_var.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS_Gramma/web_based/var_let/let_var.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/.idea/MainOpopUp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/LIBS/JS/jquery-1.4.4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/LIBS/JS/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/LIBS/JS/jquery1.9.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/.npmignore" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/.npmignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/ajax-content.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/ajax-content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/css/jquery.galpop.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/css/jquery.galpop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/ajax-loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/btn-close.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/btn-close.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/btn-next.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/btn-next.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/btn-prev.png" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/btn-prev.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/alice.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/alice.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/apocalypse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/apocalypse.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/darkroad.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/darkroad.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/goodBoy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/goodBoy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/magicLake.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/magicLake.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/reflection.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/reflection.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/roadkill.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/roadkill.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/underwater.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/underwater.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/vintage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/vintage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/large/wolfMarine.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/large/wolfMarine.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/alice.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/alice.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/apocalypse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/apocalypse.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/darkroad.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/darkroad.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/goodBoy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/goodBoy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/magicLake.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/magicLake.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/reflection.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/reflection.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/roadkill.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/roadkill.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/underwater.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/underwater.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/vintage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/vintage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/images/gallery/thumbs/wolfMarine.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/images/gallery/thumbs/wolfMarine.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/js/jquery.galpop.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/js/jquery.galpop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/js/jquery.galpop.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/Galpop--pic-show/js/jquery.galpop.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/Galpop-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/_jquery-confirm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/ajax.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/ajax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/popModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/popModal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/popModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/popModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/popModal.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/popModal.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/good_popModal-gh-pages/popModal.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_popModal-gh-pages/popModal.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/QQ截图20180506171424.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/jquery.popup/PopupDemo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/jquery.popup/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/jquery.popup/jquery.popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/jquery.popup/jquery.popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/jquery.popup/jquery.popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/jquery.popup-master/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/QQ截图20180506171252.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/TosRUs.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/addons/jquery.tosrus.buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/addons/jquery.tosrus.buttons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/addons/jquery.tosrus.caption.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/addons/jquery.tosrus.caption.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/addons/jquery.tosrus.drag.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/addons/jquery.tosrus.drag.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/addons/jquery.tosrus.pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/addons/jquery.tosrus.pagination.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/jquery.tosrus.all.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/jquery.tosrus.all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/jquery.tosrus.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/jquery.tosrus.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/media/jquery.tosrus.html.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/media/jquery.tosrus.html.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/css/media/jquery.tosrus.youtube.css" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/css/media/jquery.tosrus.youtube.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/addons/jquery.tosrus.autoplay.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/addons/jquery.tosrus.autoplay.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/addons/jquery.tosrus.buttons.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/addons/jquery.tosrus.buttons.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/addons/jquery.tosrus.caption.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/addons/jquery.tosrus.caption.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/addons/jquery.tosrus.drag.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/addons/jquery.tosrus.drag.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/addons/jquery.tosrus.keys.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/addons/jquery.tosrus.keys.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/addons/jquery.tosrus.pagination.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/addons/jquery.tosrus.pagination.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/jquery.tosrus.all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/jquery.tosrus.all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/jquery.tosrus.all.min.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/jquery.tosrus.all.min.umd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/jquery.tosrus.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/jquery.tosrus.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/jquery.tosrus.min.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/jquery.tosrus.min.umd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/media/jquery.tosrus.html.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/media/jquery.tosrus.html.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/media/jquery.tosrus.image.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/media/jquery.tosrus.image.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/media/jquery.tosrus.vimeo.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/media/jquery.tosrus.vimeo.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/dist/js/media/jquery.tosrus.youtube.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/dist/js/media/jquery.tosrus.youtube.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/gulpfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/lib/FlameViewportScale.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/lib/FlameViewportScale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/addons/jquery.tosrus.buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/addons/jquery.tosrus.buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/addons/jquery.tosrus.caption.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/addons/jquery.tosrus.caption.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/addons/jquery.tosrus.drag.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/addons/jquery.tosrus.drag.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/addons/jquery.tosrus.pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/addons/jquery.tosrus.pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/jquery.tosrus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/jquery.tosrus.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/media/jquery.tosrus.html.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/media/jquery.tosrus.html.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/css/media/jquery.tosrus.youtube.scss" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/css/media/jquery.tosrus.youtube.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/addons/jquery.tosrus.autoplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/addons/jquery.tosrus.autoplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/addons/jquery.tosrus.buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/addons/jquery.tosrus.buttons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/addons/jquery.tosrus.caption.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/addons/jquery.tosrus.caption.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/addons/jquery.tosrus.drag.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/addons/jquery.tosrus.drag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/addons/jquery.tosrus.keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/addons/jquery.tosrus.keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/addons/jquery.tosrus.pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/addons/jquery.tosrus.pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/jquery.tosrus.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/jquery.tosrus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/media/jquery.tosrus.html.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/media/jquery.tosrus.html.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/media/jquery.tosrus.image.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/media/jquery.tosrus.image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/media/jquery.tosrus.vimeo.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/media/jquery.tosrus.vimeo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/pic_show/src/js/media/jquery.tosrus.youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/pic_show/src/js/media/jquery.tosrus.youtube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/popupwindow/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/popupwindow/MIT-LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/popupwindow/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/popupwindow/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/popupwindow/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/popupwindow/example.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/popupwindow/example.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/popupwindow/jquery.popupwindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/popupwindow/jquery.popupwindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/QQ截图20180506170949.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/dist/popup-default-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/dist/popup-material-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/dist/vintage-popup.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/dist/vintage-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/css/example.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/fonts/HelveticaNeue.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/fonts/HelveticaNeue.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/fonts/HelveticaNeue.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/fonts/futura-pt-bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/fonts/futura-pt-bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/fonts/futura-pt-bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/example/static/img/content/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/gulpfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/src/popup-default-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/src/popup-material-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/src/vintage-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models/vintage-popup-master/src/vintage-popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/lib/_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/lib/_server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/lib/ffmpeg.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/lib/ffmpeg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/lib/raspivid.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/lib/raspivid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/lib/remotetcpfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/lib/remotetcpfeed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/lib/static.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/lib/static.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/samples/admiral.264" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/samples/admiral.264" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/samples/out.h264" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/samples/out.h264" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/server-ffmpeg.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/server-ffmpeg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/server-rpi.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/server-rpi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/server-static.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/server-static.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/server-tcp.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/server-tcp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/.npmignore" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/.npmignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/AUTHORS" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/AUTHORS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/broadway/Decoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/broadway/Decoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/FilterWebGLCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/FilterWebGLCanvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/Program.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/Program.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/Script.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/Script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/Shader.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/Shader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/Texture.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/Texture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/WebGLCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/WebGLCanvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/YUVCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/YUVCanvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/canvas/YUVWebGLCanvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/canvas/YUVWebGLCanvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/dist/http-live-player.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/dist/http-live-player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/utils/Size.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/utils/Size.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/utils/assert.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/utils/assert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/utils/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/utils/error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/utils/glUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/utils/glUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/utils/inherit.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/utils/inherit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/h264-live-player-master/vendor/wsavc/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/h264-live-player-master/vendor/wsavc/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/CODE_OF_CONDUCT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/LICENSE.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/LICENSE.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/_jsglyph.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/_themes.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/_themes_mdl_styles.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/fonts/jsglyph.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/fonts/jsglyph.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/fonts/jsglyph.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/fonts/jsglyph.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel-compiled.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel-compiled.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/source/jquery.jspanel.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/template/bootstrap3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/template/bootstrap4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/template/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/template/index.ui.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-2.2.4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-migrate-3.0.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/AUTHORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/jquery-ui.theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.complete/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/AUTHORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom-no-theme/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/AUTHORS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/external/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.structure.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery-ui-1.12.1.custom/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/jsPanel3-master/vendor/jquery.ui.touch-punch.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/dist/scotchPanels.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/dist/scotchPanels.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/scotchPanels.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/src/scotchPanels.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/callbacks/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/callbacks/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/callbacks/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/click-helper/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/click-helper/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/click-helper/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/custom-slider/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/custom-slider/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/custom-slider/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/directions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/directions/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/directions/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/durations/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/durations/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/durations/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/helper-classes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/helper-classes/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/helper-classes/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/horizontal-fixed-width/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/horizontal-fixed-width/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/horizontal-fixed-width/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/horizontal-percentage-width/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/horizontal-percentage-width/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/horizontal-percentage-width/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/hover-helper/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/hover-helper/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/hover-helper/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/html-example/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/html-example/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/html-example/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/iframe-example-no-loader/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/iframe-example-no-loader/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/iframe-example-no-loader/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/iframe-example-with-loader/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/iframe-example-with-loader/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/iframe-example-with-loader/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/javascript-only-with-easing/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/javascript-only-with-easing/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/javascript-only-with-easing/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/javascript-only/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/javascript-only/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/javascript-only/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/loading-buttons/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/loading-buttons/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/loading-buttons/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels-different-styles/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels-different-styles/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels-different-styles/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels-same-container/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels-same-container/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels-same-container/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/multiple-panels/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/nested-panels/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/nested-panels/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/nested-panels/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/photo-example/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/photo-example/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/photo-example/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-dev-way/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-dev-way/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-dev-way/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-easy-way/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-easy-way/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-easy-way/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-html5-way/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-html5-way/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-html5-way/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-mobile-only-with-css/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-mobile-only-with-css/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-mobile-only-with-css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-mobile-only-with-js/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-mobile-only-with-js/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/side-menu-mobile-only-with-js/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/touch-helper/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/touch-helper/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/touch-helper/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/transitions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/transitions/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/transitions/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-close-after-x/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-close-after-x/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-close-after-x/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-example/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-example/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-example/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-with-cookie/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-with-cookie/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/trigger-with-cookie/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/vertical-min-height/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/vertical-min-height/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/vertical-min-height/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/video-example/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/video-example/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/demos/video-example/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/img/about-chris.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/img/about-holly.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/img/about-me.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/img/scotch-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/power.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS_Plungins/Models_panel/scotch-panels-master/website/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -589,7 +106,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/Proj/main_page/solutions" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -599,34 +116,34 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\main_page\solutions" />
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\main_page\js" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\TEST\3种CSS3移动手机隐藏菜单" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\JS_Plungins\Models" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\Common_JS\main_page" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\JS_Plungins\Models_panel\scotch-panels-master\website" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\Common_JS\scotch-panels" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\main_page\css" />
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\main_page\js" />
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\main_page\logs" />
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\passed_libs\导航" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\passed_libs\phone" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\passed_libs" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\passed_libs\_material" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\Common_JS\scotch-panels" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\main_page" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration name="index.htm" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/TEST/3种CSS3移动手机隐藏菜单/index.htm">
+  <component name="RunManager" selected="JavaScript Debug.index.html (4)">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/Layerout_1/index.html">
+    <configuration name="index.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Proj/main_page/logs/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/TEST/jQueryTxNav/index.html">
+    <configuration name="index.html (3)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/passed_libs/导航/导航2/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html (3)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/TEST/fixedScroll/index.html">
+    <configuration name="index.html (4)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/passed_libs/vintage-popup/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Template/passed_libs/导航/悬浮菜单/index.html">
       <method v="2" />
     </configuration>
     <configuration name="index_portamento_type.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Proj/main_page/about/index_portamento_type.html">
@@ -634,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.index.html (2)" />
+        <item itemvalue="JavaScript Debug.index.html (4)" />
         <item itemvalue="JavaScript Debug.index.html (3)" />
-        <item itemvalue="JavaScript Debug.index.htm" />
+        <item itemvalue="JavaScript Debug.index.html (2)" />
         <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -747,7 +264,7 @@
       <workItem from="1580290829962" duration="1073000" />
       <workItem from="1580358018735" duration="5844000" />
       <workItem from="1580363904586" duration="2548000" />
-      <workItem from="1580366482279" duration="1805000" />
+      <workItem from="1580366482279" duration="8001000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -784,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580278640506</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remove outdated parts">
+      <created>1580368347921</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580368347921</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -839,10 +363,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="139" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1577009934867" />
-    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2" timestamp="1580364508687">
+    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2" timestamp="1580368343502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580364508687" />
+    <state x="483" y="0" width="814" height="794" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580368343502" />
     <state width="1493" height="211" key="GridCell.Tab.0.bottom" timestamp="1580367974908">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -907,10 +431,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="211" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1580367974909" />
-    <state x="154" y="50" width="778" height="735" key="RollbackChangesDialog" timestamp="1577550389357">
+    <state x="154" y="50" width="778" height="735" key="RollbackChangesDialog" timestamp="1580370819091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="154" y="50" width="778" height="735" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1577550389357" />
+    <state x="154" y="50" width="778" height="735" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580370819091" />
     <state x="353" y="31" key="SettingsEditor" timestamp="1580284573888">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -919,10 +443,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="614" y="327" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1577528460771" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580279653803">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580368351024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580279653803" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580368351024" />
     <state x="684" y="37" width="1100" height="669" key="dock-window-1" timestamp="1580359928725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

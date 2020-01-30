@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../css/fixedScroll.css">
+    <style>
+        .nav span {
+            padding: 2px 12px;
+            line-height: 30px;
+            margin: 0 5px 3px 0;
+            background-color: #48afb1;
+            display: inline-block;
+            color: white;
+        }
+
+        li {
+            margin-bottom: 20px;
+            height: 600px;
+            background-color: #efefef;
+            border: 1px solid #dbdbdb;
+            font-size: 100px;
+            color: #fff;
+        }
+    </style>
+    <script src="../../../LIB/Common_JS/jquery1.9.3.min.js"></script>
+    <script src="../js/fixedScroll.js"></script>
+</head>
+
+<body>
+<div class="main">
+    <div class="demo">
+        <div class="h25">
+            <div class="nav">
+                <span class="nav-item">可视化</span>
+                <span class="nav-item">数据科学</span>
+                <span class="nav-item">智能算法</span>
+                <span class="nav-item">统计与分析</span>
+            </div>
+        </div>
+        <ul class="hooks">
+            <li class="hook-item">1</li>
+            <li class="hook-item">2</li>
+            <li class="hook-item">3</li>
+            <li class="hook-item">4</li>
+        </ul>
+    </div>
+    <div class="foot"></div>
+</div>
+</body>
+</html>
+<script>
+    $(".nav").fixedScroll({
+        navEls: $(".nav-item"),
+        hookEls: $('.hook-item'),
+        hookOffset: 25
+    });
+</script>

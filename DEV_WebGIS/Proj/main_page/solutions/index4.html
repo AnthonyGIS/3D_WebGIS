@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>fixedScroll demo4</title>
+    <link rel="stylesheet" href="../css/fixedScroll.css">
+    <style>
+        li {
+            margin-bottom: 20px;
+            height: 600px;
+            background-color: #efefef;
+            border: 1px solid #dbdbdb;
+            font-size: 100px;
+            color: #fff;
+        }
+
+        .demo {
+            overflow: hidden;
+        }
+
+        .fl {
+            width: 78%;
+            height: 100%;
+        }
+
+        .fr {
+            width: 20%;
+            height: 200px;
+            background-color: #999;
+        }
+
+        .nav-item {
+            display: block;
+        }
+
+        .nav-item.active {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+    <script src="../../../LIB/Common_JS/jquery1.9.3.min.js"></script>
+    <script src="../js/fixedScroll.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="demo">
+        <ul class="fl">
+            <li class="hook-item">1</li>
+            <li class="hook-item">2</li>
+            <li class="hook-item">3</li>
+        </ul>
+        <div class="fr box">
+            <div class="nav2">
+                <span class="nav-item">nav 1</span>
+                <span class="nav-item">nav 2</span>
+                <span class="nav-item">nav 3</span>
+            </div>
+        </div>
+    </div>
+    <div class="foot"></div>
+</div>
+</body>
+</html>
+
+<script>
+    $(".box").fixedScroll({
+        navEls: $(".nav-item"),
+        hookEls: $('.hook-item')
+    })
+</script>
