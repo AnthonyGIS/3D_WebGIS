@@ -31,7 +31,7 @@ npm install -g express
 node  server.js
 
 
-![cesium_1](Docs\imgs\cesium_1.png)
+![cesium_1](Docs/imgs/cesium_1.png)
 
 
 

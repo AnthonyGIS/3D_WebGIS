@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Portamento Demo</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta name="author" content="Kris Noble" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!-- just some default styles, nothing important -->
+		<link rel="stylesheet" href="../../../LIB/Common_JS/portamento/demo.css" />
+		
+		<!-- the important styles are below... -->
+		<style>
+			#wrapper {overflow: hidden;}
+			#content {width:486px; margin-right:10px; float:left; min-height:1200px;}
+			#sidebar {width:284px; padding:10px; background: #eee; float:right; height:400px;}
+			
+			#portamento_container {float:right; position:relative;} /* take the positioning of the sidebar, and become the start point for the sidebar positioning */
+			#portamento_container #sidebar {float:none; position:absolute;} /* no need to float anymore, become absolutely positioned */
+			#portamento_container #sidebar.fixed {position:fixed;} /* if the panel is sliding, it needs position:fixed */
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<header>
+
+			</header>
+			
+			<div id="wrapper">
+				<div id="content">
+					<p>Q1季度目标：泛专业方向的高级算法工程师</p>
+					<p style="font-size: small;line-height: 30px">
+						多传感器的标定与融合<br/>
+						非线性优化(Eigen, Ceres, G2O)<br/>
+						SVO2、ORB-SLAM2、视觉SLAM<br/>
+						激光SLAM与VIO<br/>
+						C++、Python，Boost, CGAL, OpenGL/GLSL, GDAL<br/>
+						linux, CUDA, ROS, PyQT, QT<br/>
+						PCL点云处理与分析， 建模<br/>
+						语义SLAM， 深度学习基本概念及应用
+					</p>
+				</div>
+				
+				<div id="sidebar">
+					<p>本着点滴积累的方式，逐步得心应手的可进行WebGIS方面的综合开发。</p>
+					<p>包含底层三维可视化算法，GIS空间分析，大数据分析和智能算法。...</p>
+					<p><a href="http://simianstudios.com/portamento/">Portamento</a> Demo</p>
+				</div>
+			</div>
+
+			<footer>
+				<p>WebGIS Demos Online! @ 2020.1</p>
+			</footer>
+		</div>
+
+		<script src="../../../LIB/Common_JS/jquery1.9.3.min.js"></script>
+		<script src="../../../LIB/Common_JS/portamento/portamento.js"></script>
+		<script>
+			// set #wrapper as the bottom boundary
+			// $('#sidebar').portamento({wrapper: $('#wrapper')});
+			// disable the workaround for not-quite-capable browsers e.g. iOS, IE<7
+			// $('#sidebar').portamento({disableWorkaround: true});
+			// set a 100px gap rather than the default 10px
+			$('#sidebar').portamento({gap: 50});
+			// set #wrapper as the visual boundary of the panel
+			// $('#sidebar').portamento({wrapper: $('#wrapper')});
+			// $('#sidebar').portamento();
+		</script>
+		
+	</body>
+</html>

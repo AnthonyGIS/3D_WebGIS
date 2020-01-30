@@ -1,0 +1,12 @@
+1.
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+2.
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+3.
+页面上引入jquery.js文件，该文件的内容为：
+document.write("<script src='http://libs.baidu.com/jquery/2.1.1/jquery.min.js'><\/script>");
+
+4.兼容ie
+<!--[if IE]>
+<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->

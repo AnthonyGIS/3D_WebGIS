@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3种CSS3移动手机隐藏菜单UI</title>
+    <link rel="stylesheet" type="text/css" href="mode1.css">
+    <link rel="stylesheet" type="text/css" href="mode2.css">
+    <script src="../../../../../LIB/Common_JS/jquery-3.2.1.js"></script>
+    <!--[if IE]>
+    <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!--model 1-->
+
+<div id="wrapper">
+    <div class="menu">
+        <img id="menu-bg" src="golden-gate-lights.jpg">
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Share</a></li>
+            <li><a href="">Activity</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    <div class="screen">
+        <div class="navbar"></div>
+        <div class="list">
+            <div class="item">
+                <div class="img"></div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="item">
+                <div class="img"></div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="item">
+                <div class="img"></div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="item">
+                <div class="img"></div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="burger">
+            <div class="x"></div>
+            <div class="y" style="display: block;"></div>
+            <div class="z"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--model 2-->
+<!--范围wrapper-->
+<div id="wrapper2">
+    <!-- content top gap -->
+    <div class="navbar2"></div>
+    <!-- content   -->
+    <div class="list2">
+        <div class="item">
+            <div class="img"></div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="item">
+            <div class="img"></div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="item">
+            <div class="img"></div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="item">
+            <div class="img"></div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--  动画渐变   -->
+    <div class="circle"></div>
+    <!--  菜单   -->
+    <div class="menu2">
+        <ul>
+            <li class=""><a href="#">About</a></li>
+            <li class=""><a href="#">Share</a></li>
+            <li class=""><a href="#">Activity</a></li>
+            <li class=""><a href="#">Settings</a></li>
+            <li class=""><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <!--主菜单的左上角的按钮-->
+    <div class="burger2">
+        <div class="x2"></div>
+        <div class="y2" style="display: block;"></div>
+        <div class="z2"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+<script>
+    let click_name = 'click';
+    if ('ontouchstart' in window) {
+        click_name = 'touchstart';
+    }
+
+    $('div.burger').on(click_name, function () {
+        if (!$(this).hasClass('open')) {
+            openMenu_1();
+        } else {
+            closeMenu_1();
+        }
+    });
+    $('div.menu ul li a').on(click_name, function (e) {
+        e.preventDefault();
+        closeMenu_1();
+    });
+
+
+    $('div.burger2').on(click_name, function () {
+        if (!$(this).hasClass('open2')) {
+            openMenu_2();
+        } else {
+            closeMenu_2();
+        }
+    });
+    $('div.menu2 ul li a').on(click_name, function (e) {
+        e.preventDefault();
+        closeMenu_2();
+    });
+
+
+
+    function openMenu_1() {
+        $('div.burger').addClass('open');
+        $('div.y').fadeOut(100);
+        $('div.screen').addClass('animate');
+        setTimeout(function () {
+            $('div.x').addClass('rotate30');
+            $('div.z').addClass('rotate150');
+            $('.menu').addClass('animate');
+            setTimeout(function () {
+                $('div.x').addClass('rotate45');
+                $('div.z').addClass('rotate135');
+            }, 100);
+        }, 10);
+    }
+
+    function closeMenu_1() {
+        $('div.screen, .menu').removeClass('animate');
+        $('div.y').fadeIn(150);
+        $('div.burger').removeClass('open');
+        $('div.x').removeClass('rotate45').addClass('rotate30');
+        $('div.z').removeClass('rotate135').addClass('rotate150');
+        setTimeout(function () {
+            $('div.x').removeClass('rotate30');
+            $('div.z').removeClass('rotate150');
+        }, 50);
+        setTimeout(function () {
+            $('div.x, div.z').removeClass('collapse');
+        }, 70);
+    }
+
+
+    function openMenu_2() {
+        $('div.circle').addClass('expand2');
+        $('div.burger2').addClass('open2');
+        $('div.x2, div.y2, div.z2').addClass('collapse2');
+        $('.menu2 li').addClass('animate_2');
+        setTimeout(function () {
+            $('div.y2').hide();
+            $('div.x2').addClass('rotate30_2');
+            $('div.z2').addClass('rotate150_2');
+        }, 70);
+        setTimeout(function () {
+            $('div.x2').addClass('rotate45_2');
+            $('div.z2').addClass('rotate135_2');
+        }, 120);
+    }
+    function closeMenu_2() {
+        $('div.burger2').removeClass('open2');
+        $('div.x2').removeClass('rotate45_2').addClass('rotate30_2');
+        $('div.z2').removeClass('rotate135_2').addClass('rotate150_2');
+        $('div.circle').removeClass('expand2');
+        $('.menu2 li').removeClass('animate_2');
+        setTimeout(function () {
+            $('div.x2').removeClass('rotate30_2');
+            $('div.z2').removeClass('rotate150_2');
+        }, 50);
+        setTimeout(function () {
+            $('div.y2').show();
+            $('div.x2, div.y2, div.z2').removeClass('collapse2');
+        }, 70);
+    }
+
+</script>
+
