@@ -569,7 +569,7 @@ function makeLostContextSimulatingContext(ctx) {
     } else {
       onRestored_ = wrapEvent(listener);
     }
-  }
+  };
 
   return wrapper_;
 }

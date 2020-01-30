@@ -4,10 +4,13 @@
       <w>baidu</w>
       <w>cgal</w>
       <w>clearfix</w>
+      <w>coord</w>
       <w>cuda</w>
       <w>cuon</w>
       <w>cwrapper</w>
       <w>eigen</w>
+      <w>fshader</w>
+      <w>fsize</w>
       <w>galpop</w>
       <w>gdal</w>
       <w>glsl</w>
@@ -18,10 +21,13 @@
       <w>navbar</w>
       <w>ocar</w>
       <w>openlayers</w>
+      <w>ortho</w>
       <w>plungins</w>
       <w>portamento</w>
       <w>showcolor</w>
       <w>stylers</w>
+      <w>vshader</w>
+      <w>xform</w>
     </words>
   </dictionary>
 </component>
