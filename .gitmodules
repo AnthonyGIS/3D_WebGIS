@@ -7,3 +7,9 @@
 [submodule "T_WebGL/docs/WebGL-Programming-Guide"]
 	path = T_WebGL/docs/WebGL-Programming-Guide
 	url = https://github.com/hushhw/WebGL-Programming-Guide.git
+[submodule "DEV_WebGIS/LIB/gio_js"]
+	path = DEV_WebGIS/LIB/gio_js
+	url = https://github.com/syt123450/giojs.git
+[submodule "DEV_WebGIS/LIB/three_geo"]
+	path = DEV_WebGIS/LIB/three_geo
+	url = https://github.com/w3reality/three-geo.git

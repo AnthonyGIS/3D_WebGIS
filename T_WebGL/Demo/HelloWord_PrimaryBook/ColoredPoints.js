@@ -82,6 +82,16 @@ function main() {
 
 var g_points = [];
 var g_colors = [];
+
+
+/**
+ * 点击事件
+ * @param ev
+ * @param gl
+ * @param canvas
+ * @param a_Position
+ * @param u_FragColor
+ */
 function click(ev,gl,canvas,a_Position,u_FragColor) {
 
     var x = ev.clientX;

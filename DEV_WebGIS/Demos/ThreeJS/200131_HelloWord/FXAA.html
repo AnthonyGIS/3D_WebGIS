@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js WebGL  - postprocessing - FXAA</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				margin: 0;
+				background-color: #fff;
+				color: #222;
+				font-family: Monospace;
+				font-size: 13px;
+				line-height: 24px;
+				overscroll-behavior: none;
+			}
+			a {
+				color: #08f;
+			}
+			#container {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				bottom: 0;
+			}
+			#video {
+				position: absolute;
+				width: 0;
+				height: 0;
+			}
+		</style>
+		<script src="../../../LIB/Common_JS/jquery1.9.3.min.js"></script>
+		<!--  左上角上添加状态   -->
+		<!--<script src="../../../LIB/three_js/examples/js/libs/stats.min.js"></script>-->
+		<script src="FXAA.js" type="module"></script>
+		<video id="video" autoplay loop muted>
+			<source src="../../../LIB/three_js/examples/textures/sintel.ogv">
+			<source src="../../../LIB/three_js/examples/textures/sintel.mp4">
+		</video>
+	</head>
+
+	<body>
+		<div id="container"></div>
+
+	</body>
+</html>

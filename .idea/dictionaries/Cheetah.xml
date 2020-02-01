@@ -11,10 +11,13 @@
       <w>eigen</w>
       <w>fshader</w>
       <w>fsize</w>
+      <w>fxaa</w>
       <w>galpop</w>
       <w>gdal</w>
       <w>glsl</w>
       <w>haha</w>
+      <w>hemi</w>
+      <w>linewidth</w>
       <w>mapbox</w>
       <w>mediump</w>
       <w>mult</w>
@@ -22,9 +25,11 @@
       <w>ocar</w>
       <w>openlayers</w>
       <w>ortho</w>
+      <w>phong</w>
       <w>plungins</w>
       <w>portamento</w>
       <w>showcolor</w>
+      <w>sintel</w>
       <w>stylers</w>
       <w>vshader</w>
       <w>xform</w>

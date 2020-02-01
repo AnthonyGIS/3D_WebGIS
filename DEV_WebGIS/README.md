@@ -228,12 +228,17 @@ ___
 
 
 # 六、Mapbox
-计划新增。
+[官方主页](https://www.mapbox.com/)
+[GITHUB mapbox-gl-js](https://github.com/mapbox/mapbox-gl-js)
+
+[example (online)](https://docs.mapbox.com/mapbox-gl-js/examples/)
+
+计划新增。2020.1
 
 
 
-# 七、D3
-计划新增。
+# 七、Three.js
+第一个版本添加的时间为 2020.1.31
 
 
 
