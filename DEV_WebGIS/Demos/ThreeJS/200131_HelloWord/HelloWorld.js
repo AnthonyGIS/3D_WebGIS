@@ -25,6 +25,9 @@ import {ShaderPass} from "../../../LIB/three_js/examples/jsm/postprocessing/Shad
 import {EffectComposer} from "../../../LIB/three_js/examples/jsm/postprocessing/EffectComposer.js";
 
 
+
+
+
 var scene,camera,webgl_render,controls;
 var container;
 
@@ -113,7 +116,7 @@ function onWindowResize() {
     webgl_render.setSize(container.offsetWidth, container.offsetHeight);
 }
 
-function addContent_1()
+function addContent_1(scene)
 {
     // add plane
     var plane_geometry = new THREE.PlaneGeometry(200,400);
@@ -134,9 +137,8 @@ function addContent_1()
 }
 
 
-
 // 场景中的内容
-function addContent_2() {
+function addContent_2(scene) {
 
     var dirX = new THREE.Vector3( 1, 0, 0 );
     var dirY = new THREE.Vector3( 0, 1, 0 );
@@ -144,7 +146,6 @@ function addContent_2() {
 
     var origin = new THREE.Vector3( 0, 0, 0 );
     var length = 10;
-
     var arrowHelperX = new THREE.ArrowHelper( dirX, origin, length, 0xff0000 );
     var arrowHelperY = new THREE.ArrowHelper( dirY, origin, length, 0x00ff00 );
     var arrowHelperZ = new THREE.ArrowHelper( dirZ, origin, length, 0x0000ff );
@@ -152,48 +153,33 @@ function addContent_2() {
     scene.add( arrowHelperY );
     scene.add( arrowHelperZ );
 
-    /* 原点 */
-    var spriteOrigin = makeTextSprite( " vector3(0, 0, 0) ",
-        {
-            fontsize: 20,
-            borderColor: {r:255, g:0, b:0, a:0.4},/* 边框黑色 */
-            backgroundColor: {r:255, g:255, b:255, a:0.9}/* 背景颜色 */
-        } );
+    // 原点
+    var sprite_para = {
+        fontsize: 20,
+        borderColor: {r:255, g:0, b:0, a:0.4},// 边框黑色
+        backgroundColor: {r:255, g:255, b:255, a:0.9}// 背景颜色
+    };
+    var spriteOrigin = makeTextSprite( " ORI (0, 0, 0) ", sprite_para);
     spriteOrigin.center = new THREE.Vector2(0, 0);
     scene.add( spriteOrigin );
     spriteOrigin.position.set(0, -5, 0);
 
-    var spriteY = makeTextSprite( "Y",
-        {
-            fontsize: 20,
-            borderColor: {r:255, g:0, b:0, a:0.4},/* 边框黑色 */
-            backgroundColor: {r:255, g:255, b:255, a:0.9}/* 背景颜色 */
-        } );
+    var spriteY = makeTextSprite( "Y",sprite_para);
     spriteY.center = new THREE.Vector2(0, 0);
     scene.add( spriteY );
     spriteY.position.set(0, 6, 0);
 
-    var spriteX = makeTextSprite( "X",
-        {
-            fontsize: 20,
-            borderColor: {r:255, g:0, b:0, a:0.4},/* 边框黑色 */
-            backgroundColor: {r:255, g:255, b:255, a:0.9}/* 背景颜色 */
-        } );
+    var spriteX = makeTextSprite( "X",sprite_para);
     spriteX.center = new THREE.Vector2(0, 0);
     scene.add( spriteX );
     spriteX.position.set(10, -5, 0);
 
-    var spriteZ = makeTextSprite( "Z",
-        {
-            fontsize: 20,
-            borderColor: {r:255, g:0, b:0, a:0.4},/* 边框黑色 */
-            backgroundColor: {r:255, g:255, b:255, a:0.9}/* 背景颜色 */
-        } );
+    var spriteZ = makeTextSprite( "Z",sprite_para);
     spriteZ.center = new THREE.Vector2(0, 0);
     scene.add( spriteZ );
     spriteZ.position.set(0, -5, 10);
-
 }
+
 
 // 创建字体精灵
 function makeTextSprite(message, parameters) {
@@ -201,16 +187,12 @@ function makeTextSprite(message, parameters) {
     if ( parameters === undefined ) parameters = {};
 
     var fontface = parameters.hasOwnProperty("fontface") ? parameters["fontface"] : "Arial";
-
     /* 字体大小 */
     var fontsize = parameters.hasOwnProperty("fontsize") ? parameters["fontsize"] : 20;
-
     /* 边框厚度 */
     var borderThickness = parameters.hasOwnProperty("borderThickness") ? parameters["borderThickness"] : 4;
-
     /* 边框颜色 */
     var borderColor = parameters.hasOwnProperty("borderColor") ? parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
-
     /* 背景颜色 */
     var backgroundColor = parameters.hasOwnProperty("backgroundColor") ? parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
 
@@ -218,7 +200,6 @@ function makeTextSprite(message, parameters) {
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
     context.imageSmoothingQuality = "high";
-
     /* 字体加粗 */
     context.font = "Bold " + fontsize + "px " + fontface;
 
@@ -282,8 +263,8 @@ function init(){
     initLight();
     initControls();
 
-    addContent_1();
-    addContent_2();
+    addContent_1(scene);
+    addContent_2(scene);
 
     window.addEventListener('resize',onWindowResize, false);
 }
