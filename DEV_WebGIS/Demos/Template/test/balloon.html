@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas实现炫彩球体</title>
+    <style>
+        #canvas {
+			width: 100%;
+			height: 100%;
+        }
+        #starry-frame {
+            background: no-repeat linear-gradient(to bottom, #dcdcdc 0%, #000 100%);
+        }
+		body {
+			width: 100%;
+			height: 100%;
+			margin:0;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+
+
+    </style>
+    <script src="../../../LIB/Common_JS/jquery1.9.3.min.js"></script>
+</head>
+<body>
+<div id="starry-frame">
+    <canvas id="canvas"></canvas>
+</div>
+</body>
+</html>
+
+
+<script>
+	$(function () {
+
+		var ballArr = [];
+		var canvas = document.querySelector("canvas");
+		var ctx = canvas.getContext('2d');
+
+		var screenWidth = $("#canvas").width();
+		var screenHeight = $("#canvas").height();
+		canvas.width = screenWidth;
+		canvas.height = screenHeight;
+
+		$(window).resize(function () {
+			var canvas_dom =  $("#canvas");
+			screenWidth =canvas_dom.width();
+			screenHeight = canvas_dom.height();
+			canvas.width = screenWidth;
+			canvas.height = screenHeight;
+		});
+
+
+		//创建一个小球类
+		function Ball(x, y) {
+			this.x = x; //小球圆心x坐标
+			this.y = y; //小球圆心y坐标
+			this.r = 50; //小球半径
+			this.color = "rgba(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ",0.6)"; //小球颜色
+			this.dx = parseInt(Math.random() * 12 - 6); //小球速度的x分量
+			this.dy = parseInt(Math.random() * 12 - 6); //小球速度的y分量
+			ballArr.push(this);
+		}
+
+		//为小球类添加画小球方法
+		Ball.prototype.paint = function () {
+			ctx.save();
+			ctx.fillStyle = this.color;
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, true);
+			ctx.fill();
+			ctx.restore();
+		};
+		//更改小球的x,y实现动画效果
+		Ball.prototype.update = function () {
+			this.r--;
+			if (this.r < 0) {
+				this.die();
+			} else {
+				this.x += this.dx;
+				this.y += this.dy;
+			}
+		};
+		//当小球的半径为0时,从ballArr数组中删除小球
+		Ball.prototype.die = function () {
+			for (let i = 0; i < ballArr.length; i++) {
+				ballArr.splice(i, 1);
+			}
+		};
+
+		//设置定时器,让每个小球动起来
+		function render() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			for (let i = 0; i < ballArr.length; i++) {
+				ballArr[i].paint();
+				ballArr[i].update();
+			}
+			new Ball(Math.random() * screenWidth, Math.random() * screenHeight);
+			requestAnimationFrame(render)
+		}
+
+		render();
+		//设置鼠标移动监听事件
+		canvas.onmousemove = function (ev) {
+			ev = ev || event;
+			new Ball(ev.clientX, ev.clientY);
+		}
+	})
+</script>

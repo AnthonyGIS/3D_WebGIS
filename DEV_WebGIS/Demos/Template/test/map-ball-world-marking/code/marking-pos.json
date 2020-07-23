@@ -1,0 +1,64 @@
+{
+	"marking": [
+		{
+			"barName": "美国首都-华盛顿",
+	    	"color": "black",
+	    	"value": 20.51,
+	    	"pos": [-77.02182,38.53707]
+		},
+		{
+			"barName": "中国首都-北京",
+	    	"color": "grey",
+	    	"value": 13.2,
+	    	"pos": [116.4551,40.1439]
+		},
+		{
+			"barName": "日本首都-东京",
+	    	"color": "white",
+	    	"value": 5.06,
+	    	"pos": [139.6932, 35.6898]
+		},
+		{
+			"barName": "德国-柏林",
+	    	"color": "blue",
+			"value": 3.93,	    	
+	    	"pos": [13.25,52.3]
+		},
+		{
+			"barName": "法国首都-巴黎",
+	    	"color": "silver",
+	    	"value": 2.76,
+	    	"pos": [2.174203, 48.522552]
+		},
+		{
+			"barName": "英国首都-伦敦",
+	    	"color": "red",
+	    	"value": 2.66,
+	    	"pos": [0.5, 51.3]
+		},
+		{
+			"barName": "印度首都-新德里",
+	    	"color": "green",
+	    	"value": 2.65,
+	    	"pos": [77.13, 28.37]
+		},
+		{
+			"barName": "巴西首都-巴西利亚",
+	    	"color": "orange",
+	    	"value": 2.2,
+	    	"pos": [-47.56,-15.47]
+		},
+		{
+			"barName": "意大利首都-罗马",
+	    	"color": "bronze",
+	    	"value": 2.05,
+	    	"pos": [12,42]
+		},
+		{
+			"barName": "加拿大首都-渥太华",
+	    	"color": "yellow",
+	    	"value": 1.76,
+	    	"pos": [-75.43, 45.25]
+		}
+	]
+}

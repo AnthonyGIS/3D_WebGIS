@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>旋转地球</title>
+    <script src="../../../LIB/three_js/build/three.min.js"></script>
+    <script src="../../../LIB/three_js/examples/js/libs/stats.min.js" type="module"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        div#canvas-frame {
+            border: none;
+            cursor: pointer;
+            width: 80%;
+            margin:0 auto;
+            height:100vh;
+            background-color: #EEEEEE;
+        }
+
+        img {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+<canvas id="canvas" width="64" height="64" style="display:none;"></canvas>
+<!-- 存放canvas的容器 -->
+<div id="canvas-frame"></div>
+</body>
+
+<script type="module">
+
+    import {OrbitControls} from "../../../LIB/three_js/examples/jsm/controls/OrbitControls.js";
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        threeStart();
+    });
+
+    var text = "first text";
+    function showText(){
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.canvas.width =256;
+        const x =0;
+        const y=32;
+        ctx.fillStyle = "red";
+        ctx.font = "30px arial";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        ctx.fillText(text,x,y)
+    }
+
+    // 渲染器
+    var renderer;
+    var width, height;
+    function initThree() {
+        width = document.getElementById('canvas-frame').clientWidth;
+        height = document.getElementById('canvas-frame').clientHeight;
+        renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true,
+            canvas: renderer
+        });
+        renderer.setSize(width, height);
+        document.getElementById('canvas-frame').appendChild(renderer.domElement);
+        renderer.setClearColor(0x000000, 1.0);
+    }
+
+    // 相机
+    var camera;
+    function initCamera() {
+        // 透视相机 视角越大，看到的场景越大，那么中间的物体相对于整个场景来说，就越小了
+        camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
+        camera.position.x = 0;
+        camera.position.y = 0;
+        camera.position.z = 700;
+        //camera.lookAt({ x: 0, y: 0, z: 0 });
+    }
+
+    // 场景
+    var scene;
+    function initScene() {
+        scene = new THREE.Scene();
+    }
+
+    // 光源
+    var light;
+    function initLight() {
+
+        // 环境光
+        light = new THREE.AmbientLight(0xFFFFFF);
+        light.position.set(100, 100, 200);
+        scene.add(light);
+
+        // 平行光
+        // 位置不同，方向光作用于物体的面也不同，看到的物体各个面的颜色也不一样
+        // light = new THREE.DirectionalLight(0xffffbb, 1);
+        // light.position.set(-1, 1, 1);
+        // scene.add(light);
+    }
+
+    // 地球
+    var earthMesh;
+    function initEarth() {
+        var earthGeo = new THREE.SphereGeometry(200, 100, 100);
+        var earthMater = new THREE.MeshPhongMaterial({
+            map: new THREE.TextureLoader().load('../../../LIB/three_js/examples/textures/planets/earth_atmos_4096.jpg'),
+            //side: THREE.DoubleSide
+        });
+        earthMesh = new THREE.Mesh(earthGeo, earthMater);
+        scene.add(earthMesh);
+    }
+
+    // 云
+    var cloudsMesh;
+    function initClouds() {
+        var cloudsGeo = new THREE.SphereGeometry(201, 100, 100);
+        var cloudsMater = new THREE.MeshPhongMaterial({
+            alphaMap: new THREE.TextureLoader().load('../../../LIB/three_js/examples/textures/planets/earth_clouds_2048.png'),
+            transparent: true,
+            opacity: 0.2
+        });
+        cloudsMesh = new THREE.Mesh(cloudsGeo, cloudsMater);
+        scene.add(cloudsMesh);
+    }
+
+    var controls;
+    function threeStart() {
+        initThree();
+        //initStats();
+        initCamera();
+        initScene();
+        initLight();
+        initEarth();
+        initClouds();
+        // 载入控制器
+        controls =  new OrbitControls(camera, renderer.domElement);
+        window.addEventListener("resize", onWindowResize, false);
+        //renderer.clear();
+        animate();
+    }
+    function onWindowResize() {
+        width = document.getElementById('canvas-frame').clientWidth;
+        height = document.getElementById('canvas-frame').clientHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+    }
+
+    var sprite;
+    function showSprite(){
+        showText();
+        const canvasTexture = new THREE.CanvasTexture(
+            document.querySelector("#canvas")
+        );
+        //canvasTexture.needsUpdate = true; //注意这句不能少
+        const spritMaterial = new THREE.SpriteMaterial({
+            map:canvasTexture
+        });
+        sprite = new THREE.Sprite(spritMaterial);
+        sprite.position.set(-280,0,0);
+        //精灵的默认大小很小估计是[1,1,1]
+        sprite.scale.set(0.64*256,0.64*64,1);
+        scene.add(sprite)
+
+    }
+
+    function animate() {
+        text="new text";
+        scene.remove(sprite);
+        showSprite();
+        controls.update();
+        //stats.update();
+        // 地球自转
+        earthMesh.rotation.y -= 0.002;
+
+        // 漂浮的云层
+        cloudsMesh.rotation.y -= 0.005;
+        cloudsMesh.rotation.z += 0.005;
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+    }
+
+</script>
+</html>

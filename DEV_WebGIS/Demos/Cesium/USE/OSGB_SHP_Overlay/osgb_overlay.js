@@ -8,11 +8,16 @@ var viewer = new Cesium.Viewer('cesiumContainer');
 viewer.scene.globe.enableLighting = true;
 viewer.scene.globe.depthTestAgainstTerrain = true;
 
-
-var cesiumTerrainProviderMeshes = new Cesium.CesiumTerrainProvider({
-    url: 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
-    requestWaterMask: true,
-    requestVertexNormals: true
+// old create method. 20.6.8
+// var cesiumTerrainProviderMeshes = new Cesium.CesiumTerrainProvider({
+//     url: 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
+//     requestWaterMask: true,
+//     requestVertexNormals: true
+// });
+// new
+var cesiumTerrainProviderMeshes = Cesium.createWorldTerrain({
+    requestWaterMask : true,
+    requestVertexNormals : true
 });
 viewer.terrainProvider = cesiumTerrainProviderMeshes;
 

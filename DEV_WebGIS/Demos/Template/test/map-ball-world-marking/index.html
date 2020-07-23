@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>朵朵视野-Three.js实现世界地图球体标记图</title>
+    <link href="./css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/three.min.js"></script>
+    <script type="text/javascript" src="./js/THREE.MeshLine.js"></script>
+    <script type="text/javascript" src="./js/OrbitControls.js"></script>
+</head>
+<body>
+	<h1>2018年世界GDP排名前十国家及其GDP总量</h1>
+	<ul id="three-lite">
+		<li style="color:black;"><p>美国</p><img src="./image/america_icon.jpg" />20.51</li>
+		<li style="color:grey;"><p>中国</p><img src="./image/china_icon.jpg" />13.2</li>
+		<li style="color:white;"><p>日本 </p><img src="./image/japan_icon.jpg" />5.06</li>
+		<li style="color:blue;"><p>德国</p><img src="./image/geymany_icon.jpg" />3.93</li>
+		<li style="color:silver;"><p>英国</p><img src="./image/england_icon.jpg" />2.76</li>
+		<li style="color:red;"><p>法国 </p><img src="./image/france_icon.jpg" />2.66</li>
+		<li style="color:green;"><p>印度</p><img src="./image/india_icon.jpg" />2.65</li>
+		<li style="color:orange;"><p>意大利</p><img src="./image/italy_icon.jpg" />2.2</li>
+		<li style="color:bronze;"><p>巴西 </p><img src="./image/brazil_icon.jpg" />2.05</li>
+		<li style="color:yellow;"><p>加拿大</p><img src="./image/canada_icon.jpg" />1.76</li>
+	</ul>
+	<div id="three-frame"></div>
+	</body>
+	<script>
+	    // 渲染器
+	    var renderer = null;
+	    // 相机
+	    var camera = null;
+	    // 场景
+	    var scene = null;
+	    // 包裹画布dom
+	    var dom = document.getElementById("three-frame");
+	    // 地球对象
+	    var earthBall = null;
+	    // 标记点集合对象
+	    var marking = null;
+	    // 标记位置对象
+	    var markingPos = null;
+	    // 地球大小
+	    var earthBallSize = 30;
+	    // 地球贴图
+	    var earthImg = './image/earth_bg.jpg';
+	    // 标记对象集合变量
+	    var markingGroup = null;
+	    // 获取标记地点信息
+	    var getMarkingPos = function () {
+	    	$.ajax({ 
+		     	type : "GET", //提交方式 
+		     	url : "./code/marking-pos.json",
+		     	async: false,
+		     	success : function(response) {//返回数据根据结果进行相应的处理 
+		     		markingPos = response;
+		     	} 
+		    })
+	    }
+	    // 经纬度转换函数
+	    var getPosition = function (longitude, latitude, radius) {
+	    	var lg = THREE.Math.degToRad(longitude);
+	    	var lt = THREE.Math.degToRad(latitude);
+	    	var temp = radius * Math.cos(lt);
+	    	var x = temp * Math.sin(lg);
+	    	var y = radius * Math.sin(lt);
+	    	var z = temp * Math.cos(lg);
+	    	return {
+	    		x: x,
+	    		y: y,
+	    		z: z
+	    	}
+	    }
+	    // 标记函数
+	    var markingPoint = function (marking) {
+	    	var pos = getPosition(marking.pos[0] + 90, marking.pos[1], earthBallSize);
+	    	var _pos = getPosition(marking.pos[0] + 90, marking.pos[1], earthBallSize + marking.value);
+	    	var curve = new THREE.CubicBezierCurve3(pos, pos, _pos, _pos);
+	    	var points = curve.getPoints(100);
+	    	var aGroup = new THREE.Group();
+	    	points.forEach(function (pointItem, index) {
+	    		var radius = 0.5 - index * 0.005;
+	    		var aGeo = new THREE.SphereGeometry(radius, 50, 50);
+	    		var aMater = new THREE.MeshPhongMaterial({
+	    			color: marking.color,
+	    			transparent: true,
+	    			opacity: 1 - index * 0.01
+	    		})
+	    		var aMesh = new THREE.Mesh(aGeo, aMater);
+	    		aMesh.position.set(pointItem.x, pointItem.y, pointItem.z);
+	    		aGroup.add(aMesh);
+	    	})
+	    	markingGroup.add(aGroup);
+	    }
+	    // 执行函数
+	    var render = function () {
+	    	scene.rotation.y -= 0.01;
+	        renderer.render(scene, camera);
+	        orbitcontrols.update();
+	        requestAnimationFrame(render);
+	    }
+	    // 初始化函数
+	    var initThree = function () {
+	        // 初始化场景
+	        scene = new THREE.Scene();
+	        // 初始化相机
+	        camera = new THREE.PerspectiveCamera(20, dom.clientWidth / dom.clientHeight, 1, 100000);
+	        // 设置相机位置
+	        camera.position.set(0, 0, 200);
+	        renderer = new THREE.WebGLRenderer({
+	            alpha: true,
+	            antialias: true
+	        });
+	        // 设置窗口尺寸
+	        renderer.setSize(dom.clientWidth, dom.clientHeight);
+	        // 初始化控制器
+	        orbitcontrols = new THREE.OrbitControls(camera,renderer.domElement);
+	        dom.appendChild(renderer.domElement);
+	        // 设置光线
+	        scene.add(new THREE.HemisphereLight('#ffffff', '#ffffff', 1));
+	        // 定义地球材质
+	        var earthTexture = THREE.ImageUtils.loadTexture(earthImg, {}, function () {
+	            renderer.render(scene, camera);
+	        });
+	        // 创建地球
+	        earthBall = new THREE.Mesh(new THREE.SphereGeometry(earthBallSize, 50, 50), new THREE.MeshBasicMaterial({
+	            map: earthTexture
+	        }));
+	        scene.add(earthBall);
+	        // 球体表面标记
+	        markingGroup = new THREE.Group();
+	        markingPos.marking.forEach(function (item, index) {
+        		markingPoint(item);
+	        })
+	        scene.add(markingGroup);
+	        // 渲染
+	        render();
+	    }
+	    // 页面资源加载完全执行函数
+	    window.onload = function () {
+	    	getMarkingPos();
+	    	initThree();
+	    }
+	    // 窗口resize事件
+	    window.onresize = function () {
+	    	// 重新初始化尺寸
+	        camera.aspect = dom.clientWidth / dom.clientHeight;
+	        camera.updateProjectionMatrix();
+	        renderer.setSize(dom.clientWidth, dom.clientHeight)
+	    }
+	</script>
+</html>

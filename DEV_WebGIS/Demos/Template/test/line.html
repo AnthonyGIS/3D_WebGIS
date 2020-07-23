@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+	<script src="../../../LIB/Common_JS/jquery1.9.3.min.js"></script>
+	<script src="../../../LIB/three_js/build/three.js"></script>
+	<script src="../../../LIB/three_js/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深入理解Three.js中线条Line，LinLoop，LineSegments</title>
+</head>
+<body>
+<div id="starry-frame"></div>
+</body>
+
+<script>
+    $(function () {
+        var renderer, camera, scene;
+        var dom = document.getElementById('starry-frame');
+        var orbitcontrols = null;
+        var average = 15;
+        var sperateNum = average * 2;
+        var lineGroup = new THREE.Group();
+        var sphereMaterial = null;
+
+        function initThree() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(60, dom.clientWidth / dom.clientHeight, 1, 100000);
+            camera.position.set(0, 0, 100);
+            camera.lookAt(0, 0, 0);
+            renderer = new THREE.WebGLRenderer({
+                appha: true,
+                antialias: true
+            });
+            renderer.setSize(dom.clientWidth, dom.clientHeight);
+            dom.appendChild(renderer.domElement);
+            orbitcontrols = new THREE.OrbitControls(camera, renderer.domElement);
+            var num1 = 0;
+            var geometry1 = new THREE.Geometry();
+            var lineMaterial1 = new THREE.LineBasicMaterial({
+                color: '#686b74'
+            });
+            geometry1.vertices.push(
+                new THREE.Vector3(0, average * 1.5, 0),
+                new THREE.Vector3(average, average, average),
+                new THREE.Vector3(0, average * 1.5, 0),
+                new THREE.Vector3(average, average, -average),
+                new THREE.Vector3(0, average * 1.5, 0),
+                new THREE.Vector3(-average, average, -average),
+                new THREE.Vector3(0, average * 1.5, 0),
+                new THREE.Vector3(-average, average, average)
+            )
+            for (var i = 0; i < average * 8; i++) {
+                num = parseInt(i / sperateNum) + 1;
+                if (num == 1) {
+                    geometry1.vertices.push(
+                        new THREE.Vector3(0, average * 1.5, 0),
+                        new THREE.Vector3(i % sperateNum - average, average, average)
+                    )
+                }
+                if (num == 2) {
+                    geometry1.vertices.push(
+                        new THREE.Vector3(0, average * 1.5, 0),
+                        new THREE.Vector3(average, average, i % sperateNum - average)
+                    )
+                }
+                if (num == 3) {
+                    geometry1.vertices.push(
+                        new THREE.Vector3(0, average * 1.5, 0),
+                        new THREE.Vector3(i % sperateNum - average, average, -average)
+                    )
+                }
+                if (num == 4) {
+                    geometry1.vertices.push(
+                        new THREE.Vector3(0, average * 1.5, 0),
+                        new THREE.Vector3(-average, average, i % sperateNum - average)
+                    )
+                }
+            }
+            var line1 = new THREE.Line(geometry1, lineMaterial1);
+            lineGroup.add(line1);
+            var geometry2 = new THREE.Geometry();
+            var lineMaterial2 = new THREE.LineBasicMaterial({
+                color: '#de904e'
+            });
+            for (var i = 0; i <= average; i++) {
+                geometry2.vertices.push(
+                    new THREE.Vector3(-average, i, -average),
+                    new THREE.Vector3(average, i, -average)
+                )
+            }
+            for (var i = 0; i <= average * 2; i++) {
+                geometry2.vertices.push(
+                    new THREE.Vector3(i - average, average, -average),
+                    new THREE.Vector3(i - average, 0, -average)
+                )
+            }
+            var line2 = new THREE.LineSegments(geometry2, lineMaterial2);
+            lineGroup.add(line2);
+            var geometry3 = geometry2.clone();
+            var line3 = new THREE.LineSegments(geometry3, lineMaterial2);
+            line3.rotation.y = Math.PI / 2;
+            lineGroup.add(line3);
+            var geometry4 = geometry2.clone();
+            var line4 = new THREE.LineSegments(geometry4, lineMaterial2);
+            line4.rotation.y = -Math.PI / 2;
+            lineGroup.add(line4);
+            var geometry5 = geometry2.clone();
+            var line5 = new THREE.LineSegments(geometry5, lineMaterial2);
+            line5.position.z += average * 2;
+            lineGroup.add(line5);
+            var lineMaterial6 = new THREE.LineBasicMaterial({
+                color: '#1f212d'
+            })
+            var geometry6 = new THREE.Geometry();
+            for (var i = 0; i <= average * 4; i++) {
+                geometry6.vertices.push(
+                    new THREE.Vector3(i * 0.5 - average, 0, -average),
+                    new THREE.Vector3(i - average * 2, -average, -average * 2)
+                )
+            }
+            var line6 = new THREE.LineSegments(geometry6, lineMaterial6);
+            lineGroup.add(line6);
+            var geometry7 = geometry6.clone();
+            var line7 = new THREE.LineSegments(geometry7, lineMaterial6);
+            line7.rotation.y = Math.PI / 2;
+            lineGroup.add(line7);
+            var geometry8 = geometry6.clone();
+            var line8 = new THREE.LineSegments(geometry8, lineMaterial6);
+            line8.rotation.y = -Math.PI / 2;
+            lineGroup.add(line8);
+            var geometry9 = geometry6.clone();
+            var line9 = new THREE.LineSegments(geometry9, lineMaterial6);
+            line9.position.y += average;
+            line9.position.z += average;
+            line9.rotation.x = -Math.PI / 2;
+            lineGroup.add(line9);
+            var lineMaterial10 = new THREE.LineBasicMaterial({
+                color: '#eba25e'
+            })
+            var geometry10 = new THREE.Geometry();
+            geometry10.vertices.push(
+                new THREE.Vector3(average * 2, -average, average * 2),
+                new THREE.Vector3(average * 2, -average, -average * 2),
+                new THREE.Vector3(-average * 2, -average, -average * 2),
+                new THREE.Vector3(-average * 2, -average, average * 2)
+            )
+            var line10 = new THREE.LineSegments(geometry10, lineMaterial10);
+            lineGroup.add(line10);
+            var geometry11 = new THREE.Geometry();
+            geometry11.vertices.push(
+                new THREE.Vector3(average * 2, -average, average * 2),
+                new THREE.Vector3(average * 2, -average * 2, average * 2),
+                new THREE.Vector3(average * 2, -average, -average * 2),
+                new THREE.Vector3(average * 2, -average * 2, -average * 2),
+                new THREE.Vector3(-average * 2, -average, -average * 2),
+                new THREE.Vector3(-average * 2, -average * 2, -average * 2),
+                new THREE.Vector3(-average * 2, -average, average * 2),
+                new THREE.Vector3(-average * 2, -average * 2, average * 2),
+            )
+            var line11 = new THREE.LineSegments(geometry11, lineMaterial10);
+            lineGroup.add(line11);
+            var geometry12 = new THREE.Geometry();
+            geometry12.vertices.push(
+                new THREE.Vector3(0, average * 1.5, 0),
+                new THREE.Vector3(0, -average, 0)
+            )
+            var line12 = new THREE.LineSegments(geometry12, lineMaterial1)
+            lineGroup.add(line12);
+            var geometry = new THREE.SphereGeometry(average / 2, 30, 30);
+            sphereMaterial = new THREE.MeshLambertMaterial({
+                color: '#666666',
+                emissive: '#ff0000',
+            })
+            var sphere = new THREE.Mesh(geometry, sphereMaterial)
+            sphere.position.y = -average;
+            lineGroup.add(sphere);
+            lineGroup.position.y += average;
+            lineGroup.rotation.x = Math.PI / 6;
+            scene.add(lineGroup);
+            render();
+        }
+
+        initThree();
+
+        function render() {
+            var timer = 0.0001 * Date.now();
+            renderer.render(scene, camera);
+            lineGroup.rotation.y += 0.01;
+            if (sphereMaterial) {
+                sphereMaterial.emissive.setHSL(0.54, 1, 0.35 * (0.5 + 0.5 * Math.sin(35 * timer)))
+            }
+            orbitcontrols.update();
+            requestAnimationFrame(render);
+        }
+
+        window.onresize = function () {
+            camera.aspect = dom.clientWidth / dom.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(dom.clientWidth, dom.clientHeight);
+        }
+    })
+</script>
+</html>

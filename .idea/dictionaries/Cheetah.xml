@@ -1,6 +1,8 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Cheetah">
     <words>
+      <w>adcode</w>
+      <w>atmos</w>
       <w>baidu</w>
       <w>cgal</w>
       <w>clearfix</w>
@@ -8,12 +10,16 @@
       <w>cuda</w>
       <w>cuon</w>
       <w>cwrapper</w>
+      <w>dtiles</w>
       <w>eigen</w>
+      <w>fontface</w>
       <w>fshader</w>
+      <w>fshaders</w>
       <w>fsize</w>
       <w>fxaa</w>
       <w>galpop</w>
       <w>gdal</w>
+      <w>georeferenced</w>
       <w>glsl</w>
       <w>haha</w>
       <w>hemi</w>
@@ -28,11 +34,15 @@
       <w>phong</w>
       <w>plungins</w>
       <w>portamento</w>
+      <w>projs</w>
       <w>showcolor</w>
       <w>sintel</w>
       <w>stylers</w>
+      <w>tileset</w>
       <w>vshader</w>
+      <w>vshaders</w>
       <w>xform</w>
+      <w>xxxxx</w>
     </words>
   </dictionary>
 </component>

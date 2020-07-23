@@ -77,12 +77,12 @@ function GraphemeSplitter(){
 	// two given grapheme breaking classes
 	function shouldBreak(start, mid, end){
 		var all = [start].concat(mid).concat([end]);
-		var previous = all[all.length - 2];
-		var next = end;
+		var previous = all[all.length - 2]
+		var next = end
 
 		// Lookahead termintor for:
 		// GB10. (E_Base | EBG) Extend* ?	E_Modifier
-		var eModifierIndex = all.lastIndexOf(E_Modifier);
+		var eModifierIndex = all.lastIndexOf(E_Modifier)
 		if(eModifierIndex > 1 &&
 			all.slice(1, eModifierIndex).every(function(c){return c == Extend}) &&
 			[Extend, E_Base, E_Base_GAZ].indexOf(start) == -1){
@@ -92,7 +92,7 @@ function GraphemeSplitter(){
 		// Lookahead termintor for:
 		// GB12. ^ (RI RI)* RI	?	RI
 		// GB13. [^RI] (RI RI)* RI	?	RI
-		var rIIndex = all.lastIndexOf(Regional_Indicator);
+		var rIIndex = all.lastIndexOf(Regional_Indicator)
 		if(rIIndex > 0 &&
 			all.slice(1, rIIndex).every(function(c){return c == Regional_Indicator}) &&
 			[Prepend, Regional_Indicator].indexOf(previous) == -1) {
@@ -187,7 +187,7 @@ function GraphemeSplitter(){
 			return string.length;
 		}
 		var prev = getGraphemeBreakProperty(codePointAt(string, index));
-		var mid = [];
+		var mid = []
 		for (var i = index + 1; i < string.length; i++) {
 			// check for already processed low surrogates
 			if(isSurrogate(string, i - 1)){

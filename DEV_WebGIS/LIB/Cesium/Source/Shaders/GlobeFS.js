@@ -10,6 +10,11 @@ uniform bool u_dayTextureUseWebMercatorT[TEXTURE_UNITS];\n\
 uniform float u_dayTextureAlpha[TEXTURE_UNITS];\n\
 #endif\n\
 \n\
+#ifdef APPLY_DAY_NIGHT_ALPHA\n\
+uniform float u_dayTextureNightAlpha[TEXTURE_UNITS];\n\
+uniform float u_dayTextureDayAlpha[TEXTURE_UNITS];\n\
+#endif\n\
+\n\
 #ifdef APPLY_SPLIT\n\
 uniform float u_dayTextureSplit[TEXTURE_UNITS];\n\
 #endif\n\
@@ -73,7 +78,7 @@ uniform mat4 u_clippingPlanesMatrix;\n\
 uniform vec4 u_clippingPlanesEdgeStyle;\n\
 #endif\n\
 \n\
-#if defined(FOG) && (defined(ENABLE_VERTEX_LIGHTING) || defined(ENABLE_DAYNIGHT_SHADING)) || defined(GROUND_ATMOSPHERE)\n\
+#if defined(FOG) && defined(DYNAMIC_ATMOSPHERE_LIGHTING) && (defined(ENABLE_VERTEX_LIGHTING) || defined(ENABLE_DAYNIGHT_SHADING))\n\
 uniform float u_minimumBrightness;\n\
 #endif\n\
 \n\
@@ -83,6 +88,17 @@ uniform vec3 u_hsbShift; // Hue, saturation, brightness\n\
 \n\
 #ifdef HIGHLIGHT_FILL_TILE\n\
 uniform vec4 u_fillHighlightColor;\n\
+#endif\n\
+\n\
+#ifdef TRANSLUCENT\n\
+uniform vec4 u_frontFaceAlphaByDistance;\n\
+uniform vec4 u_backFaceAlphaByDistance;\n\
+uniform vec4 u_translucencyRectangle;\n\
+#endif\n\
+\n\
+#ifdef UNDERGROUND_COLOR\n\
+uniform vec4 u_undergroundColor;\n\
+uniform vec4 u_undergroundColorAlphaByDistance;\n\
 #endif\n\
 \n\
 varying vec3 v_positionMC;\n\
@@ -97,8 +113,11 @@ varying float v_slope;\n\
 varying float v_aspect;\n\
 #endif\n\
 \n\
-#if defined(FOG) || defined(GROUND_ATMOSPHERE)\n\
+#if defined(FOG) || defined(GROUND_ATMOSPHERE) || defined(UNDERGROUND_COLOR) || defined(TRANSLUCENT)\n\
 varying float v_distance;\n\
+#endif\n\
+\n\
+#if defined(FOG) || defined(GROUND_ATMOSPHERE)\n\
 varying vec3 v_fogRayleighColor;\n\
 varying vec3 v_fogMieColor;\n\
 #endif\n\
@@ -108,6 +127,36 @@ varying vec3 v_rayleighColor;\n\
 varying vec3 v_mieColor;\n\
 #endif\n\
 \n\
+#if defined(UNDERGROUND_COLOR) || defined(TRANSLUCENT)\n\
+float interpolateByDistance(vec4 nearFarScalar, float distance)\n\
+{\n\
+    float startDistance = nearFarScalar.x;\n\
+    float startValue = nearFarScalar.y;\n\
+    float endDistance = nearFarScalar.z;\n\
+    float endValue = nearFarScalar.w;\n\
+    float t = clamp((distance - startDistance) / (endDistance - startDistance), 0.0, 1.0);\n\
+    return mix(startValue, endValue, t);\n\
+}\n\
+#endif\n\
+\n\
+#if defined(UNDERGROUND_COLOR) || defined(TRANSLUCENT) || defined(APPLY_MATERIAL)\n\
+vec4 alphaBlend(vec4 sourceColor, vec4 destinationColor)\n\
+{\n\
+    return sourceColor * vec4(sourceColor.aaa, 1.0) + destinationColor * (1.0 - sourceColor.a);\n\
+}\n\
+#endif\n\
+\n\
+#ifdef TRANSLUCENT\n\
+bool inTranslucencyRectangle()\n\
+{\n\
+    return\n\
+        v_textureCoordinates.x > u_translucencyRectangle.x &&\n\
+        v_textureCoordinates.x < u_translucencyRectangle.z &&\n\
+        v_textureCoordinates.y > u_translucencyRectangle.y &&\n\
+        v_textureCoordinates.y < u_translucencyRectangle.w;\n\
+}\n\
+#endif\n\
+\n\
 vec4 sampleAndBlend(\n\
     vec4 previousColor,\n\
     sampler2D textureToSample,\n\
@@ -115,13 +164,16 @@ vec4 sampleAndBlend(\n\
     vec4 textureCoordinateRectangle,\n\
     vec4 textureCoordinateTranslationAndScale,\n\
     float textureAlpha,\n\
+    float textureNightAlpha,\n\
+    float textureDayAlpha,\n\
     float textureBrightness,\n\
     float textureContrast,\n\
     float textureHue,\n\
     float textureSaturation,\n\
     float textureOneOverGamma,\n\
     float split,\n\
-    vec4 colorToAlpha)\n\
+    vec4 colorToAlpha,\n\
+    float nightBlend)\n\
 {\n\
     // This crazy step stuff sets the alpha to 0.0 if this following condition is true:\n\
     //    tileTextureCoordinates.s < textureCoordinateRectangle.s ||\n\
@@ -135,6 +187,10 @@ vec4 sampleAndBlend(\n\
 \n\
     alphaMultiplier = step(vec2(0.0), textureCoordinateRectangle.pq - tileTextureCoordinates);\n\
     textureAlpha = textureAlpha * alphaMultiplier.x * alphaMultiplier.y;\n\
+\n\
+#if defined(APPLY_DAY_NIGHT_ALPHA) && defined(ENABLE_DAYNIGHT_SHADING)\n\
+    textureAlpha *= mix(textureDayAlpha, textureNightAlpha, nightBlend);\n\
+#endif\n\
 \n\
     vec2 translation = textureCoordinateTranslationAndScale.xy;\n\
     vec2 scale = textureCoordinateTranslationAndScale.zw;\n\
@@ -226,8 +282,14 @@ vec3 colorCorrect(vec3 rgb) {\n\
     return rgb;\n\
 }\n\
 \n\
-vec4 computeDayColor(vec4 initialColor, vec3 textureCoordinates);\n\
+vec4 computeDayColor(vec4 initialColor, vec3 textureCoordinates, float nightBlend);\n\
 vec4 computeWaterColor(vec3 positionEyeCoordinates, vec2 textureCoordinates, mat3 enuToEye, vec4 imageryColor, float specularMapValue, float fade);\n\
+\n\
+#ifdef GROUND_ATMOSPHERE\n\
+vec3 computeGroundAtmosphereColor(vec3 fogColor, vec4 finalColor, vec3 atmosphereLightDirection, float cameraDist);\n\
+#endif\n\
+\n\
+const float fExposure = 2.0;\n\
 \n\
 void main()\n\
 {\n\
@@ -243,11 +305,22 @@ void main()\n\
     float clipDistance = clip(gl_FragCoord, u_clippingPlanes, u_clippingPlanesMatrix);\n\
 #endif\n\
 \n\
+#if defined(SHOW_REFLECTIVE_OCEAN) || defined(ENABLE_DAYNIGHT_SHADING) || defined(HDR)\n\
+    vec3 normalMC = czm_geodeticSurfaceNormal(v_positionMC, vec3(0.0), vec3(1.0));   // normalized surface normal in model coordinates\n\
+    vec3 normalEC = czm_normal3D * normalMC;                                         // normalized surface normal in eye coordiantes\n\
+#endif\n\
+\n\
+#if defined(APPLY_DAY_NIGHT_ALPHA) && defined(ENABLE_DAYNIGHT_SHADING)\n\
+    float nightBlend = 1.0 - clamp(czm_getLambertDiffuse(czm_lightDirectionEC, normalEC) * 5.0, 0.0, 1.0);\n\
+#else\n\
+    float nightBlend = 0.0;\n\
+#endif\n\
+\n\
     // The clamp below works around an apparent bug in Chrome Canary v23.0.1241.0\n\
     // where the fragment shader sees textures coordinates < 0.0 and > 1.0 for the\n\
     // fragments on the edges of tiles even though the vertex shader is outputting\n\
     // coordinates strictly in the 0-1 range.\n\
-    vec4 color = computeDayColor(u_initialColor, clamp(v_textureCoordinates, 0.0, 1.0));\n\
+    vec4 color = computeDayColor(u_initialColor, clamp(v_textureCoordinates, 0.0, 1.0), nightBlend);\n\
 \n\
 #ifdef SHOW_TILE_BOUNDARIES\n\
     if (v_textureCoordinates.x < (1.0/256.0) || v_textureCoordinates.x > (255.0/256.0) ||\n\
@@ -255,11 +328,6 @@ void main()\n\
     {\n\
         color = vec4(1.0, 0.0, 0.0, 1.0);\n\
     }\n\
-#endif\n\
-\n\
-#if defined(SHOW_REFLECTIVE_OCEAN) || defined(ENABLE_DAYNIGHT_SHADING) || defined(HDR)\n\
-    vec3 normalMC = czm_geodeticSurfaceNormal(v_positionMC, vec3(0.0), vec3(1.0));   // normalized surface normal in model coordinates\n\
-    vec3 normalEC = czm_normal3D * normalMC;                                         // normalized surface normal in eye coordiantes\n\
 #endif\n\
 \n\
 #if defined(ENABLE_DAYNIGHT_SHADING) || defined(GROUND_ATMOSPHERE)\n\
@@ -318,16 +386,17 @@ void main()\n\
     materialInput.height = v_height;\n\
     materialInput.aspect = v_aspect;\n\
     czm_material material = czm_getMaterial(materialInput);\n\
-    color.xyz = mix(color.xyz, material.diffuse, material.alpha);\n\
+    vec4 materialColor = vec4(material.diffuse, material.alpha);\n\
+    color = alphaBlend(materialColor, color);\n\
 #endif\n\
 \n\
 #ifdef ENABLE_VERTEX_LIGHTING\n\
-    float diffuseIntensity = clamp(czm_getLambertDiffuse(czm_sunDirectionEC, normalize(v_normalEC)) * 0.9 + 0.3, 0.0, 1.0);\n\
-    vec4 finalColor = vec4(color.rgb * diffuseIntensity, color.a);\n\
+    float diffuseIntensity = clamp(czm_getLambertDiffuse(czm_lightDirectionEC, normalize(v_normalEC)) * 0.9 + 0.3, 0.0, 1.0);\n\
+    vec4 finalColor = vec4(color.rgb * czm_lightColor * diffuseIntensity, color.a);\n\
 #elif defined(ENABLE_DAYNIGHT_SHADING)\n\
-    float diffuseIntensity = clamp(czm_getLambertDiffuse(czm_sunDirectionEC, normalEC) * 5.0 + 0.3, 0.0, 1.0);\n\
+    float diffuseIntensity = clamp(czm_getLambertDiffuse(czm_lightDirectionEC, normalEC) * 5.0 + 0.3, 0.0, 1.0);\n\
     diffuseIntensity = mix(1.0, diffuseIntensity, fade);\n\
-    vec4 finalColor = vec4(color.rgb * diffuseIntensity, color.a);\n\
+    vec4 finalColor = vec4(color.rgb * czm_lightColor * diffuseIntensity, color.a);\n\
 #else\n\
     vec4 finalColor = color;\n\
 #endif\n\
@@ -350,14 +419,19 @@ void main()\n\
 #if defined(FOG) || defined(GROUND_ATMOSPHERE)\n\
     vec3 fogColor = colorCorrect(v_fogMieColor) + finalColor.rgb * colorCorrect(v_fogRayleighColor);\n\
 #ifndef HDR\n\
-    const float fExposure = 2.0;\n\
     fogColor = vec3(1.0) - exp(-fExposure * fogColor);\n\
 #endif\n\
 #endif\n\
 \n\
+#if defined(DYNAMIC_ATMOSPHERE_LIGHTING_FROM_SUN)\n\
+    vec3 atmosphereLightDirection = czm_sunDirectionWC;\n\
+#else\n\
+    vec3 atmosphereLightDirection = czm_lightDirectionWC;\n\
+#endif\n\
+\n\
 #ifdef FOG\n\
-#if defined(ENABLE_VERTEX_LIGHTING) || defined(ENABLE_DAYNIGHT_SHADING)\n\
-    float darken = clamp(dot(normalize(czm_viewerPositionWC), normalize(czm_sunPositionWC)), u_minimumBrightness, 1.0);\n\
+#if defined(DYNAMIC_ATMOSPHERE_LIGHTING) && (defined(ENABLE_VERTEX_LIGHTING) || defined(ENABLE_DAYNIGHT_SHADING))\n\
+    float darken = clamp(dot(normalize(czm_viewerPositionWC), atmosphereLightDirection), u_minimumBrightness, 1.0);\n\
     fogColor *= darken;\n\
 #endif\n\
 \n\
@@ -370,13 +444,39 @@ void main()\n\
 #endif\n\
 \n\
 #ifdef GROUND_ATMOSPHERE\n\
-    if (czm_sceneMode != czm_sceneMode3D)\n\
+    if (!czm_backFacing())\n\
     {\n\
-        gl_FragColor = finalColor;\n\
-        return;\n\
+        vec3 groundAtmosphereColor = computeGroundAtmosphereColor(fogColor, finalColor, atmosphereLightDirection, cameraDist);\n\
+        finalColor = vec4(mix(finalColor.rgb, groundAtmosphereColor, fade), finalColor.a);\n\
     }\n\
+#endif\n\
 \n\
-#if defined(PER_FRAGMENT_GROUND_ATMOSPHERE) && (defined(ENABLE_DAYNIGHT_SHADING) || defined(ENABLE_VERTEX_LIGHTING))\n\
+#ifdef UNDERGROUND_COLOR\n\
+    if (czm_backFacing())\n\
+    {\n\
+        float distanceFromEllipsoid = max(czm_eyeHeight, 0.0);\n\
+        float distance = max(v_distance - distanceFromEllipsoid, 0.0);\n\
+        float blendAmount = interpolateByDistance(u_undergroundColorAlphaByDistance, distance);\n\
+        vec4 undergroundColor = vec4(u_undergroundColor.rgb, u_undergroundColor.a * blendAmount);\n\
+        finalColor = alphaBlend(undergroundColor, finalColor);\n\
+    }\n\
+#endif\n\
+\n\
+#ifdef TRANSLUCENT\n\
+    if (inTranslucencyRectangle())\n\
+    {\n\
+      vec4 alphaByDistance = gl_FrontFacing ? u_frontFaceAlphaByDistance : u_backFaceAlphaByDistance;\n\
+      finalColor.a *= interpolateByDistance(alphaByDistance, v_distance);\n\
+    }\n\
+#endif\n\
+\n\
+    gl_FragColor = finalColor;\n\
+}\n\
+\n\
+#ifdef GROUND_ATMOSPHERE\n\
+vec3 computeGroundAtmosphereColor(vec3 fogColor, vec4 finalColor, vec3 atmosphereLightDirection, float cameraDist)\n\
+{\n\
+#if defined(PER_FRAGMENT_GROUND_ATMOSPHERE) && defined(DYNAMIC_ATMOSPHERE_LIGHTING) && (defined(ENABLE_DAYNIGHT_SHADING) || defined(ENABLE_VERTEX_LIGHTING))\n\
     float mpp = czm_metersPerPixel(vec4(0.0, 0.0, -czm_currentFrustum.x, 1.0), 1.0);\n\
     vec2 xy = gl_FragCoord.xy / czm_viewport.zw * 2.0 - vec2(1.0);\n\
     xy *= czm_viewport.zw * mpp * 0.5;\n\
@@ -390,15 +490,15 @@ void main()\n\
 \n\
     vec3 ellipsoidPosition = czm_pointAlongRay(ray, intersection.start);\n\
     ellipsoidPosition = (czm_inverseView * vec4(ellipsoidPosition, 1.0)).xyz;\n\
-    AtmosphereColor atmosColor = computeGroundAtmosphereFromSpace(ellipsoidPosition, true);\n\
+    AtmosphereColor atmosColor = computeGroundAtmosphereFromSpace(ellipsoidPosition, true, atmosphereLightDirection);\n\
 \n\
     vec3 groundAtmosphereColor = colorCorrect(atmosColor.mie) + finalColor.rgb * colorCorrect(atmosColor.rayleigh);\n\
 #ifndef HDR\n\
     groundAtmosphereColor = vec3(1.0) - exp(-fExposure * groundAtmosphereColor);\n\
 #endif\n\
 \n\
-    fadeInDist = u_nightFadeDistance.x;\n\
-    fadeOutDist = u_nightFadeDistance.y;\n\
+    float fadeInDist = u_nightFadeDistance.x;\n\
+    float fadeOutDist = u_nightFadeDistance.y;\n\
 \n\
     float sunlitAtmosphereIntensity = clamp((cameraDist - fadeOutDist) / (fadeInDist - fadeOutDist), 0.0, 1.0);\n\
 \n\
@@ -417,11 +517,9 @@ void main()\n\
     groundAtmosphereColor = czm_saturation(groundAtmosphereColor, 1.6);\n\
 #endif\n\
 \n\
-    finalColor = vec4(mix(finalColor.rgb, groundAtmosphereColor, fade), finalColor.a);\n\
-#endif\n\
-\n\
-    gl_FragColor = finalColor;\n\
+    return groundAtmosphereColor;\n\
 }\n\
+#endif\n\
 \n\
 #ifdef SHOW_REFLECTIVE_OCEAN\n\
 \n\
@@ -456,7 +554,7 @@ vec4 computeWaterColor(vec3 positionEyeCoordinates, vec2 textureCoordinates, mat
     float positionToEyeECLength = length(positionToEyeEC);\n\
 \n\
     // The double normalize below works around a bug in Firefox on Android devices.\n\
-    vec3 normalizedpositionToEyeEC = normalize(normalize(positionToEyeEC));\n\
+    vec3 normalizedPositionToEyeEC = normalize(normalize(positionToEyeEC));\n\
 \n\
     // Fade out the waves as the camera moves far from the surface.\n\
     float waveIntensity = waveFade(70000.0, 1000000.0, positionToEyeECLength);\n\
@@ -492,7 +590,7 @@ vec4 computeWaterColor(vec3 positionEyeCoordinates, vec2 textureCoordinates, mat
     const vec3 waveHighlightColor = vec3(0.3, 0.45, 0.6);\n\
 \n\
     // Use diffuse light to highlight the waves\n\
-    float diffuseIntensity = czm_getLambertDiffuse(czm_sunDirectionEC, normalEC) * maskValue;\n\
+    float diffuseIntensity = czm_getLambertDiffuse(czm_lightDirectionEC, normalEC) * maskValue;\n\
     vec3 diffuseHighlight = waveHighlightColor * diffuseIntensity * (1.0 - fade);\n\
 \n\
 #ifdef SHOW_OCEAN_WAVES\n\
@@ -505,7 +603,7 @@ vec4 computeWaterColor(vec3 positionEyeCoordinates, vec2 textureCoordinates, mat
 #endif\n\
 \n\
     // Add specular highlights in 3D, and in all modes when zoomed in.\n\
-    float specularIntensity = czm_getSpecular(czm_sunDirectionEC, normalizedpositionToEyeEC, normalEC, 10.0) + 0.25 * czm_getSpecular(czm_moonDirectionEC, normalizedpositionToEyeEC, normalEC, 10.0);\n\
+    float specularIntensity = czm_getSpecular(czm_lightDirectionEC, normalizedPositionToEyeEC, normalEC, 10.0);\n\
     float surfaceReflectance = mix(0.0, mix(u_zoomedOutOceanSpecularIntensity, oceanSpecularIntensity, waveIntensity), maskValue);\n\
     float specular = specularIntensity * surfaceReflectance;\n\
 \n\

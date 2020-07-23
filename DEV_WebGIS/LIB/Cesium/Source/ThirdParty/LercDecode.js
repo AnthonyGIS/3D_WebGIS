@@ -1422,7 +1422,7 @@ var tmp = {};
               else if (blockEncoding === 2) { //constant 0
                 data.counter.constant++;
                 data.ptr += blockPtr;
-
+                continue;
               }
               else if (blockEncoding === 0) {  //uncompressed
                 data.counter.uncompressed++;
@@ -1585,7 +1585,7 @@ var tmp = {};
             }
           }
         }
-
+        return;
       },
 
       getDataTypeArray: function(t) {

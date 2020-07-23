@@ -13,3 +13,6 @@
 [submodule "DEV_WebGIS/LIB/three_geo"]
 	path = DEV_WebGIS/LIB/three_geo
 	url = https://github.com/w3reality/three-geo.git
+[submodule "DEV_WebGIS/LIB/indoor_3d"]
+	path = DEV_WebGIS/LIB/indoor_3d
+	url = https://github.com/wolfwind521/indoor3D.git

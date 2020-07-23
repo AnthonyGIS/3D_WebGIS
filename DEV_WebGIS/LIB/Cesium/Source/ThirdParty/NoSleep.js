@@ -173,7 +173,7 @@ var NoSleep = function () {
   return NoSleep;
 }();
 
-
+;
 
 module.exports = NoSleep;
 

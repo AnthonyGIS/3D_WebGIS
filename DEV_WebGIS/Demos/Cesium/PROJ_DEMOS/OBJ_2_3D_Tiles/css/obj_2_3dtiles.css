@@ -1,0 +1,24 @@
+#cesiumContainer {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+#content {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 10px;
+    top: 10px;
+    line-height: 50px;
+    background: rgba(255, 255, 255, 0.52);
+}
+
+#coords {
+    line-height: 30px;
+    color: #17376b;
+    text-align: center;
+}

@@ -68,7 +68,7 @@ mersenne-twister.js - https://gist.github.com/banksean/300494
    email: m-mat @ math.sci.hiroshima-u.ac.jp (remove space)
 */
 
-var MersenneTwister = function(seed) {
+function MersenneTwister(seed) {
   if (seed == undefined) {
     seed = new Date().getTime();
   }
@@ -83,7 +83,7 @@ var MersenneTwister = function(seed) {
   this.mti=this.N+1; /* mti==N+1 means mt[N] is not initialized */
 
   this.init_genrand(seed);
-};
+}
 
 /* initializes mt[N] with a seed */
 MersenneTwister.prototype.init_genrand = function(s) {
@@ -99,7 +99,7 @@ MersenneTwister.prototype.init_genrand = function(s) {
       this.mt[this.mti] >>>= 0;
       /* for >32 bit machines */
   }
-};
+}
 
 /* initialize by an array with array-length */
 /* init_key is the array for initializing keys */
@@ -166,7 +166,7 @@ MersenneTwister.prototype.genrand_int32 = function() {
   y ^= (y >>> 18);
 
   return y >>> 0;
-};
+}
 
 /* generates a random number on [0,0x7fffffff]-interval */
 //MersenneTwister.prototype.genrand_int31 = function() {
@@ -183,7 +183,7 @@ MersenneTwister.prototype.genrand_int32 = function() {
 MersenneTwister.prototype.random = function() {
   return this.genrand_int32()*(1.0/4294967296.0);
   /* divided by 2^32 */
-};
+}
 
 /* generates a random number on (0,1)-real-interval */
 //MersenneTwister.prototype.genrand_real3 = function() {

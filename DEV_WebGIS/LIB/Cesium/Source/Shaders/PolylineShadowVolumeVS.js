@@ -158,7 +158,7 @@ void main()\n\
 #endif\n\
 \n\
     positionEC.xyz += width * normalEC;\n\
-    gl_Position = czm_depthClampFarPlane(czm_projection * positionEC);\n\
+    gl_Position = czm_depthClamp(czm_projection * positionEC);\n\
 \n\
 #ifdef ANGLE_VARYING\n\
     // Approximate relative screen space direction of the line.\n\
