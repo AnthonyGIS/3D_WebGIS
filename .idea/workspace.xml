@@ -20,349 +20,22 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Docs/openlayers_sub_modules_using.md" afterDir="false" />
+    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="feat: add openlayers as a git modules">
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/Hello/hello_index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/HeatMap/heatmap/heatmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/HeatMap/heatmap/heatmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FeatureEdit/Modify Features.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FeatureEdit/Modify Features.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FirstGeoServer/FTiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FirstGeoServer/FTiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FirstGeoServer/Simple_dwz.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FirstGeoServer/Simple_dwz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FirstGeoServer/index_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/FirstGeoServer/index_show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/HeatMap/heatmap/2012_Earthquakes_Mag5.kml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/HeatMap/heatmap/3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/HeatMap/heatmap/heatmap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/HeatMap/heatmap/map.geojson" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/build/ol.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/build/ol.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/build/ol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/build/ol.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/AssertionError.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Collection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/CollectionEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Disposable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Feature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Geolocation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ImageBase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ImageCanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ImageState.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ImageTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Kinetic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapBrowserEvent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapBrowserEventHandler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapBrowserEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapBrowserPointerEvent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapEvent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/MapProperty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ObjectEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Observable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Overlay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/OverlayPositioning.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/PluggableMap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/Tile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/TileCache.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/TileQueue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/TileRange.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/TileState.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/VectorRenderTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/VectorTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/View.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ViewHint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ViewProperty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/asserts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/centerconstraint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/color.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/colorlike.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/Attribution.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/Control.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/FullScreen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/MousePosition.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/OverviewMap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/Rotate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/ScaleLine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/Zoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/ZoomSlider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/control/ZoomToExtent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/coordinate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/css.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/dom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/events.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/events/Event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/events/EventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/events/KeyCode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/events/Target.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/events/condition.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/extent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/extent/Corner.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/extent/Relationship.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/featureloader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/EsriJSON.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/Feature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/FormatType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GML.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GML2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GML3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GML32.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GMLBase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GPX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/GeoJSON.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/IGC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/IIIFInfo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/JSONFeature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/KML.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/MVT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/OSMXML.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/OWS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/Polyline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/TextFeature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/TopoJSON.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/WFS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/WKT.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/WMSCapabilities.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/WMSGetFeatureInfo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/WMTSCapabilities.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/XLink.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/XML.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/XMLFeature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/And.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Bbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Comparison.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/ComparisonBinary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Contains.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/During.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/EqualTo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Filter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/GreaterThan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/GreaterThanOrEqualTo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Intersects.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/IsBetween.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/IsLike.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/IsNull.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/LessThan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/LessThanOrEqualTo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/LogicalNary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Not.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/NotEqualTo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Or.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Spatial.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/filter/Within.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/format/xsd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/Circle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/Geometry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/GeometryCollection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/GeometryLayout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/GeometryType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/LineString.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/LinearRing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/MultiLineString.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/MultiPoint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/MultiPolygon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/Point.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/Polygon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/SimpleGeometry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/area.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/center.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/closest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/contains.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/deflate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/flip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/geodesic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/inflate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/interiorpoint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/interpolate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/intersectsextent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/length.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/orient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/reverse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/segments.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/simplify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/straightchunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/textpath.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/topology.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/geom/flat/transform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/has.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DoubleClickZoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DragAndDrop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DragBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DragPan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DragRotate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DragRotateAndZoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/DragZoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Draw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Extent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Interaction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/KeyboardPan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/KeyboardZoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Modify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/MouseWheelZoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/PinchRotate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/PinchZoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Pointer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Property.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Snap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/interaction/Translate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/BaseImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/BaseTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/BaseVector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Graticule.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Group.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Heatmap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Property.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Tile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/TileProperty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/Vector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/VectorImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/VectorTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/VectorTileRenderType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/layer/WebGLPoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/loadingstrategy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/math.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/net.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/obj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/ol.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/pixel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/pointer/EventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/Projection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/Units.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/epsg3857.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/epsg4326.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/proj4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/projections.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/proj/transforms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/Box.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/Event.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/EventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/Feature.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/VectorContext.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/Builder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/BuilderGroup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/BuilderType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/Executor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/ExecutorGroup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/ImageBuilder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/Immediate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/Instruction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/LabelCache.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/LineStringBuilder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/PolygonBuilder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/TextBuilder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/render/canvas/hitdetect.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/Composite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/Layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/Map.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/canvas/ImageLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/canvas/Layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/canvas/TileLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/canvas/VectorImageLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/canvas/VectorLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/canvas/VectorTileLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/vector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/webgl/Layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/renderer/webgl/PointsLayer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/reproj.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/reproj/Image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/reproj/Tile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/reproj/Triangulation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/reproj/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/resolutionconstraint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/rotationconstraint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/size.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/BingMaps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/CartoDB.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Cluster.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/IIIF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/ImageArcGISRest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/ImageCanvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/ImageMapGuide.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/ImageStatic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/ImageWMS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/OSM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Raster.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Source.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Stamen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/State.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Tile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/TileArcGISRest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/TileDebug.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/TileEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/TileImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/TileJSON.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/TileWMS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/UTFGrid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/UrlTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Vector.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/VectorEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/VectorTile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/WMSServerType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/WMTS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/WMTSRequestEncoding.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/XYZ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/Zoomify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/source/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/sphere.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/string.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/structs/LRUCache.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/structs/LinkedList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/structs/PriorityQueue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/structs/RBush.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Circle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Fill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Icon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/IconAnchorUnits.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/IconImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/IconImageCache.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/IconOrigin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Image.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/LiteralStyle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/RegularShape.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Stroke.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/Text.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/TextPlacement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/style/expressions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/tilecoord.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/tilegrid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/tilegrid/TileGrid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/tilegrid/WMTS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/tilegrid/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/tileurlfunction.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/transform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/uri.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/vec/mat4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl/Buffer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl/ContextEventType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl/Helper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl/PostProcessingPass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl/RenderTarget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/webgl/ShaderBuilder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/worker/version.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/worker/webgl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers_build/src/ol/xml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/three_geo" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/three_geo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,9 +55,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -427,40 +100,41 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers/build/legacy/ol.css" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.4.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/Demos/OL/Hello" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Program\Dev\JetBrains\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\openlayers\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\Hello" />
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\TEST\TEST_2" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Cesium\PROJ_DEMOS\OBJ_2_3D_Tiles" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\test" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\ThreeJS\200204_SHADERS" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\ThreeJS\200131_HelloWord" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\TEST" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Docs" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Proj\camera_simulate" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\ThreeJS\200131_HelloWord" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Cesium\USE\_Examples\doc" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\JS_Gramma\es" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.hello_index.html">
+    <configuration name="FTiles.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/FirstGeoServer/FTiles.html">
+      <method v="2" />
+    </configuration>
     <configuration name="Modify Features.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/FeatureEdit/Modify Features.html">
       <method v="2" />
     </configuration>
-    <configuration name="SnapInteraction.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/FeatureEdit/SnapInteraction.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="将事件和函数绑定到元素.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/D3_WebGIS/JS_Gramma/web_based/事件绑定到元素/将事件和函数绑定到元素.html" useBuiltInWebServerPort="true">
+    <configuration name="Simple_dwz.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/FirstGeoServer/Simple_dwz.html">
       <method v="2" />
     </configuration>
     <configuration name="流动纹理.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/_Examples/流动纹理.html">
@@ -472,16 +146,19 @@
     <configuration name="heatmap.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/HeatMap/heatmap/heatmap.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/index.html">
+    <configuration name="hello_index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/Hello/hello_index.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="index_show.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/FirstGeoServer/index_show.html">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.heatmap.html" />
+        <item itemvalue="JavaScript Debug.hello_index.html" />
+        <item itemvalue="JavaScript Debug.FTiles.html" />
+        <item itemvalue="JavaScript Debug.index_show.html" />
         <item itemvalue="JavaScript Debug.Modify Features.html" />
-        <item itemvalue="JavaScript Debug.SnapInteraction.html" />
-        <item itemvalue="JavaScript Debug.将事件和函数绑定到元素.html" />
+        <item itemvalue="JavaScript Debug.Simple_dwz.html" />
       </list>
     </recent_temporary>
   </component>
@@ -650,7 +327,7 @@
       <workItem from="1601437065942" duration="140000" />
       <workItem from="1601437749999" duration="6426000" />
       <workItem from="1601451816561" duration="3942000" />
-      <workItem from="1601458713566" duration="1006000" />
+      <workItem from="1601458713566" duration="9596000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -750,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601452450600</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: add openlayers as a git modules">
+      <created>1601459870718</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601459870718</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -798,7 +482,8 @@
     <MESSAGE value="feat: update of July" />
     <MESSAGE value="feat: update of 2020.9" />
     <MESSAGE value="feat: update dev_webgis/lib" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update dev_webgis/lib" />
+    <MESSAGE value="feat: add openlayers as a git modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add openlayers as a git modules" />
   </component>
   <component name="WindowStateProjectService">
     <state x="626" y="288" key="#Custom_Plugin_Repositories" timestamp="1596905839451">
@@ -826,11 +511,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="108" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1596904265989" />
-    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2" timestamp="1601452445919">
+    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2" timestamp="1601463206699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="242" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1595510206090" />
-    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601452445919" />
+    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601463206699" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1601452548686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -856,6 +541,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="614" y="323" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1596987104288" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601469645413">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601469645413" />
+    <state x="968" y="30" width="1209" height="781" key="dock-window-1" timestamp="1601467173918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="968" y="30" width="1209" height="781" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1601467173918" />
+    <state x="468" y="137" width="600" height="550" key="find.popup" timestamp="1601460676530">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="468" y="137" width="600" height="550" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601460676530" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

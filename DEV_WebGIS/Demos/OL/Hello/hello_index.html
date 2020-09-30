@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+    <link href="../../../LIB/openlayers/build/legacy/ol.css" rel="stylesheet"/>
+    <script src="../../../LIB/openlayers/build/legacy/ol.js"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="map" class="map"></div>
+
+<script>
+
+    var projection = new ol.proj.Projection({
+        code: 'EPSG:4326',
+        units: 'degrees',
+        axisOrientation: 'neu',
+        global: false
+    });
+
+    var bounds = [113.901069641113, 33.0065879821777,
+        113.906242370605, 33.0110206604004];
+    var map;
+
+    var defaultView = new ol.View({
+        projection: projection,
+        center: [113.901069641113, 33.0065879821777],
+        zoom: 11
+    });
+
+    function loadVectorTile() {
+
+        // raster layer
+        var raster = new ol.layer.Tile({
+            source: new ol.source.BingMaps({
+                imagerySet: 'Aerial',
+                key: 'AuUKioHoVzV-16Ep0yv6ay21ixWZ5OZ7jDs-k7g03fiUMbN6GSH97IpRcQ_s_s3-'
+            })
+        });
+
+        //构造Map对象
+        map = new ol.Map({
+            target: 'map',
+            layers:
+                [
+                // bottom
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+                // top layer
+                // raster
+                ],
+
+            view: defaultView,
+            controls: [
+                new ol.control.ScaleLine(),
+                new ol.control.ZoomSlider(),
+                new ol.control.OverviewMap(),
+                new ol.control.Zoom()
+            ]
+        });
+    }
+
+    loadVectorTile();
+    if (map!== null)
+        map.getView().fit(bounds, map.getSize());
+
+</script>
+</body>
+</html>
