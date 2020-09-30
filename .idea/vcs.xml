@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/DEV_WebGIS/Demos/Template/passed_libs/_jquery-confirm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/DEV_WebGIS/LIB/gio_js" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/DEV_WebGIS/LIB/indoor_3d" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DEV_WebGIS/LIB/openlayers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/DEV_WebGIS/LIB/three_geo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/T_WebGL/docs/WebGL-Programming-Guide" vcs="Git" />
   </component>

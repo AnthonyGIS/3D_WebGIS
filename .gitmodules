@@ -16,3 +16,6 @@
 [submodule "DEV_WebGIS/LIB/indoor_3d"]
 	path = DEV_WebGIS/LIB/indoor_3d
 	url = https://github.com/wolfwind521/indoor3D.git
+[submodule "DEV_WebGIS/LIB/openlayers"]
+	path = DEV_WebGIS/LIB/openlayers
+	url = https://github.com/openlayers/openlayers.git

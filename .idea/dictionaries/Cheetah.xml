@@ -12,6 +12,7 @@
       <w>cwrapper</w>
       <w>dtiles</w>
       <w>eigen</w>
+      <w>epsg</w>
       <w>fontface</w>
       <w>fshader</w>
       <w>fshaders</w>
@@ -19,6 +20,7 @@
       <w>fxaa</w>
       <w>galpop</w>
       <w>gdal</w>
+      <w>geojson</w>
       <w>georeferenced</w>
       <w>glsl</w>
       <w>haha</w>
