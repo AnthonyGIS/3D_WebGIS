@@ -1,4 +1,5 @@
 // let and var https://www.cnblogs.com/fly_dragon/p/8669057.html
+// 见自己的Onenote  /learning/JS.one#JavaScript-ES6
 //1. JS中的let和var的区别
 var a = 99;
 f();

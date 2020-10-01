@@ -19,3 +19,14 @@
 [submodule "DEV_WebGIS/LIB/openlayers"]
 	path = DEV_WebGIS/LIB/openlayers
 	url = https://github.com/openlayers/openlayers.git
+[submodule "DEV_WebGIS/LIB/leaflet/Proj4Leaflet"]
+	path = DEV_WebGIS/LIB/leaflet/Proj4Leaflet
+	url = https://github.com/kartena/Proj4Leaflet.git
+[submodule "DEV_WebGIS/LIB/leaflet/leaflet"]
+	path = DEV_WebGIS/LIB/leaflet/leaflet
+	url = https://github.com/Leaflet/Leaflet.git
+	branch = master
+[submodule "DEV_WebGIS/LIB/Cesium"]
+	path = DEV_WebGIS/LIB/Cesium
+	url = https://github.com/CesiumGS/cesium.git
+	branch = master
