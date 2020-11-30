@@ -11,13 +11,12 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/0.4" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/blog-foss4g" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="feat: update lib version">
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/leaflet/Proj4Leaflet/.idea/Proj4Leaflet.iml" afterDir="false" />
+    <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
   </component>
   <component name="Git.Settings">
     <branch-grouping />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="GitToolBoxStore">
@@ -338,7 +337,7 @@
       <workItem from="1601535641303" duration="648000" />
       <workItem from="1606728709124" duration="851000" />
       <workItem from="1606735035476" duration="145000" />
-      <workItem from="1606736258869" duration="753000" />
+      <workItem from="1606736258869" duration="1200000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -466,7 +465,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606729513770</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="lib: reallocate cesium">
+      <created>1606737265308</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1606737265308</updated>
+    </task>
+    <task id="LOCAL-00020" summary="lib: reallocate proj4">
+      <created>1606737325569</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606737325569</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +521,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/0.4" />
+                        <option value="origin/blog-foss4g" />
                       </list>
                     </value>
                   </entry>
@@ -545,7 +558,9 @@
     <MESSAGE value="feat: ol hello world" />
     <MESSAGE value="feat: update leaflet as a submodule" />
     <MESSAGE value="feat: update lib version" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update lib version" />
+    <MESSAGE value="lib: reallocate cesium" />
+    <MESSAGE value="lib: reallocate proj4" />
+    <option name="LAST_COMMIT_MESSAGE" value="lib: reallocate proj4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Deployment" timestamp="1601526868130">
@@ -564,14 +579,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="526" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1601528181841" />
-    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2" timestamp="1606736529796">
+    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2" timestamp="1606737323350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606736529796" />
-    <state x="-48" y="32" width="1416" height="638" key="DiffContextDialog" timestamp="1606737017847">
+    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606737323350" />
+    <state x="-48" y="32" width="1416" height="638" key="DiffContextDialog" timestamp="1606737216955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="-48" y="32" width="1416" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606737017847" />
+    <state x="-48" y="32" width="1416" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606737216955" />
     <state x="93" y="93" width="1350" height="638" key="DirDiffDialog" timestamp="1601531840942">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -644,10 +659,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="256" y="34" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601529989378" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606736655755">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606737394904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606736655755" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606737394904" />
     <state x="968" y="30" width="1209" height="781" key="dock-window-1" timestamp="1601467173918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -656,10 +671,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="936" y="143" width="600" height="586" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601475828824" />
-    <state x="337" y="265" width="862" height="514" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606736972180">
+    <state x="337" y="265" width="862" height="514" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606737300518">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="337" y="265" width="862" height="514" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606736972180" />
+    <state x="337" y="265" width="862" height="514" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606737300518" />
     <state x="386" y="311" key="git4idea.ui.GitStashDialog" timestamp="1601528401946">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
