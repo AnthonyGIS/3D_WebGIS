@@ -17,12 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium_MY_LIBS/Cesium_Plugins/CesiumMeasure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/VS/4_SpatialData.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/VS/4_SpatialData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium_MY_LIBS/Cesium_Plugins/CesiumMeasure.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium_MY_LIBS/Cesium_Plugins/CesiumMeasure.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

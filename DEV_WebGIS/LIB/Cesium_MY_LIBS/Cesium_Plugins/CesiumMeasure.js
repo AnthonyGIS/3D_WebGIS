@@ -95,7 +95,7 @@ var MeasureTool = (function() {
         var style = document.getElementsByTagName("style");
         if (style.length === 0) {
             style = document.createElement("style");
-            style.type = "text/css";
+            // style.type = "text/css";
             document.getElementsByTagName('head')[0].appendChild(style);
         }
         else
@@ -340,7 +340,7 @@ var MeasureTool = (function() {
 
         }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-        handler.setInputAction(function(movement) {
+        handler.setInputAction(function() {
             handler.destroy(); //关闭事件句柄
             handler = undefined;
             positions.pop(); //最后一个点无效
@@ -362,7 +362,7 @@ var MeasureTool = (function() {
         viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
         // 鼠标事件
         var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene._imageryLayerCollection);
-        var positions = [];
+        var tmp_positions = [];
         var pgPointsPicked = [];
         var polygon = null;
         // var tooltip = document.getElementById("toolTip");
@@ -385,7 +385,7 @@ var MeasureTool = (function() {
                     }
                 };
 
-                this.hierarchy = positions;
+                this.hierarchy = {positions};
                 this._init();
             }
 
@@ -399,79 +399,82 @@ var MeasureTool = (function() {
                 var addedEntity = viewer.entities.add(this.options);
                 me.measureIds.push(addedEntity.id);
             };
+
+            return _;
         });
 
+        var PolyLinePrimitive = (function() {
+            function _(positions) {
+                this.options = {
+                    name: '直线',
+                    polyline: {
+                        show: true,
+                        positions: [],
+                        material: Cesium.Color.CHARTREUSE,
+                        width: 3,
+                        clampToGround: true
+                    }
+                };
+                this.positions = positions;
+                this._init();
+            }
+
+            _.prototype._init = function() {
+                var _self = this;
+                var _update = function() {
+                    return _self.positions;
+                };
+                //实时更新polyline.positions
+                this.options.polyline.positions = new Cesium.CallbackProperty(_update, false);
+                var addedEntity = viewer.entities.add(this.options);
+                me.measureIds.push(addedEntity.id);
+            };
+
+            return _;
+        })();
+
+
+
         handler.setInputAction(function(movement){
-            // tooltip.style.left = movement.endPosition.x + 3 + "px";
-            // tooltip.style.top = movement.endPosition.y - 25 + "px";
-            // tooltip.innerHTML ='<p>单击开始，右击结束</p>';
-            // cartesian = viewer.scene.pickPosition(movement.endPosition);
+
             let ray = viewer.camera.getPickRay(movement.endPosition);
             cartesian = viewer.scene.globe.pick(ray, viewer.scene);
             //cartesian = viewer.scene.camera.pickEllipsoid(movement.endPosition, viewer.scene.globe.ellipsoid);
-            if(positions.length >= 2){
+            if(tmp_positions.length >= 2){
                 if (!Cesium.defined(polygon)) {
-                    positions.push(cartesian);
-                    positions.push(positions[0])
-                    polygon = new PolygonPrimitive(positions);
+                    tmp_positions.push(cartesian);
+                    polygon = new PolyLinePrimitive(tmp_positions);
                 }else{
-                    positions.pop();
-                    positions.pop();
-                    positions.push(cartesian);
-                    positions.push(positions[0])
+                    tmp_positions.pop();
+                    tmp_positions.push(cartesian);
                 }
             }
         },Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
         handler.setInputAction(function(movement){
-            // tooltip.style.display = "none";
-            // cartesian = viewer.scene.pickPosition(movement.position);
             let ray = viewer.camera.getPickRay(movement.position);
             cartesian = viewer.scene.globe.pick(ray, viewer.scene);
             // cartesian = viewer.scene.camera.pickEllipsoid(movement.position, viewer.scene.globe.ellipsoid);
-            if(positions.length === 0) {
-                positions.push(cartesian.clone());
-                positions.pop();
-            }
-            positions.push(cartesian);
+            tmp_positions.push(cartesian);
 
             //在三维场景中添加点
-            var cartographic = Cesium.Cartographic.fromCartesian(positions[positions.length - 1]);
-            var longitudeString = Cesium.Math.toDegrees(cartographic.longitude);
-            var latitudeString = Cesium.Math.toDegrees(cartographic.latitude);
-            var heightString = cartographic.height;
-            pgPointsPicked.push({ lon: longitudeString, lat: latitudeString ,hei:heightString});
-            floatingPoint = viewer.entities.add({
-                name : '多边形面积',
-                position : positions[positions.length - 2],  // label location
-                point : {
-                    pixelSize : 5,
-                    color : Cesium.Color.RED,
-                    outlineColor : Cesium.Color.WHITE,
-                    outlineWidth : 2,
-                    heightReference:Cesium.HeightReference.CLAMP_TO_GROUND
-                }
-            });
-            me.measureIds.push(floatingPoint.id);
+            var cartographic = Cesium.Cartographic.fromCartesian(tmp_positions[tmp_positions.length - 1]);
+            pgPointsPicked.push({
+                lon: Cesium.Math.toDegrees(cartographic.longitude),
+                lat: Cesium.Math.toDegrees(cartographic.latitude) ,
+                hei:cartographic.height});
+
+            addPointVertexLabel(viewer, tmp_positions[tmp_positions.length - 1]);
         },Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
-        handler.setInputAction(function(movement){
+        handler.setInputAction(function(){
             handler.destroy();
-            positions.pop();
-            //pgPointsPicked.pop();
-            // viewer.entities.remove(floatingPoint);
-            // tooltip.style.display = "none";
-            //在三维场景中添加点
-            // var cartographic = Cesium.Cartographic.fromCartesian(positions[positions.length - 1]);
-            // var longitudeString = Cesium.Math.toDegrees(cartographic.longitude);
-            // var latitudeString = Cesium.Math.toDegrees(cartographic.latitude);
-            // var heightString = cartographic.height;
-            // pgPointsPicked.push({ lon: longitudeString, lat: latitudeString ,hei:heightString});
+            tmp_positions.pop();
 
             var textArea = getArea(pgPointsPicked) + "平方公里";
             var areaEntity = viewer.entities.add({
                 name : '多边形面积',
-                position : positions[positions.length - 2],
+                position : tmp_positions[tmp_positions.length - 2],
                 // point : {
                 //  pixelSize : 5,
                 //  color : Cesium.Color.RED,
@@ -494,6 +497,23 @@ var MeasureTool = (function() {
 
         }, Cesium.ScreenSpaceEventType.RIGHT_CLICK );
 
+
+        // 面节点标注
+        function addPointVertexLabel(viewer, pt)
+        {
+            floatingPoint = viewer.entities.add({
+                name : '多边形面积',
+                position : pt,  // label location
+                point : {
+                    pixelSize : 5,
+                    color : Cesium.Color.RED,
+                    outlineColor : Cesium.Color.WHITE,
+                    outlineWidth : 2,
+                    heightReference:Cesium.HeightReference.CLAMP_TO_GROUND
+                }
+            });
+            me.measureIds.push(floatingPoint.id);
+        }
 
         // 长度
         function distance(point1,point2){
@@ -521,8 +541,8 @@ var MeasureTool = (function() {
                 var totalAngle = Angle(points[i], points[j], points[k]);
 
 
-                var dis_temp1 = distance(positions[i], positions[j]);
-                var dis_temp2 = distance(positions[j], positions[k]);
+                var dis_temp1 = distance(tmp_positions[i], tmp_positions[j]);
+                var dis_temp2 = distance(tmp_positions[j], tmp_positions[k]);
                 res += dis_temp1 * dis_temp2 * Math.abs(Math.sin(totalAngle)) ;
                 console.log(res);
             }
