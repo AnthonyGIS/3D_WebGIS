@@ -269,7 +269,6 @@
           var key = parseType(scope, str, pos + 2);
           if (!key) return null;
           pos = skipSpace(str, key.end);
-          madeUp = madeUp || key.madeUp;
           if (str.charAt(pos++) != ",") return null;
           var val = parseType(scope, str, pos);
           if (!val) return null;
@@ -325,7 +324,7 @@
 
     for (var i = 0; i < comments.length; ++i) {
       var comment = comments[i];
-      var decl = /(?:\n|$|\*)\s*@(type|param|arg(?:ument)?|returns?|this)\s+(.*)/g, m;
+      var decl = /(?:\n|\$|\*)\s*@(type|param|arg(?:ument)?|returns?|this)\s+(.*)/g, m;
       while (m = decl.exec(comment)) {
         if (m[1] == "this" && (parsed = parseType(scope, m[2], 0))) {
           self = parsed;
@@ -352,7 +351,7 @@
     }
 
     if (foundOne) applyType(type, self, args, ret, node, aval);
-  }
+  };
 
   function jsdocParseTypedefs(text, scope) {
     var cx = infer.cx();
@@ -398,5 +397,5 @@
     } else if (type) {
       propagateWithWeight(type, aval);
     }
-  }
+  };
 });

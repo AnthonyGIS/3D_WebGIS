@@ -4,7 +4,7 @@
 //
 // Copyright (C) 2012 Zachary Carter
 //
-// Permission is hereby granted, free of charge, to any person obtaining a 
+// Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation
 // the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -41,7 +41,7 @@ case 1: // replace escaped characters with actual character
                      .replace(/\\v/g,'\v')
                      .replace(/\\f/g,'\f')
                      .replace(/\\b/g,'\b');
-        
+
 break;
 case 2:this.$ = Number(yytext);
 break;
@@ -120,7 +120,7 @@ parse: function parse(input) {
         return token;
     }
 
-    var symbol, preErrorSymbol, state, action, a, r, yyval={},p,len,newState, expected;
+    var symbol, preErrorSymbol, state, action, r, yyval={},p,len,newState, expected;
     while (true) {
         // retreive state number from top of stack
         state = stack[stack.length-1];
@@ -136,6 +136,7 @@ parse: function parse(input) {
         }
 
         // handle parse error
+        _handle_error:
         if (typeof action === 'undefined' || !action.length || !action[0]) {
 
             if (!recovering) {
@@ -259,7 +260,6 @@ parse: function parse(input) {
 
     }
 
-    return true;
 }};
 /* Jison generated lexer */
 var lexer = (function(){
@@ -328,7 +328,6 @@ next:function () {
             match,
             tempMatch,
             index,
-            col,
             lines;
         if (!this._more) {
             this.yytext = '';
@@ -364,7 +363,7 @@ next:function () {
         if (this._input === "") {
             return this.EOF;
         } else {
-            this.parseError('Lexical error on line '+(this.yylineno+1)+'. Unrecognized text.\n'+this.showPosition(), 
+            this.parseError('Lexical error on line '+(this.yylineno+1)+'. Unrecognized text.\n'+this.showPosition(),
                     {text: "", token: null, line: this.yylineno});
         }
     },
@@ -392,37 +391,36 @@ pushState:function begin(condition) {
         this.begin(condition);
     }});
 lexer.options = {};
-lexer.performAction = function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
+lexer.performAction = function anonymous(yy,yy_,$avoiding_name_collisions) {
 
-var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:/* skip whitespace */
 break;
-case 1:return 6;
+case 1:return 6
 break;
-case 2:yy_.yytext = yy_.yytext.substr(1,yy_.yyleng-2); return 4;
+case 2:yy_.yytext = yy_.yytext.substr(1,yy_.yyleng-2); return 4
 break;
-case 3:return 17;
+case 3:return 17
 break;
-case 4:return 18;
+case 4:return 18
 break;
-case 5:return 23;
+case 5:return 23
 break;
-case 6:return 24;
+case 6:return 24
 break;
-case 7:return 22;
+case 7:return 22
 break;
-case 8:return 21;
+case 8:return 21
 break;
-case 9:return 10;
+case 9:return 10
 break;
-case 10:return 11;
+case 10:return 11
 break;
-case 11:return 8;
+case 11:return 8
 break;
-case 12:return 14;
+case 12:return 14
 break;
-case 13:return 'INVALID';
+case 13:return 'INVALID'
 break;
 }
 };
@@ -430,14 +428,14 @@ lexer.rules = [/^(?:\s+)/,/^(?:(-?([0-9]|[1-9][0-9]+))(\.[0-9]+)?([eE][-+]?[0-9]
 lexer.conditions = {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13],"inclusive":true}};
 
 
-
-return lexer;})();
+;
+return lexer;})()
 parser.lexer = lexer;
 return parser;
 })();
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
 exports.parser = jsonlint;
-exports.parse = function () { return jsonlint.parse.apply(jsonlint, arguments); };
+exports.parse = function () { return jsonlint.parse.apply(jsonlint, arguments); }
 exports.main = function commonjsMain(args) {
     if (!args[1])
         throw new Error('Usage: '+args[0]+' FILE');
@@ -448,7 +446,7 @@ exports.main = function commonjsMain(args) {
         var source = cwd.join(args[1]).read({charset: "utf-8"});
     }
     return exports.parser.parse(source);
-};
+}
 if (typeof module !== 'undefined' && require.main === module) {
   exports.main(typeof process !== 'undefined' ? process.argv.slice(1) : require("system").args);
 }

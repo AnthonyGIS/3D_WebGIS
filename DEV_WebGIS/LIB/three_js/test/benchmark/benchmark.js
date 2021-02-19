@@ -4,34 +4,34 @@ var BenchClass = function() {
   window.THREE = undefined;
   Benchmark.options.maxTime = 1.0;
   return this;
-};
+}
 
 BenchClass.prototype.isTHREELoaded = function() {
   return _.isObject(this.THREE);
-};
+}
 
 BenchClass.prototype.newSuite = function(name) {
   var s = new Benchmark.Suite(name);
   this.suites.push(s);
   return s;
-};
+}
 
 BenchClass.prototype.display = function() {
   for (x of this.suites) {
     var s = new SuiteUI(x);
     s.render();
   }
-};
+}
 
 BenchClass.prototype.warning = function(message) {
   console.error(message);
-};
+}
 
 var SuiteUI = function(suite) {
   this.suite = suite;
   this.isRunning = false;
   return this;
-};
+}
 
 SuiteUI.prototype.render = function() {
   var n = document.importNode(this.suiteTemplate, true);
@@ -44,16 +44,16 @@ SuiteUI.prototype.render = function() {
   this.runButton.onclick = this.run.bind(this);
 
   this.section.appendChild(n);
-};
+}
 
 SuiteUI.prototype.run = function() {
   this.runButton.click = _.noop;
-  this.runButton.innerText = "Running...";
+  this.runButton.innerText = "Running..."
   this.suite.on("complete", this.complete.bind(this));
   this.suite.run({
     async: true
   });
-};
+}
 
 SuiteUI.prototype.complete = function() {
   this.runButton.style.display = "none";
@@ -67,7 +67,7 @@ SuiteUI.prototype.complete = function() {
     n.querySelector(".desv").innerText = x.stats.rme.toFixed(2);
     this.results.appendChild(n);
   }
-};
+}
 
 var Bench = new BenchClass();
 window.addEventListener('load', function() {
@@ -76,4 +76,4 @@ window.addEventListener('load', function() {
   SuiteUI.prototype.section = document.querySelector("section");
 
   Bench.display();
-});
+})

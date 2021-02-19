@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 	<head>
 		<meta charset="utf-8" />
 		<base href="../../../" />
-		<script src="list.js"></script>
 		<script src="page.js"></script>
 		<link type="text/css" rel="stylesheet" href="page.css" />
 	</head>
@@ -18,18 +17,11 @@
 			该光源可以投射阴影 - 跳转至 [page:SpotLightShadow] 查看更多细节。
 		</p>
 
-		<h2>示例</h2>
-
-		<p>
-			[example:webgl_lights_spotlight lights / spotlight ]<br />
-			[example:webgl_lights_spotlights lights / spotlights ]
-		</p>
-
 		<h2>代码示例</h2>
 		<code>
 		// white spotlight shining from the side, casting a shadow
 
-		var spotLight = new THREE.SpotLight( 0xffffff );
+		const spotLight = new THREE.SpotLight( 0xffffff );
 		spotLight.position.set( 100, 1000, 100 );
 
 		spotLight.castShadow = true;
@@ -43,6 +35,13 @@
 
 		scene.add( spotLight );
 		</code>
+
+		<h2>例子</h2>
+
+		<p>
+			[example:webgl_lights_spotlight lights / spotlight ]<br />
+			[example:webgl_lights_spotlights lights / spotlights ]
+		</p>
 
 		<h2>构造器（Constructor）</h2>
 
@@ -61,7 +60,7 @@
 
 		<h2>属性（Properties）</h2>
 
-		公共属性请查看基类[page:Light Light]。
+		<p>公共属性请查看基类[page:Light Light]。</p>
 
 		<h3>[property:Float angle]</h3>
 		<p>
@@ -132,7 +131,7 @@
 
 			它也可以设置target为场景中的其他对象(任意拥有 [page:Object3D.position position] 属性的对象), 示例如下:
 			<code>
-var targetObject = new THREE.Object3D();
+const targetObject = new THREE.Object3D();
 scene.add(targetObject);
 
 light.target = targetObject;
@@ -143,7 +142,7 @@ light.target = targetObject;
 
 		<h2>方法（Methods）</h2>
 
-		公共方法请查看基类 [page:Light Light]。
+		<p>公共方法请查看基类 [page:Light Light]。</p>
 
 		<h3>[method:SpotLight copy]( [param:SpotLight source] )</h3>
 		<p>

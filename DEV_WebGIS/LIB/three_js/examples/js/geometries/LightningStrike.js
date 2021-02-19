@@ -1,6 +1,4 @@
 /**
- * @author yomboprime https://github.com/yomboprime
- *
  * @fileoverview LightningStrike object for creating lightning strikes and voltaic arcs.
  *
  *
@@ -484,7 +482,7 @@ THREE.LightningStrike.prototype.fillMesh = function ( time ) {
 
 		if ( time < subray.birthTime ) { //&& ( ! this.rayParameters.isEternal || scope.currentSubray.recursion > 0 ) ) {
 
-
+			return;
 
 		} else if ( this.rayParameters.isEternal && scope.currentSubray.recursion == 0 ) {
 

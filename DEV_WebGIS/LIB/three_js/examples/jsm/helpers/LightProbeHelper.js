@@ -1,11 +1,7 @@
-/**
- * @author WestLangley / http://github.com/WestLangley
- */
-
 import {
 	Mesh,
 	ShaderMaterial,
-	SphereBufferGeometry
+	SphereGeometry
 } from '../../../build/three.module.js';
 
 function LightProbeHelper( lightProbe, size ) {
@@ -102,9 +98,11 @@ function LightProbeHelper( lightProbe, size ) {
 
 	} );
 
-	var geometry = new SphereBufferGeometry( 1, 32, 16 );
+	var geometry = new SphereGeometry( 1, 32, 16 );
 
 	Mesh.call( this, geometry, material );
+
+	this.type = 'LightProbeHelper';
 
 	this.onBeforeRender();
 

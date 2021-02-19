@@ -10,7 +10,7 @@ Some example could be like this
 ```javascript
 (function() {
   // We want to make sure THREE.JS is loaded for this Benchmark
-  var THREE;
+  var THREE
   if (Bench.isTHREELoaded()) {
     THREE = Bench.THREE;
   } else {
@@ -28,7 +28,7 @@ Some example could be like this
 
   s.add("Vector3", function() {
     v3a.distanceTo(v3b);
-  });
+  })
 
   s.add("Vector2", function() {
     v2a.distanceTo(v2b);

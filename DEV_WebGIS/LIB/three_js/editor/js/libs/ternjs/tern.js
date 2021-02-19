@@ -374,8 +374,7 @@
     // This is a partial file
 
     var realFile = file.backing = srv.findFile(file.name);
-    var offset = file.offset;
-    if (file.offsetLines) offset = {line: file.offsetLines, ch: 0};
+    var offset;
     file.offset = offset = resolvePos(realFile, file.offsetLines == null ? file.offset : {line: file.offsetLines, ch: 0}, true);
     var line = firstLine(file.text);
     var foundPos = findMatchingPosition(line, realFile.text, offset);
@@ -485,7 +484,7 @@
         var file = doc.files[i];
         if (typeof file != "object") return ".files[n] must be objects";
         else if (typeof file.name != "string") return ".files[n].name must be a string";
-        else if (file.type == "delete")
+        else if (file.type == "delete") continue;
         else if (typeof file.text != "string") return ".files[n].text must be a string";
         else if (file.type == "part") {
           if (!isPosition(file.offset) && typeof file.offsetLines != "number")
@@ -781,7 +780,7 @@
       }
     }
     return type;
-  }
+  };
 
   function findTypeAt(srv, query, file) {
     var expr = findExpr(file, query), exprName;
@@ -950,13 +949,13 @@
 
   function findRefs(srv, query, file) {
     var expr = findExprOrThrow(file, query, true);
-    if (expr && expr.node.type == "Identifier") {
+    if (expr.node.type == "Identifier") {
       return findRefsToVariable(srv, query, file, expr);
-    } else if (expr && expr.node.type == "MemberExpression" && !expr.node.computed) {
+    } else if (expr.node.type == "MemberExpression" && !expr.node.computed) {
       var p = expr.node.property;
       expr.node = expr.node.object;
       return findRefsToProperty(srv, query, expr, p);
-    } else if (expr && expr.node.type == "ObjectExpression") {
+    } else if (expr.node.type == "ObjectExpression") {
       var pos = resolvePos(file, query.end);
       for (var i = 0; i < expr.node.properties.length; ++i) {
         var k = expr.node.properties[i].key;

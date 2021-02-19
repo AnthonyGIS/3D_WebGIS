@@ -1,9 +1,6 @@
-/**
- * @author bhouston / http://exocortex.com
- * @author TristanVALCKE / https://github.com/Itee
- */
 /* global QUnit */
 
+import { Matrix3 } from '../../../../src/math/Matrix3';
 import { Matrix4 } from '../../../../src/math/Matrix4';
 import { Vector3 } from '../../../../src/math/Vector3';
 import { Euler } from '../../../../src/math/Euler';
@@ -164,6 +161,25 @@ export default QUnit.module( 'Maths', () => {
 			// ensure that it is a true copy
 			a.elements[ 0 ] = 2;
 			assert.ok( ! matrixEquals4( a, b ), "Passed!" );
+
+		} );
+
+		QUnit.test( "setFromMatrix4", ( assert ) => {
+
+			var a = new Matrix3().set(
+				0, 1, 2,
+				3, 4, 5,
+				6, 7, 8
+			);
+			var b = new Matrix4();
+			var c = new Matrix4().set(
+				0, 1, 2, 0,
+				3, 4, 5, 0,
+				6, 7, 8, 0,
+				0, 0, 0, 1
+			);
+			b.setFromMatrix3( a );
+			assert.ok( b.equals( c ) );
 
 		} );
 
@@ -459,28 +475,17 @@ export default QUnit.module( 'Maths', () => {
 
 		} );
 
-		QUnit.test( "getInverse", ( assert ) => {
+		QUnit.test( "invert", ( assert ) => {
 
+			var zero = new Matrix4().set( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
 			var identity = new Matrix4();
 
 			var a = new Matrix4();
 			var b = new Matrix4().set( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
-			var c = new Matrix4().set( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
 
-			assert.ok( ! matrixEquals4( a, b ), "Passed!" );
-			b.getInverse( a, false );
-			assert.ok( matrixEquals4( b, new Matrix4() ), "Passed!" );
+			a.copy( b ).invert();
+			assert.ok( matrixEquals4( a, zero ), "Passed!" );
 
-			try {
-
-				b.getInverse( c, true );
-				assert.ok( false, "Passed!" ); // should never get here.
-
-			} catch ( err ) {
-
-				assert.ok( true, "Passed!" );
-
-			}
 
 			var testMatrices = [
 				new Matrix4().makeRotationX( 0.3 ),
@@ -500,9 +505,9 @@ export default QUnit.module( 'Maths', () => {
 
 				var m = testMatrices[ i ];
 
-				var mInverse = new Matrix4().getInverse( m );
+				var mInverse = new Matrix4().copy( m ).invert();
 				var mSelfInverse = m.clone();
-				mSelfInverse.getInverse( mSelfInverse );
+				mSelfInverse.copy( mSelfInverse ).invert();
 
 				// self-inverse should the same as inverse
 				assert.ok( matrixEquals4( mSelfInverse, mInverse ), "Passed!" );
@@ -546,7 +551,7 @@ export default QUnit.module( 'Maths', () => {
 			var b = new Vector3( 2, 3, 4 );
 			var c = new Matrix4().set( 1, 0, 0, 2, 0, 1, 0, 3, 0, 0, 1, 4, 0, 0, 0, 1 );
 
-			a.makeTranslation( b );
+			a.makeTranslation( b.x, b.y, b.z );
 			assert.ok( matrixEquals4( a, c ), "Passed!" );
 
 		} );

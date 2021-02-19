@@ -1,7 +1,10 @@
-// r113
+// r125
 
 const assets = [
 	'./',
+
+	'./manifest.json',
+	'./images/icon.png',
 
 	'../files/favicon.ico',
 
@@ -10,13 +13,22 @@ const assets = [
 	'../examples/jsm/controls/TransformControls.js',
 
 	'../examples/jsm/libs/chevrotain.module.min.js',
-	'../examples/jsm/libs/inflate.module.min.js',
+	'../examples/jsm/libs/fflate.module.min.js',
 
-	'../examples/js/libs/jszip.min.js',
 	'../examples/js/libs/draco/draco_decoder.js',
 	'../examples/js/libs/draco/draco_decoder.wasm',
+	'../examples/js/libs/draco/draco_encoder.js',
 	'../examples/js/libs/draco/draco_wasm_wrapper.js',
 
+	'../examples/js/libs/draco/gltf/draco_decoder.js',
+	'../examples/js/libs/draco/gltf/draco_decoder.wasm',
+	'../examples/js/libs/draco/gltf/draco_wasm_wrapper.js',
+
+	'../examples/jsm/libs/rhino3dm/rhino3dm.wasm',
+	'../examples/jsm/libs/rhino3dm/rhino3dm.js',
+
+	'../examples/jsm/loaders/3DMLoader.js',
+	'../examples/jsm/loaders/3MFLoader.js',
 	'../examples/jsm/loaders/AMFLoader.js',
 	'../examples/jsm/loaders/ColladaLoader.js',
 	'../examples/jsm/loaders/DRACOLoader.js',
@@ -32,22 +44,31 @@ const assets = [
 	'../examples/jsm/loaders/SVGLoader.js',
 	'../examples/jsm/loaders/TGALoader.js',
 	'../examples/jsm/loaders/TDSLoader.js',
+	'../examples/jsm/loaders/VOXLoader.js',
 	'../examples/jsm/loaders/VRMLLoader.js',
 	'../examples/jsm/loaders/VTKLoader.js',
+	'../examples/jsm/loaders/XYZLoader.js',
 
 	'../examples/jsm/curves/NURBSCurve.js',
 	'../examples/jsm/curves/NURBSUtils.js',
 
 	'../examples/jsm/exporters/ColladaExporter.js',
+	'../examples/jsm/exporters/DRACOExporter.js',
 	'../examples/jsm/exporters/GLTFExporter.js',
 	'../examples/jsm/exporters/OBJExporter.js',
 	'../examples/jsm/exporters/PLYExporter.js',
 	'../examples/jsm/exporters/STLExporter.js',
+	'../examples/jsm/exporters/USDZExporter.js',
 
-	'../examples/jsm/geometries/TeapotBufferGeometry.js',
+	'../examples/jsm/helpers/VertexNormalsHelper.js',
 
-	'./manifest.json',
-	'./images/icon.png',
+	'../examples/jsm/geometries/TeapotGeometry.js',
+
+	'../examples/jsm/webxr/VRButton.js',
+
+	'./images/rotate.svg',
+	'./images/scale.svg',
+	'./images/translate.svg',
 
 	'./js/libs/codemirror/codemirror.css',
 	'./js/libs/codemirror/theme/monokai.css',
@@ -58,7 +79,6 @@ const assets = [
 
 	'./js/libs/esprima.js',
 	'./js/libs/jsonlint.js',
-	'./js/libs/glslprep.min.js',
 
 	'./js/libs/codemirror/addon/dialog.css',
 	'./js/libs/codemirror/addon/show-hint.css',
@@ -98,6 +118,7 @@ const assets = [
 	'./js/Config.js',
 	'./js/History.js',
 	'./js/Loader.js',
+	'./js/LoaderUtils.js',
 	'./js/Menubar.js',
 	'./js/Menubar.File.js',
 	'./js/Menubar.Edit.js',
@@ -106,16 +127,20 @@ const assets = [
 	'./js/Menubar.Examples.js',
 	'./js/Menubar.Help.js',
 	'./js/Menubar.Status.js',
+	'./js/Resizer.js',
 	'./js/Sidebar.js',
 	'./js/Sidebar.Scene.js',
 	'./js/Sidebar.Project.js',
+	'./js/Sidebar.Project.Materials.js',
+	'./js/Sidebar.Project.Renderer.js',
+	'./js/Sidebar.Project.Video.js',
 	'./js/Sidebar.Settings.js',
+	'./js/Sidebar.Settings.History.js',
 	'./js/Sidebar.Settings.Shortcuts.js',
 	'./js/Sidebar.Settings.Viewport.js',
 	'./js/Sidebar.Properties.js',
 	'./js/Sidebar.Object.js',
 	'./js/Sidebar.Geometry.js',
-	'./js/Sidebar.Geometry.Geometry.js',
 	'./js/Sidebar.Geometry.BufferGeometry.js',
 	'./js/Sidebar.Geometry.Modifiers.js',
 	'./js/Sidebar.Geometry.BoxGeometry.js',
@@ -124,6 +149,7 @@ const assets = [
 	'./js/Sidebar.Geometry.DodecahedronGeometry.js',
 	'./js/Sidebar.Geometry.ExtrudeGeometry.js',
 	'./js/Sidebar.Geometry.IcosahedronGeometry.js',
+	'./js/Sidebar.Geometry.LatheGeometry.js',
 	'./js/Sidebar.Geometry.OctahedronGeometry.js',
 	'./js/Sidebar.Geometry.PlaneGeometry.js',
 	'./js/Sidebar.Geometry.RingGeometry.js',
@@ -133,17 +159,16 @@ const assets = [
 	'./js/Sidebar.Geometry.TorusGeometry.js',
 	'./js/Sidebar.Geometry.TorusKnotGeometry.js',
 	'./js/Sidebar.Geometry.TubeGeometry.js',
-	'./js/Sidebar.Geometry.TeapotBufferGeometry.js',
-	'./js/Sidebar.Geometry.LatheGeometry.js',
+	'./js/Sidebar.Geometry.TeapotGeometry.js',
 	'./js/Sidebar.Material.js',
 	'./js/Sidebar.Animation.js',
 	'./js/Sidebar.Script.js',
-	'./js/Sidebar.History.js',
 	'./js/Strings.js',
 	'./js/Toolbar.js',
 	'./js/Viewport.js',
 	'./js/Viewport.Camera.js',
 	'./js/Viewport.Info.js',
+	'./js/Viewport.ViewHelper.js',
 
 	'./js/Command.js',
 	'./js/commands/AddObjectCommand.js',
@@ -167,6 +192,7 @@ const assets = [
 	'./js/commands/SetMaterialValueCommand.js',
 	'./js/commands/SetMaterialVectorCommand.js',
 	'./js/commands/SetSceneCommand.js',
+	'./js/commands/Commands.js',
 
 	//
 

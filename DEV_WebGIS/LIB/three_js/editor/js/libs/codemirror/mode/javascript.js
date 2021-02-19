@@ -338,7 +338,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
       if (type == wanted) return cont();
       else if (wanted == ";") return pass();
       else return cont(exp);
-    }
+    };
     return exp;
   }
 
@@ -524,7 +524,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     return pass(pattern, maybetype, maybeAssign, vardefCont);
   }
   function pattern(type, value) {
-    if (type == "modifier") return cont(pattern);
+    if (type == "modifier") return cont(pattern)
     if (type == "variable") { register(value); return cont(); }
     if (type == "spread") return cont(pattern);
     if (type == "[") return contCommasep(pattern, "]");
@@ -720,7 +720,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
 
     expressionAllowed: expressionAllowed,
     skipExpression: function(state) {
-      var top = state.cc[state.cc.length - 1];
+      var top = state.cc[state.cc.length - 1]
       if (top == expression || top == expressionNoComma) state.cc.pop()
     }
   };

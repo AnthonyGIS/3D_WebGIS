@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8" />
 		<base href="../../../" />
-		<script src="list.js"></script>
 		<script src="page.js"></script>
 		<link type="text/css" rel="stylesheet" href="page.css" />
 	</head>
@@ -14,18 +13,20 @@
 
 		<p class="desc">The GridHelper is an object to define grids. Grids are two-dimensional arrays of lines.</p>
 
-		<h2>Example</h2>
+		<h2>Code Example</h2>
+
+		<code>const size = 10;
+		const divisions = 10;
+
+		const gridHelper = new THREE.GridHelper( size, divisions );
+		scene.add( gridHelper );
+		</code>
+
+		<h2>Examples</h2>
 
 		<p>
 			[example:webgl_helpers WebGL / helpers]
 		</p>
-
-		<code>var size = 10;
-		var divisions = 10;
-
-		var gridHelper = new THREE.GridHelper( size, divisions );
-		scene.add( gridHelper );
-		</code>
 
 		<h2>Constructor</h2>
 

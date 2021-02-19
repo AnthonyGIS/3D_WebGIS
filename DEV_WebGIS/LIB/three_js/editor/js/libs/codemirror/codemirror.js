@@ -1216,7 +1216,7 @@
     // Used to work around IE issue with selection being forgotten when focus moves away from textarea
     this.hasSelection = false;
     this.composing = null;
-  }
+  };
 
   function hiddenTextarea() {
     var te = elt("textarea", null, null, "position: absolute; padding: 0; width: 1px; height: 1em; outline: none");
@@ -1253,7 +1253,7 @@
       });
 
       on(te, "paste", function(e) {
-        if (signalDOMEvent(cm, e) || handlePaste(e, cm)) return;
+        if (signalDOMEvent(cm, e) || handlePaste(e, cm)) return
 
         cm.state.pasteIncoming = true;
         input.fastPoll();
@@ -1300,7 +1300,7 @@
 
       on(te, "compositionstart", function() {
         var start = cm.getCursor("from");
-        if (input.composing) input.composing.range.clear();
+        if (input.composing) input.composing.range.clear()
         input.composing = {
           start: start,
           range: cm.markText(start, cm.getCursor("to"), {className: "CodeMirror-composing"})
@@ -1519,13 +1519,13 @@
       }
       function rehide() {
         input.contextMenuPending = false;
-        input.wrapper.style.cssText = oldWrapperCSS;
+        input.wrapper.style.cssText = oldWrapperCSS
         te.style.cssText = oldCSS;
         if (ie && ie_version < 9) display.scrollbars.setScrollTop(display.scroller.scrollTop = scrollPos);
 
         // Try to detect the user choosing select-all
         if (te.selectionStart != null) {
-          if (!ie || (ie && ie_version < 9)) prepareSelectAllHack();
+          if (!ie || (ie_version < 9)) prepareSelectAllHack();
           var i = 0, poll = function() {
             if (display.selForContextMenu == cm.doc.sel && te.selectionStart == 0 &&
                 te.selectionEnd > 0 && input.prevInput == "\u200b")
@@ -1846,7 +1846,7 @@
     },
     applyComposition: function(composing) {
       if (this.cm.isReadOnly())
-        operation(this.cm, regChange)(this.cm);
+        operation(this.cm, regChange)(this.cm)
       else if (composing.data && composing.data != composing.startData)
         operation(this.cm, applyTextInput)(this.cm, composing.data, 0, composing.sel);
     },
@@ -2222,7 +2222,7 @@
   // Verify that the selection does not partially select any atomic
   // marked ranges.
   function reCheckSelection(doc) {
-    setSelectionInner(doc, skipAtomicInSelection(doc, doc.sel, null, false), sel_dontScroll);
+    setSelectionInner(doc, skipAtomicInSelection(doc, doc.sel, null, false));
   }
 
   // Return a selection that does not partially select any atomic
@@ -3429,7 +3429,7 @@
         prevTouch = d.activeTouch;
         prevTouch.end = +new Date;
       }
-    }
+    };
     function isMouseLikeTouchEvent(e) {
       if (e.touches.length != 1) return false;
       var touch = e.touches[0];
@@ -4040,7 +4040,7 @@
       // actually possible. Otherwise, it causes vertical scroll
       // jitter on OSX trackpads when deltaX is small and deltaY
       // is large (issue #3579)
-      if (!dy || (dy && canScrollY))
+      if (!dy || canScrollY)
         e_preventDefault(e);
       display.wheelStartX = null; // Abort measurement, if in progress
       return;
@@ -4825,7 +4825,7 @@
     var lineObj = getLine(doc, line);
     function findNextLine() {
       var l = line + dir;
-      if (l < doc.first || l >= doc.first + doc.size) return false;
+      if (l < doc.first || l >= doc.first + doc.size) return false
       line = l;
       return lineObj = getLine(doc, l);
     }
@@ -6298,7 +6298,7 @@
 
   function detachSharedMarkers(markers) {
     for (var i = 0; i < markers.length; i++) {
-      var marker = markers[i], linked = [marker.primary.doc];
+      var marker = markers[i], linked = [marker.primary.doc];;
       linkedDocs(marker.primary.doc, function(d) { linked.push(d); });
       for (var j = 0; j < marker.markers.length; j++) {
         var subMarker = marker.markers[j];
@@ -6752,7 +6752,7 @@
       var prop = lineClass[1] ? "bgClass" : "textClass";
       if (output[prop] == null)
         output[prop] = lineClass[2];
-      else if (!(new RegExp("(?:^|\s)" + lineClass[2] + "(?:$|\s)")).test(output[prop]))
+      else if (!(new RegExp("(?:^|\\s)" + lineClass[2] + "(?:$|\\s)")).test(output[prop]))
         output[prop] += " " + lineClass[2];
     }
     return type;
@@ -8163,8 +8163,8 @@
 
   var noHandlers = [];
   function getHandlers(emitter, type, copy) {
-    var arr = emitter._handlers && emitter._handlers[type];
-    if (copy) return arr && arr.length > 0 ? arr.slice() : noHandlers;
+    var arr = emitter._handlers && emitter._handlers[type]
+    if (copy) return arr && arr.length > 0 ? arr.slice() : noHandlers
     else return arr || noHandlers
   }
 
@@ -8174,7 +8174,7 @@
     else if (emitter.detachEvent)
       emitter.detachEvent("on" + type, f);
     else {
-      var handlers = getHandlers(emitter, type, false);
+      var handlers = getHandlers(emitter, type, false)
       for (var i = 0; i < handlers.length; ++i)
         if (handlers[i] == f) { handlers.splice(i, 1); break; }
     }
@@ -8197,7 +8197,7 @@
   // them to be executed when the last operation ends, or, if no
   // operation is active, when a timeout fires.
   function signalLater(emitter, type /*, values...*/) {
-    var arr = getHandlers(emitter, type, false);
+    var arr = getHandlers(emitter, type, false)
     if (!arr.length) return;
     var args = Array.prototype.slice.call(arguments, 2), list;
     if (operationGroup) {
@@ -8208,7 +8208,7 @@
       list = orphanDelayedCallbacks = [];
       setTimeout(fireOrphanDelayed, 0);
     }
-    function bnd(f) {return function(){f.apply(null, args);};}
+    function bnd(f) {return function(){f.apply(null, args);};};
     for (var i = 0; i < arr.length; ++i)
       list.push(bnd(arr[i]));
   }
@@ -8337,7 +8337,7 @@
     }
     if (props) copyObj(props, inst);
     return inst;
-  }
+  };
 
   function copyObj(obj, target, overwrite) {
     if (!target) target = {};
@@ -8771,8 +8771,8 @@
     return function(str) {
       if (!bidiRE.test(str)) return false;
       var len = str.length, types = [];
-      for (var i = 0, type; i < len; ++i)
-        types.push(type = charType(str.charCodeAt(i)));
+      for (var i = 0; i < len; ++i)
+        types.push(charType(str.charCodeAt(i)));
 
       // W1. Examine each non-spacing mark (NSM) in the level run, and
       // change the type of the NSM to the type of the previous

@@ -1,11 +1,3 @@
-/**
- * @author abelnation / http://github.com/abelnation
- * @author Mugen87 / http://github.com/Mugen87
- * @author WestLangley / http://github.com/WestLangley
- *
- *  This helper must be added as a child of the light
- */
-
 import {
 	BackSide,
 	BufferGeometry,
@@ -16,9 +8,11 @@ import {
 	MeshBasicMaterial
 } from '../../../build/three.module.js';
 
-function RectAreaLightHelper( light, color ) {
+/**
+ *  This helper must be added as a child of the light
+ */
 
-	this.type = 'RectAreaLightHelper';
+function RectAreaLightHelper( light, color ) {
 
 	this.light = light;
 
@@ -34,6 +28,8 @@ function RectAreaLightHelper( light, color ) {
 
 	Line.call( this, geometry, material );
 
+	this.type = 'RectAreaLightHelper';
+
 	//
 
 	var positions2 = [ 1, 1, 0, - 1, 1, 0, - 1, - 1, 0, 1, 1, 0, - 1, - 1, 0, 1, - 1, 0 ];
@@ -44,14 +40,12 @@ function RectAreaLightHelper( light, color ) {
 
 	this.add( new Mesh( geometry2, new MeshBasicMaterial( { side: BackSide, fog: false } ) ) );
 
-	this.update();
-
 }
 
 RectAreaLightHelper.prototype = Object.create( Line.prototype );
 RectAreaLightHelper.prototype.constructor = RectAreaLightHelper;
 
-RectAreaLightHelper.prototype.update = function () {
+RectAreaLightHelper.prototype.updateMatrixWorld = function () {
 
 	this.scale.set( 0.5 * this.light.width, 0.5 * this.light.height, 1 );
 
@@ -72,6 +66,9 @@ RectAreaLightHelper.prototype.update = function () {
 		this.children[ 0 ].material.color.copy( this.material.color );
 
 	}
+
+	this.matrixWorld.copy( this.light.matrixWorld ).scale( this.scale );
+	this.children[ 0 ].matrixWorld.copy( this.matrixWorld );
 
 };
 
