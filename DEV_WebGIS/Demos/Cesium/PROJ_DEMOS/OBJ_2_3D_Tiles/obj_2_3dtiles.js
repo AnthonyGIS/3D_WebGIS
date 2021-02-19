@@ -2,7 +2,7 @@
 // https://www.cnblogs.com/HandyLi/p/11113030.html
 // 20.6.8
 
-
+Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkYTgyZmMzMC0xM2UzLTQyZjYtODVkYi0yNGYyNjk2ZDk4YmIiLCJpZCI6Mzc2MDYsImlhdCI6MTYwNTI0OTMwM30._tGGnG1gO-9KO6oRm3yFeGQ6l3E-ragZG0Wv5hmzRtM';
 
 var viewer = new Cesium.Viewer('cesiumContainer', {
 
@@ -21,6 +21,10 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
     clock: new Cesium.Clock(),//用于控制当前时间的时钟对象
     selectedImageryProviderViewModel: undefined,//当前图像图层的显示模型，仅baseLayerPicker设为true有意义
     imageryProviderViewModels: Cesium.createDefaultImageryProviderViewModels(),//可供BaseLayerPicker选择的图像图层ProviderViewModel数组
+    /*imageryProvider : Cesium.createWorldImagery({
+        style : Cesium.IonWorldImageryStyle.AERIAL_WITH_LABELS
+    }),*/
+    baseLayerPicker : false,
     selectedTerrainProviderViewModel: undefined,//当前地形图层的显示模型，仅baseLayerPicker设为true有意义
     terrainProviderViewModels: Cesium.createDefaultTerrainProviderViewModels(),//可供BaseLayerPicker选择的地形图层ProviderViewModel数组
 
@@ -57,9 +61,20 @@ var viewer = new Cesium.Viewer('cesiumContainer', {
 });
 var scene = viewer.scene;
 
+// 黑夜亮灯效果
+/*scene.globe.enableLighting = true //必须开启光照效果，
+var layer = viewer.scene.imageryLayers.addImageryProvider(
+    new Cesium.SingleTileImageryProvider({
+        url: 'img/2012c_satellite_night.jpg'
+    })
+)
+layer.dayAlpha = 0.0 //白天图层透明值
+layer.nightAlpha = 1.0 //夜晚图层透明值
+layer.brightness = 3.5 //图层发光亮度*/
+
 // set lighting to true
-viewer.scene.globe.enableLighting = true;
-viewer.scene.globe.depthTestAgainstTerrain = true;
+scene.globe.enableLighting = false;  // 使用黑夜、白天效果
+scene.globe.depthTestAgainstTerrain = true;
 
 // add terrain
 var cesiumTerrainProviderMeshes = Cesium.createWorldTerrain({
@@ -72,8 +87,9 @@ viewer.terrainProvider = cesiumTerrainProviderMeshes;
 // osgb 2 tiles set add
 var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     // note that this is the ip and endpoint
-    // url: './Cesium3DTiles/assert_id_40866/tileset.json'   // local tileset
-    url: './Cesium3DTiles/Hierarchy/BatchTableHierarchy/tileset.json'   // local tileset
+    url: './Cesium3DTiles/assert_id_40866/tileset.json'   // local tileset
+    // url: './Cesium3DTiles/Hierarchy/BatchTableHierarchy/tileset.json'   // local tileset
+    // url: './Cesium3DTiles/out/BatchedTilesets/tileset.json'
     // url: Cesium.IonResource.fromAssetId(40866)            // cesium io
     // the following should run: E:\Projs\tasks\200605_3dtiles\lib_test
     // url: 'http://localhost:8003/tilesets/TilesetWithDiscreteLOD/tileset.json'  // Tileset With Discrete LOD (come from 3d-tiles-samples) TilesetWithDiscreteLOD、TilesetWithExpiration
@@ -88,6 +104,8 @@ function  initialScreenDisplay() {
 
 // load ready
 tileset.readyPromise.then(function(tileset) {
+    console.log('entered tileset ready.');
+
     var height = -30;　　//根据地形设置调整高度
     var longitude = 120.16;
     var latitude = 30.215;

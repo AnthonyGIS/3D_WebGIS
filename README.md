@@ -11,6 +11,23 @@ A simple 3D WebGIS Application code set for the primary learners.
 * three_geo
 * three.js
 
+## Third part libs compile
+
+* Cesium
+
+  in cesium path  `DEV_WebGIS/LIB/Cesium` and run:
+
+  ```
+  git pull origin master
+  npm install
+  npm i gulp-cli 
+  npm run 
+  npm run release
+  ```
+  
+
+  
+
 
 
 

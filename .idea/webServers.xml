@@ -3,10 +3,10 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="1eb799f3-0ecd-4d10-b1c7-aa38ea3cb750" name="DEV_WebGIS" url="http://localhost:8090/D3_WebGIS/DEV_WebGIS/">
-        <fileTransfer mountedRoot="D:\Pros\IDE\apache-tomcat-10.0.0-M8\webapps\D3_WebGIS\DEV_WebGIS" accessType="MOUNT" port="0" />
+        <fileTransfer mountedRoot="D:\Pros\IDE\apache-tomcat-9.0.43\webapps\D3_WebGIS\DEV_WebGIS" accessType="MOUNT" port="0" />
       </webServer>
       <webServer id="2be1c2a8-6fe2-442b-b794-887ac9d3c5d6" name="T_WebGL" url="http://localhost:8090/D3_WebGIS/T_WebGL/">
-        <fileTransfer mountedRoot="D:\Pros\IDE\apache-tomcat-10.0.0-M8\webapps\D3_WebGIS\T_WebGL" accessType="MOUNT" port="0" />
+        <fileTransfer mountedRoot="D:\Pros\IDE\apache-tomcat-9.0.43\webapps\D3_WebGIS\T_WebGL" accessType="MOUNT" port="0" />
       </webServer>
     </option>
   </component>

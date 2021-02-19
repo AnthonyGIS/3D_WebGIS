@@ -17,7 +17,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/Cesium3DTiles/out/BatchedTilesets/barrel_withCustomBatchTable.b3dm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/Cesium3DTiles/out/BatchedTilesets/barrel_withDefaultBatchTable.b3dm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/Cesium3DTiles/out/BatchedTilesets/tileset.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/img/2012c_satellite_night.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/reame.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium/.idea/runConfigurations/Run_tests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,21 +100,21 @@
     <property name="ignore_missing_gitignore" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.4.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/LIB/leaflet/Proj4Leaflet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\openlayers\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Cesium\PROJ_DEMOS\OBJ_2_3D_Tiles\img" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\Hello" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\TEST\TEST_2" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Cesium\PROJ_DEMOS\OBJ_2_3D_Tiles" />
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Template\test" />
-      <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\ThreeJS\200204_SHADERS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\leaflet" />
@@ -113,29 +124,29 @@
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\TEST" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.FTiles.html">
-    <configuration name="FTiles.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/OL/FirstGeoServer/FTiles.html">
+  <component name="RunManager" selected="JavaScript Debug.obj_2_3dtiles.html">
+    <configuration name="1_HelloWorld.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/VS/1_HelloWorld.html">
       <method v="2" />
     </configuration>
-    <configuration name="index5_stream.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Leaflet/1901_GISMapLoad/index5_stream.html">
+    <configuration name="buttons.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/USE_D7_Buttons/buttons.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.htm (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Leaflet/1901_OnMobile/index.htm">
+    <configuration name="is_test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/ImageSwitcher/is_test.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.htm (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Leaflet/1901_Quick_Start/index.htm">
+    <configuration name="mesh_CSG.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/_Examples/mesh_CSG.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.htm" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Leaflet/1901_UAV_LINE_MAP/index.htm">
+    <configuration name="obj_2_3dtiles.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.html">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.FTiles.html" />
-        <item itemvalue="JavaScript Debug.index.htm" />
-        <item itemvalue="JavaScript Debug.index.htm (2)" />
-        <item itemvalue="JavaScript Debug.index.htm (1)" />
-        <item itemvalue="JavaScript Debug.index5_stream.html" />
+        <item itemvalue="JavaScript Debug.obj_2_3dtiles.html" />
+        <item itemvalue="JavaScript Debug.1_HelloWorld.html" />
+        <item itemvalue="JavaScript Debug.buttons.html" />
+        <item itemvalue="JavaScript Debug.mesh_CSG.html" />
+        <item itemvalue="JavaScript Debug.is_test.html" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +348,17 @@
       <workItem from="1601535641303" duration="648000" />
       <workItem from="1606728709124" duration="851000" />
       <workItem from="1606735035476" duration="145000" />
-      <workItem from="1606736258869" duration="1200000" />
+      <workItem from="1606736258869" duration="1917000" />
+      <workItem from="1606738196700" duration="1563000" />
+      <workItem from="1606741366731" duration="608000" />
+      <workItem from="1606742929850" duration="1531000" />
+      <workItem from="1611503520677" duration="2556000" />
+      <workItem from="1611559636733" duration="36000" />
+      <workItem from="1611628574727" duration="141000" />
+      <workItem from="1612080021833" duration="14000" />
+      <workItem from="1613662288369" duration="902000" />
+      <workItem from="1613701406567" duration="87000" />
+      <workItem from="1613701581870" duration="2763000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -479,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606737325569</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="lib: add cesium again correctly">
+      <created>1606737703570</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1606737703570</updated>
+    </task>
+    <task id="LOCAL-00022" summary="lib: add proj4 again correctly">
+      <created>1606737978075</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1606737978075</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,125 +595,9 @@
     <MESSAGE value="feat: update lib version" />
     <MESSAGE value="lib: reallocate cesium" />
     <MESSAGE value="lib: reallocate proj4" />
-    <option name="LAST_COMMIT_MESSAGE" value="lib: reallocate proj4" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="361" y="70" key="#Deployment" timestamp="1601526868130">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="70" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1601526868130" />
-    <state x="579" y="51" key="#Menus_and_Toolbars" timestamp="1601521785636">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="579" y="51" key="#Menus_and_Toolbars/0.0.1536.824@0.0.1536.824" timestamp="1601521785636" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601442861157">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601442861157" />
-    <state x="526" y="206" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601528181841">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="526" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1601528181841" />
-    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2" timestamp="1606737323350">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="242" y="0" width="863" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606737323350" />
-    <state x="-48" y="32" width="1416" height="638" key="DiffContextDialog" timestamp="1606737216955">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="-48" y="32" width="1416" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606737216955" />
-    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog" timestamp="1601531840942">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="DirDiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1601531840941" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601530347887">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601530347887" />
-    <state width="1515" height="268" key="GridCell.Tab.0.bottom" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.0.center" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.0.left" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.0.right" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.1.bottom" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.1.center" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.1.left" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.1.right" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.2.bottom" timestamp="1601535503675">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601535503675" />
-    <state width="1515" height="268" key="GridCell.Tab.2.center" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.2.left" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state width="1515" height="268" key="GridCell.Tab.2.right" timestamp="1601535503674">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="268" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601535503674" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1606729407088">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1606729407088" />
-    <state x="124" y="28" width="1206" height="624" key="MultipleFileMergeDialog" timestamp="1606729407098">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="124" y="28" width="1206" height="624" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1606729407098" />
-    <state x="549" y="30" key="RollbackChangesDialog" timestamp="1606736516057">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="30" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606736516057" />
-    <state x="256" y="34" width="1207" height="714" key="SettingsEditor" timestamp="1601529989378">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="256" y="34" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601529989378" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606737394904">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606737394904" />
-    <state x="968" y="30" width="1209" height="781" key="dock-window-1" timestamp="1601467173918">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="968" y="30" width="1209" height="781" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1601467173918" />
-    <state x="936" y="143" width="600" height="586" key="find.popup" timestamp="1601475828824">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="936" y="143" width="600" height="586" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601475828824" />
-    <state x="337" y="265" width="862" height="514" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606737300518">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="337" y="265" width="862" height="514" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606737300518" />
-    <state x="386" y="311" key="git4idea.ui.GitStashDialog" timestamp="1601528401946">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="386" y="311" key="git4idea.ui.GitStashDialog/0.0.1536.824@0.0.1536.824" timestamp="1601528401946" />
+    <MESSAGE value="lib: add cesium again correctly" />
+    <MESSAGE value="lib: add proj4 again correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="lib: add proj4 again correctly" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
