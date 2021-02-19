@@ -520,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613704568359</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="find bug for area measure">
+      <created>1613729028714</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1613729028714</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +611,8 @@
     <MESSAGE value="lib: add cesium again correctly" />
     <MESSAGE value="lib: add proj4 again correctly" />
     <MESSAGE value="common update for date 2021.2.19" />
-    <option name="LAST_COMMIT_MESSAGE" value="common update for date 2021.2.19" />
+    <MESSAGE value="find bug for area measure" />
+    <option name="LAST_COMMIT_MESSAGE" value="find bug for area measure" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

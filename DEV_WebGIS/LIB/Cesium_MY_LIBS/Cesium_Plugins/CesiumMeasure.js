@@ -401,39 +401,7 @@ var MeasureTool = (function() {
             };
 
             return _;
-        });
-
-        var PolyLinePrimitive = (function() {
-            function _(positions) {
-                this.options = {
-                    name: '直线',
-                    polyline: {
-                        show: true,
-                        positions: [],
-                        material: Cesium.Color.CHARTREUSE,
-                        width: 3,
-                        clampToGround: true
-                    }
-                };
-                this.positions = positions;
-                this._init();
-            }
-
-            _.prototype._init = function() {
-                var _self = this;
-                var _update = function() {
-                    return _self.positions;
-                };
-                //实时更新polyline.positions
-                this.options.polyline.positions = new Cesium.CallbackProperty(_update, false);
-                var addedEntity = viewer.entities.add(this.options);
-                me.measureIds.push(addedEntity.id);
-            };
-
-            return _;
         })();
-
-
 
         handler.setInputAction(function(movement){
 
@@ -443,7 +411,7 @@ var MeasureTool = (function() {
             if(tmp_positions.length >= 2){
                 if (!Cesium.defined(polygon)) {
                     tmp_positions.push(cartesian);
-                    polygon = new PolyLinePrimitive(tmp_positions);
+                    polygon = new PolygonPrimitive(tmp_positions);
                 }else{
                     tmp_positions.pop();
                     tmp_positions.push(cartesian);
@@ -494,6 +462,9 @@ var MeasureTool = (function() {
                 }
             });
             me.measureIds.push(areaEntity.id);
+
+            //记录测量工具状态
+            me._finishMeasure();
 
         }, Cesium.ScreenSpaceEventType.RIGHT_CLICK );
 
