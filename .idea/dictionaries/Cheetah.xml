@@ -4,12 +4,14 @@
       <w>adcode</w>
       <w>atmos</w>
       <w>baidu</w>
+      <w>carto</w>
       <w>cgal</w>
       <w>clearfix</w>
       <w>coord</w>
       <w>cuda</w>
       <w>cuon</w>
       <w>cwrapper</w>
+      <w>disp</w>
       <w>dtiles</w>
       <w>eigen</w>
       <w>epsg</w>
@@ -25,6 +27,7 @@
       <w>glsl</w>
       <w>haha</w>
       <w>hemi</w>
+      <w>khtml</w>
       <w>linewidth</w>
       <w>mapbox</w>
       <w>mediump</w>

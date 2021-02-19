@@ -132,6 +132,12 @@ tileset.readyPromise.then(function(tileset) {
 
     // add event
     initialScreenDisplay();
+
+    //创建测量工具
+    new MeasureTool({
+        viewer: viewer,
+        target: 'measure'
+    });
 });
 
 

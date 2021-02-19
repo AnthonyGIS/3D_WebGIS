@@ -17,18 +17,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/Cesium3DTiles/out/BatchedTilesets/barrel_withCustomBatchTable.b3dm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/Cesium3DTiles/out/BatchedTilesets/barrel_withDefaultBatchTable.b3dm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/Cesium3DTiles/out/BatchedTilesets/tileset.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/img/2012c_satellite_night.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/reame.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium_MY_LIBS/Cesium_Plugins/CesiumMeasure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cheetah.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium/.idea/runConfigurations/Run_tests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/VS/4_SpatialData.js" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/Demos/Cesium/VS/4_SpatialData.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +43,8 @@
       <list>
         <option value="TypeScript File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -61,6 +55,14 @@
     <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -358,7 +360,8 @@
       <workItem from="1612080021833" duration="14000" />
       <workItem from="1613662288369" duration="902000" />
       <workItem from="1613701406567" duration="87000" />
-      <workItem from="1613701581870" duration="2763000" />
+      <workItem from="1613701581870" duration="2837000" />
+      <workItem from="1613704588660" duration="14574000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -514,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606737978075</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="common update for date 2021.2.19">
+      <created>1613704568359</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1613704568359</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +607,8 @@
     <MESSAGE value="lib: reallocate proj4" />
     <MESSAGE value="lib: add cesium again correctly" />
     <MESSAGE value="lib: add proj4 again correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="lib: add proj4 again correctly" />
+    <MESSAGE value="common update for date 2021.2.19" />
+    <option name="LAST_COMMIT_MESSAGE" value="common update for date 2021.2.19" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
