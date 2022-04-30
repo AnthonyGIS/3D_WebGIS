@@ -1,3 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 node_modules
 .idea
+
+
+# libs compiled
+DEV_WebGIS/LIB/leaflet/esri_leaflet_v*

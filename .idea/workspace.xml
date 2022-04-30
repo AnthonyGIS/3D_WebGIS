@@ -17,6 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f311e626-bcbd-4168-bd1c-dbd4780e1527" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/leaflet/Leaflet_MousePosition/L.Control.MousePosition.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/leaflet/Leaflet_MousePosition/L.Control.MousePosition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DEV_WebGIS/LIB/reame.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEV_WebGIS/LIB/reame.md" afterDir="false" />
     </list>
@@ -68,11 +71,8 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1PvGOBOFd4Vy6F7E8f7vpZQvI7e" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -82,30 +82,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="add_unversioned_files" value="true" />
-    <property name="ignore_missing_gitignore" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.4.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DEV_WebGIS/LIB/Cesium" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\LIB\openlayers\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\Cesium\PROJ_DEMOS\OBJ_2_3D_Tiles\img" />
@@ -122,29 +108,13 @@
       <recent name="E:\Learns\WebGIS\PROJS\D3_WebGIS\DEV_WebGIS\Demos\OL\TEST" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.obj_2_3dtiles.html">
-    <configuration name="1_HelloWorld.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/VS/1_HelloWorld.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="buttons.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/USE_D7_Buttons/buttons.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="is_test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/ImageSwitcher/is_test.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="mesh_CSG.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/USE/_Examples/mesh_CSG.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="obj_2_3dtiles.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/PROJ_DEMOS/OBJ_2_3D_Tiles/obj_2_3dtiles.html">
+  <component name="RunManager">
+    <configuration name="arcgis_server.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8090/D3_WebGIS/DEV_WebGIS/Demos/Cesium/BEGINNERS/arcgis_server.html">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.obj_2_3dtiles.html" />
-        <item itemvalue="JavaScript Debug.1_HelloWorld.html" />
-        <item itemvalue="JavaScript Debug.buttons.html" />
-        <item itemvalue="JavaScript Debug.mesh_CSG.html" />
-        <item itemvalue="JavaScript Debug.is_test.html" />
+        <item itemvalue="JavaScript Debug.arcgis_server.html" />
       </list>
     </recent_temporary>
   </component>
@@ -358,6 +328,14 @@
       <workItem from="1613701406567" duration="87000" />
       <workItem from="1613701581870" duration="2837000" />
       <workItem from="1613704588660" duration="14574000" />
+      <workItem from="1613745444723" duration="262000" />
+      <workItem from="1618760019768" duration="175000" />
+      <workItem from="1630855452648" duration="121000" />
+      <workItem from="1649172080761" duration="540000" />
+      <workItem from="1651301362057" duration="1391000" />
+      <workItem from="1651303286866" duration="199000" />
+      <workItem from="1651303529717" duration="363000" />
+      <workItem from="1651303901771" duration="938000" />
     </task>
     <task id="LOCAL-00001" summary="Dir Change, Code Add">
       <created>1547191805088</created>
@@ -534,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613729812882</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update three.js by github source.">
+      <created>1613732787562</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1613732787562</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +572,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -620,7 +604,8 @@
     <MESSAGE value="common update for date 2021.2.19" />
     <MESSAGE value="find bug for area measure" />
     <MESSAGE value="fixed the area measure bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the area measure bug." />
+    <MESSAGE value="update three.js by github source." />
+    <option name="LAST_COMMIT_MESSAGE" value="update three.js by github source." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

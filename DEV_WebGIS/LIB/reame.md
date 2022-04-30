@@ -8,6 +8,7 @@ git submodule add  -b dev --force https://github.com/mrdoob/three.js.git DEV_Web
 
 
 备注：
+
 three.js的包太大，就没有git submodule方式添加了, 仅添加部分常用的目录文件。
 具体可以到 [github](https://github.com/mrdoob/three.js) 上学习。
 
